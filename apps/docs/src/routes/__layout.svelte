@@ -1,11 +1,12 @@
-<script>
+<script lang="ts">
+  import { onDestroy, onMount } from "svelte";
   import "../app.css";
   import { createTheme } from "kitui/styles/createTheme";
   import Drawer from "kitui/components/Drawer.svelte";
   import Toolbar from "kitui/components/Toolbar.svelte";
   import Button from "kitui/components/Button.svelte";
-  import {Icon} from '@steeze-ui/svelte-icon'
-  import {Menu} from '@steeze-ui/heroicons'
+  import { Icon } from "@steeze-ui/svelte-icon";
+  import { Menu } from "@steeze-ui/heroicons";
   import Container from "kitui/components/Container.svelte";
   import Stack from "kitui/components/Stack.svelte";
   import setThemeContext from "kitui/styles/setThemeContext";
@@ -16,20 +17,28 @@
   const theme = createTheme({});
   setThemeContext(theme);
 
+  const smMinWidthStore = mediaQueryMatch("sm");
+
   let isMobile;
-  mediaQueryMatch("sm").subscribe((matches) => {
-    isMobile = !matches;
+  let isMobileUnsubscribe;
+  onMount(() => {
+    isMobileUnsubscribe = smMinWidthStore
+      .subscribe((smMinWidth) => isMobile = !smMinWidth);
+  });
+
+  onDestroy(() => {
+    isMobileUnsubscribe && isMobileUnsubscribe();
   });
 </script>
 
 <div class="flex min-h-screen">
   {#if isMobile}
     <Drawer variant="temporary" open={$sidebarOpen} on:close={toggleSidebar}>
-      <SidebarList/>
+      <SidebarList />
     </Drawer>
   {:else}
     <Drawer variant="persistent" class="min-w-[15rem] shadow">
-      <SidebarList class="px-2"/>
+      <SidebarList class="px-2" />
     </Drawer>
   {/if}
 
@@ -38,7 +47,7 @@
       <Container>
         <Stack class="items-center" direction="row" gap={4}>
           <Button class="sm:hidden p-1.5" variant="outlined" on:click={toggleSidebar}>
-            <Icon src={Menu} class="w-6 h-6 text-inherit"/>
+            <Icon src={Menu} class="w-6 h-6 text-inherit" />
           </Button>
           <a href="/" class="w-12 h-12 p-2">
             <img src="/logo.png" alt="Logo">

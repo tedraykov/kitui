@@ -23,7 +23,9 @@
 
 <aside class={
 twMerge(
-  cn({
+  cn(
+   "bg-slate-100",
+   {
     [
       `absolute top-0 left-0 w-72 bg-slate-100
        h-full overflow-hidden

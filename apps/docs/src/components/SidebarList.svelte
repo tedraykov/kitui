@@ -6,7 +6,21 @@
   import { toggleSidebar } from "../stores/uiStore";
   import { page } from "$app/stores";
 
-  let _class;
+  let _class = "";
+  const components = [
+    {
+      href: "/components/button",
+      label: "Button",
+    },
+    {
+      href: "/components/list",
+      label: "List",
+    },
+    {
+      href: "/components/tabs",
+      label: "Tabs",
+    }
+  ]
   export {_class as class};
 </script>
 
@@ -14,19 +28,13 @@
   <ListSubheader class="font-">
     <Typography variant="caption">Components</Typography>
   </ListSubheader>
-  <ListItem
-    element="a"
-    href="/components/button"
-    active={$page.url.pathname === "/components/button"}
-    on:click={toggleSidebar}>
-    Button
-  </ListItem>
-  <ListItem
-    element="a"
-    href="/components/list"
-    on:click={toggleSidebar}
-    active={$page.url.pathname === "/components/list"}
-  >
-    List
-  </ListItem>
+  {#each components as component}
+    <ListItem
+      element="a"
+      href={component.href}
+      active={$page.url.pathname === component.href}
+      on:click={toggleSidebar}>
+      {component.label}
+    </ListItem>
+  {/each}
 </List>
