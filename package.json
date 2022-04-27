@@ -1,5 +1,5 @@
 {
-  "name": "turborepo-basic-shared",
+  "name": "svelte-kitui",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev --parallel",
+    "docs:dev": "turbo run dev --filter=docs --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
