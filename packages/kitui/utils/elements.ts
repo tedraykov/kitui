@@ -39,5 +39,5 @@ const components = [
     "strong",
     "ul",
   ] as const;
-  
-  export type HTMLElement = typeof components[number];
+
+  export type SupportedElement = typeof components[number];

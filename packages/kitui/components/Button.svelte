@@ -5,7 +5,7 @@
 <script lang="ts">
   import cn from "classnames"
   import { twMerge } from "tailwind-merge"
-  import type { ButtonProps } from "types";
+  import type { ButtonProps } from "../types";
   import getThemeContext from "../styles/getThemeContext"
 
   const theme = getThemeContext();

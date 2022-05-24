@@ -1,116 +1,123 @@
-<script lang="ts" context="module">
-    type TTabProps<
-      TSlotProps extends {},
-      TAsProp extends SupportedAs
-    > = TPassThroughProps<TSlotProps, TAsProp, "button"> & {
-      /** Whether the `Tab` is currently disabled */
-      disabled?: boolean;
-    };
-  </script>
-  
-  <script lang="ts">
-    import { onMount } from "svelte";
-    import { Focus, focusIn } from "$lib/utils/focus-management";
-    import { Keys } from "$lib/utils/keyboard";
-    import { match } from "$lib/utils/match";
-    import { useTabsContext } from "./TabGroup.svelte";
-    import { useId } from "$lib/hooks/use-id";
-    import { forwardEventsBuilder } from "$lib/internal/forwardEventsBuilder";
-    import { get_current_component } from "svelte/internal";
-    import type { SupportedAs } from "$lib/internal/elements";
-    import type { HTMLActionArray } from "$lib/hooks/use-actions";
-    import Render from "$lib/utils/Render.svelte";
-    import { resolveButtonType } from "$lib/utils/resolve-button-type";
-    import type { TPassThroughProps } from "$lib/types";
-    /***** Props *****/
-    type TAsProp = $$Generic<SupportedAs>;
-    type $$Props = TTabProps<typeof slotProps, TAsProp>;
-    export let as: SupportedAs = "button";
-    export let use: HTMLActionArray = [];
-    export let disabled = false;
-    /***** Events *****/
-    const forwardEvents = forwardEventsBuilder(get_current_component());
-    /***** Component *****/
-    let api = useTabsContext("Tab");
-    let id = `headlessui-tabs-tab-${useId()}`;
-    let tabRef: HTMLElement | null = null;
-    onMount(() => {
-      $api.registerTab(tabRef);
-      return () => $api.unregisterTab(tabRef);
-    });
-    $: myIndex = tabRef ? $api.tabs.indexOf(tabRef) : -1;
-    $: selected = myIndex === $api.selectedIndex;
-    function handleKeyDown(e: CustomEvent) {
-      let event = e as any as KeyboardEvent;
-      let list = $api.tabs.filter(Boolean) as HTMLElement[];
-      if (event.key === Keys.Space || event.key === Keys.Enter) {
+<script lang="ts">
+  import { onMount } from "svelte";
+  import { TabProps } from "../types";
+  import getThemeContext from "../styles/getThemeContext";
+  import generateId from "../utils/generateId";
+  import getTabsContext from "../contexts/tabs";
+  import { Keys } from "../utils/keys";
+  import { Focus, focusIn } from "../utils/focus";
+  import { match } from "../utils/match";
+  import { twMerge } from "tailwind-merge";
+  import cn from "classnames";
+
+  const theme = getThemeContext();
+  const { defaultProps, styleOverrides } = theme.components.Tab;
+
+  /***** Props *****/
+  let _class = ""
+  export { _class as class }
+  export let element: TabProps["element"] = defaultProps.element;
+  export let disabled: TabProps["disabled"] = defaultProps.disabled;
+
+  /***** Component *****/
+  let context = getTabsContext("Tab");
+  let id = `kitui-tabs-tab-${generateId()}`;
+  let tabRef: HTMLElement | null = null;
+
+  onMount(() => {
+    $context.registerTab(tabRef);
+    return () => $context.unregisterTab(tabRef);
+  });
+
+  $: myIndex = tabRef ? $context.tabs.indexOf(tabRef) : -1;
+  $: selected = myIndex === $context.selectedIndex;
+
+  function handleKeyDown(e: CustomEvent) {
+    let event = e as any as KeyboardEvent;
+    let list = $context.tabs.filter(Boolean) as HTMLElement[];
+    if (event.key === Keys.Space || event.key === Keys.Enter) {
+      event.preventDefault();
+      event.stopPropagation();
+      $context.setSelectedIndex(myIndex);
+      return;
+    }
+    switch (event.key) {
+      case Keys.Home:
+      case Keys.PageUp:
         event.preventDefault();
         event.stopPropagation();
-        $api.setSelectedIndex(myIndex);
+        return focusIn(list, Focus.First);
+      case Keys.End:
+      case Keys.PageDown:
+        event.preventDefault();
+        event.stopPropagation();
+        return focusIn(list, Focus.Last);
+    }
+    return match($context.orientation, {
+      vertical() {
+        if (event.key === Keys.ArrowUp)
+          return focusIn(list, Focus.Previous | Focus.WrapAround);
+        if (event.key === Keys.ArrowDown)
+          return focusIn(list, Focus.Next | Focus.WrapAround);
+        return;
+      },
+      horizontal() {
+        if (event.key === Keys.ArrowLeft)
+          return focusIn(list, Focus.Previous | Focus.WrapAround);
+        if (event.key === Keys.ArrowRight)
+          return focusIn(list, Focus.Next | Focus.WrapAround);
         return;
       }
-      switch (event.key) {
-        case Keys.Home:
-        case Keys.PageUp:
-          event.preventDefault();
-          event.stopPropagation();
-          return focusIn(list, Focus.First);
-        case Keys.End:
-        case Keys.PageDown:
-          event.preventDefault();
-          event.stopPropagation();
-          return focusIn(list, Focus.Last);
-      }
-      return match($api.orientation, {
-        vertical() {
-          if (event.key === Keys.ArrowUp)
-            return focusIn(list, Focus.Previous | Focus.WrapAround);
-          if (event.key === Keys.ArrowDown)
-            return focusIn(list, Focus.Next | Focus.WrapAround);
-          return;
-        },
-        horizontal() {
-          if (event.key === Keys.ArrowLeft)
-            return focusIn(list, Focus.Previous | Focus.WrapAround);
-          if (event.key === Keys.ArrowRight)
-            return focusIn(list, Focus.Next | Focus.WrapAround);
-          return;
-        },
-      });
+    });
+  }
+
+  function handleFocus() {
+    tabRef?.focus();
+  }
+
+  function handleSelection() {
+    if (disabled) return;
+    tabRef?.focus();
+    $context.setSelectedIndex(myIndex);
+  }
+
+  function handleSetHovered() {
+    $context.setHoveredIndex(myIndex)
+  }
+
+  $: myPanelRef = $context.panels[myIndex]?.ref;
+  $: props = {
+    id,
+    role: "tab",
+    "aria-controls": $myPanelRef ? $context.panels[myIndex]?.id : undefined,
+    "aria-selected": selected,
+    tabIndex: selected ? 0 : -1,
+    disabled: disabled ? true : undefined
+  };
+</script>
+
+<svelte:element
+  this={element}
+  bind:this={tabRef}
+  class={twMerge(
+    cn(
+    // Root
+    twMerge(
+      `font-medium h-fit w-fit py-2 px-4
+        cursor-pointer
+      `,
+      styleOverrides?.root
+      ),
+    {
+      [`border-b-2 border-primary-500`]: selected
     }
-    function handleFocus() {
-      tabRef?.focus();
-    }
-    function handleSelection() {
-      if (disabled) return;
-      tabRef?.focus();
-      $api.setSelectedIndex(myIndex);
-    }
-    $: myPanelRef = $api.panels[myIndex]?.ref;
-    $: propsWeControl = {
-      id,
-      role: "tab",
-      type: resolveButtonType({ type: $$props.type, as }, tabRef),
-      "aria-controls": $myPanelRef ? $api.panels[myIndex]?.id : undefined,
-      "aria-selected": selected,
-      tabIndex: selected ? 0 : -1,
-      disabled: disabled ? true : undefined,
-    };
-    $: if (process.env.NODE_ENV === "test") {
-      Object.assign(propsWeControl, { ["data-headlessui-index"]: myIndex });
-    }
-    $: slotProps = { selected };
-  </script>
-  <Render
-    {...{ ...$$restProps, ...propsWeControl }}
-    {as}
-    {slotProps}
-    use={[...use, forwardEvents]}
-    name={"Tab"}
-    bind:el={tabRef}
-    on:keydown={handleKeyDown}
-    on:click={handleSelection}
-    on:focus={$api.activation === "manual" ? handleFocus : handleSelection}
-  >
-    <slot {...slotProps} />
-  </Render>
+  ), _class
+  )}
+  on:keydown={handleKeyDown}
+  on:click={handleSelection}
+  on:focus={$context.activation === "manual" ? handleFocus : handleSelection}
+  on:mouseenter={handleSetHovered}
+  {...props}
+>
+  <slot/>
+</svelte:element>

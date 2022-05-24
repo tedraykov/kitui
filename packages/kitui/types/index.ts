@@ -1,18 +1,28 @@
+import { SupportedElement } from "../utils/elements";
+
 export type ThemeOptions = {
   components?: {
     Button?: ButtonOptions
     Drawer?: DrawerOptions
     Typography?: TypographyOptions
     TabGroup?: TabGroupOptions
+    TabList?: TabListOptions
+    Tab?: TabOptions
+    TabPanels?: TabPanelsOptions
+    TabPanel?: TabPanelOptions
   }
 }
 
-export type ButtonOptions = {
+export type ElementOptions = {
+  element?: SupportedElement
+}
+
+export type ButtonOptions = ElementOptions & {
   defaultProps?: ButtonPropsOptions,
   styleOverrides?: ButtonStylesOverrideOptions
 }
 
-export type DrawerOptions = {
+export type DrawerOptions = ElementOptions & {
   defaultProps?: DrawerPropsOptions,
   styleOverrides?: DrawerStylesOverrideOptions
 }
@@ -21,23 +31,23 @@ export type TypographyOptions = {
   defaultProps?: TypographyPropsOptions
 }
 
-export type TypographyPropsOptions = {
+export type TypographyPropsOptions = ElementOptions & {
   element?: TypographyElement,
   variant?: TypographyVariant
 }
 
-export type TypographyProps = {
+export type TypographyProps = ElementOptions & {
   element?: TypographyElement,
-  variant: TypographyVariant
+  variant?: TypographyVariant
 }
 
 export type TypographyElement = "h1" |"h2" |"h3" |"h4" |"h5" |"h6" |"p"| "span"
 export type TypographyVariant = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "body1" | "body2"
 
-export type DrawerPropsOptions = {
+export type DrawerPropsOptions = ElementOptions & {
   variant?: 'permanent' | 'persistent' | 'temporary'
 }
-export type DrawerProps = {
+export type DrawerProps = ElementOptions & {
   variant?: 'permanent' | 'persistent' | 'temporary'
 }
 
@@ -45,13 +55,13 @@ export type DrawerStylesOverrideOptions = {
   root?: string
 }
 
-export type ButtonPropsOptions = {
+export type ButtonPropsOptions = ElementOptions & {
   variant?: "text" | "contained" | "outlined"
   color?: "primary" | "secondary" | "inherit"
   size?: "small" | "medium" | "large"
 }
 
-export type ButtonProps = {
+export type ButtonProps = ElementOptions & {
   variant?: "text" | "contained" | "outlined"
   color?: "primary" | "secondary" | "inherit"
   size?: "small" | "medium" | "large"
@@ -70,12 +80,12 @@ export type ButtonStylesOverrideOptions = {
   small?: string,
 }
 
-export type TabGroupOptions = {
+export type TabGroupOptions = ElementOptions & {
   defaultProps?: TabGroupPropsOptions
   styleOverrides?: any
 }
 
-export type TabGroupProps = {
+export type TabGroupProps = ElementOptions & {
   defaultIndex?: number
     /** Whether the orientation of the `TabList` is vertical instead of horizontal */
   vertical?: boolean
@@ -87,8 +97,44 @@ export type TabGroupProps = {
   manual?: boolean
 }
 
-export type TabGroupPropsOptions = {
+export type TabGroupPropsOptions = ElementOptions & {
   defaultIndex?: number
   vertical?: boolean
   manual?: boolean
 }
+
+export type TabListOptions = {
+  defaultProps: TabListPropsOptions
+}
+
+export type TabListPropsOptions = ElementOptions & {}
+export type TabListProps = ElementOptions & {}
+
+export type TabOptions = ElementOptions & {
+  defaultProps?: TabPropsOptions
+  styleOverrides?: any
+}
+
+export type TabPropsOptions = ElementOptions & {
+  disabled?: boolean
+}
+
+export type TabProps = ElementOptions & {
+  disabled?: boolean
+}
+
+export type TabPanelsOptions = {
+  defaultProps: TabPanelsPropsOptions
+}
+
+export type TabPanelsPropsOptions = ElementOptions & {}
+
+export type TabPanelsProps = ElementOptions & {}
+
+export type TabPanelOptions = {
+  defaultProps: TabPanelPropsOptions
+}
+
+export type TabPanelPropsOptions = ElementOptions & {}
+
+export type TabPanelProps = ElementOptions & {}

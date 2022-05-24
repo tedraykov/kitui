@@ -30,7 +30,9 @@
   let isMobileUnsubscribe = null
   onMount(() => {
     isMobileUnsubscribe = smMinWidthStore
-      .subscribe((smMinWidth: boolean) => isMobile = !smMinWidth)
+      .subscribe((smMinWidth: boolean) => {
+        isMobile = !smMinWidth
+      })
   });
 
   onDestroy(() => {
@@ -38,9 +40,7 @@
   });
 </script>
 
-<svelte:body class="overflow-x-hidden"/>
-
-<div class="flex min-h-screen">
+<div class="flex min-h-screen overflow-x-hidden">
   {#if isMobile}
     <Drawer variant="temporary" open={$sidebarOpen} on:close={toggleSidebar}>
       <SidebarList />

@@ -2,7 +2,7 @@
   import deriveTypographyElement from "../utils/deriveTypographyElement";
   import { twMerge } from "tailwind-merge";
   import typographyVariant from "../utils/typographyVariant";
-  import type {TypographyProps} from "types";
+  import type {TypographyProps} from "../types";
 
   let _class = "";
   export { _class as class };

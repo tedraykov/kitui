@@ -19,9 +19,31 @@ const defaultTheme: ThemeOptions = {
     },
     TabGroup: {
       defaultProps: {
+        element: "div",
         vertical: false,
         manual: false,
         defaultIndex: 0
+      }
+    },
+    TabList: {
+      defaultProps: {
+        element: "ul"
+      }
+    },
+    Tab: {
+      defaultProps: {
+        element: "li",
+        disabled: false
+      }
+    },
+    TabPanels: {
+      defaultProps: {
+        element: "div"
+      }
+    },
+    TabPanel: {
+      defaultProps: {
+        element: "div"
       }
     }
   }

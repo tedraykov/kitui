@@ -1,42 +1,49 @@
-<script lang="ts" context="module">
-    type TTabListProps<
-      TSlotProps extends {},
-      TAsProp extends SupportedAs
-    > = TPassThroughProps<TSlotProps, TAsProp, "div"> & {};
-  </script>
-  
-  <script lang="ts">
-    import { useTabsContext } from "./TabGroup.svelte";
-    import { forwardEventsBuilder } from "$lib/internal/forwardEventsBuilder";
-    import { get_current_component } from "svelte/internal";
-    import type { SupportedAs } from "$lib/internal/elements";
-    import type { HTMLActionArray } from "$lib/hooks/use-actions";
-    import Render from "$lib/utils/Render.svelte";
-    import type { TPassThroughProps } from "$lib/types";
-    /***** Props *****/
-    type TAsProp = $$Generic<SupportedAs>;
-    type $$Props = TTabListProps<typeof slotProps, TAsProp>;
-    export let as: SupportedAs = "div";
-    export let use: HTMLActionArray = [];
-    /***** Events *****/
-    const forwardEvents = forwardEventsBuilder(get_current_component());
+<script lang="ts">
+    import getTabsContext from "../contexts/tabs";
+    import getThemeContext from "../styles/getThemeContext";
+    import { TabListProps } from "../types";
+    import TabHighlighter from "./TabHighlighter.svelte";
+    import { twMerge } from "tailwind-merge";
+    import cn from "classnames";
+
+    const theme = getThemeContext();
+    const { defaultProps, styleOverrides } = theme.components.TabList;
+
+    let _class = ""
+    export { _class as class }
+    export let element: TabListProps["element"] = defaultProps.element;
+
     /***** Component *****/
-    let api = useTabsContext("TabList");
-    let listRef = $api.listRef;
-    $: propsWeControl = {
+    let context = getTabsContext("TabList");
+    let listRef = $context.listRef;
+
+    function resetHoverState() {
+      $context.setHoveredIndex(null)
+    }
+
+    $: props = {
       role: "tablist",
-      "aria-orientation": $api.orientation,
+      "aria-orientation": $context.orientation,
     };
-    $: slotProps = { selectedIndex: $api.selectedIndex };
-  </script>
-  
-  <Render
-    {...{ ...$$restProps, ...propsWeControl }}
-    {as}
-    {slotProps}
-    bind:el={$listRef}
-    use={[...use, forwardEvents]}
-    name={"TabList"}
+
+</script>
+
+  <svelte:element
+    this={element}
+    bind:this={$listRef}
+    class={
+      twMerge(
+        "flex relative",
+        cn({
+          ["flex-row"]: $context.orientation === "horizontal",
+          ["flex-col"]: $context.orientation === "vertical"
+        }),
+        _class
+      )
+    }
+    {...props}
+    on:mouseleave={resetHoverState}
   >
-    <slot {...slotProps} />
-  </Render>
+    <TabHighlighter/>
+    <slot/>
+  </svelte:element>
