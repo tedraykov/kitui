@@ -1,35 +1,44 @@
+<script context="module" lang="ts">
+  /** @type {import('@sveltejs/kit').Load} */
+  export const load = async ({ url }) => ({ props: { url } });
+</script>
+
 <script lang="ts">
-  import { onDestroy, onMount } from "svelte";
-  import "../app.css";
-  import { createTheme } from "kitui/styles/createTheme";
-  import Drawer from "kitui/components/Drawer.svelte";
-  import Toolbar from "kitui/components/Toolbar.svelte";
-  import Button from "kitui/components/Button.svelte";
-  import { Icon } from "@steeze-ui/svelte-icon";
-  import { Menu } from "@steeze-ui/heroicons";
-  import Container from "kitui/components/Container.svelte";
-  import Stack from "kitui/components/Stack.svelte";
-  import setThemeContext from "kitui/styles/setThemeContext";
-  import { mediaQueryMatch } from "kitui/stores/mediaQuery";
-  import { sidebarOpen, toggleSidebar } from "../stores/uiStore";
-  import SidebarList from "../components/SidebarList.svelte";
+  import { onDestroy, onMount } from "svelte"
+  import "../app.css"
+  import { createTheme } from "kitui/styles/createTheme"
+  import Drawer from "kitui/components/Drawer.svelte"
+  import Toolbar from "kitui/components/Toolbar.svelte"
+  import Button from "kitui/components/Button.svelte"
+  import { Icon } from "@steeze-ui/svelte-icon"
+  import { Menu } from "@steeze-ui/heroicons"
+  import Container from "kitui/components/Container.svelte"
+  import Stack from "kitui/components/Stack.svelte"
+  import setThemeContext from "kitui/styles/setThemeContext"
+  import { mediaQueryMatch } from "kitui/stores/mediaQuery"
+  import { sidebarOpen, toggleSidebar } from "../stores/uiStore"
+  import SidebarList from "../components/SidebarList.svelte"
+  import PageTransition from "../components/PageTransition.svelte"
 
-  const theme = createTheme({});
-  setThemeContext(theme);
+  export let url;
+  const theme = createTheme({})
+  setThemeContext(theme)
 
-  const smMinWidthStore = mediaQueryMatch("sm");
+  const smMinWidthStore = mediaQueryMatch("sm")
 
-  let isMobile;
-  let isMobileUnsubscribe;
+  let isMobile = false
+  let isMobileUnsubscribe = null
   onMount(() => {
     isMobileUnsubscribe = smMinWidthStore
-      .subscribe((smMinWidth) => isMobile = !smMinWidth);
+      .subscribe((smMinWidth: boolean) => isMobile = !smMinWidth)
   });
 
   onDestroy(() => {
-    isMobileUnsubscribe && isMobileUnsubscribe();
+    isMobileUnsubscribe && isMobileUnsubscribe()
   });
 </script>
+
+<svelte:body class="overflow-x-hidden"/>
 
 <div class="flex min-h-screen">
   {#if isMobile}
@@ -56,7 +65,9 @@
       </Container>
     </Toolbar>
     <main>
-      <slot />
+      <PageTransition {url}>
+        <slot />
+      </PageTransition>
     </main>
   </div>
 </div>

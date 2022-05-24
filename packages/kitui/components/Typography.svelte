@@ -2,12 +2,13 @@
   import deriveTypographyElement from "../utils/deriveTypographyElement";
   import { twMerge } from "tailwind-merge";
   import typographyVariant from "../utils/typographyVariant";
+  import type {TypographyProps} from "types";
 
   let _class = "";
   export { _class as class };
 
-  export let element = null;
-  export let variant = "body1";
+  export let element: TypographyProps["element"] = null;
+  export let variant: TypographyProps["variant"] = "body1";
   let computedElement = deriveTypographyElement(element, variant);
 
   const typographyClasses = twMerge(

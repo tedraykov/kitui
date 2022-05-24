@@ -7,6 +7,6 @@
 <Container class="py-4">
   <Typography variant="h3">Tabs</Typography>
   <Stack>
-
+    
   </Stack>
 </Container>

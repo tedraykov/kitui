@@ -16,6 +16,13 @@ const defaultTheme: ThemeOptions = {
         variant: "temporary"
       },
       styleOverrides: {}
+    },
+    TabGroup: {
+      defaultProps: {
+        vertical: false,
+        manual: false,
+        defaultIndex: 0
+      }
     }
   }
 };

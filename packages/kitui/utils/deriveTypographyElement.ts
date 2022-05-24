@@ -1,25 +1,28 @@
-export default function deriveTypographyElement(element, variant) {
+import { TypographyElement, TypographyVariant } from "../types"
+
+
+export default function deriveTypographyElement(element: TypographyElement, variant: TypographyVariant) {
   if (!element) {
     switch (variant) {
       case "h1":
-        return "h1";
+        return "h1"
       case "h2":
-        return "h2";
+        return "h2"
       case "h3":
-        return "h3";
+        return "h3"
       case "h4":
-        return "h4";
+        return "h4"
       case "h5":
-        return "h5";
+        return "h5"
       case "h6":
-        return "h6";
+        return "h6"
       case "body1":
-        return "p";
+        return "p"
       case "body2":
-        return "p";
+        return "p"
       default:
-        return "span";
+        return "span"
     }
   }
-  return element;
+  return element
 }

@@ -1,18 +1,23 @@
+<script lang="ts" context="module">
+
+</script>
+
 <script lang="ts">
-  import cn from "classnames";
-  import { twMerge } from "tailwind-merge";
-  import getThemeContext from "../styles/getThemeContext";
+  import cn from "classnames"
+  import { twMerge } from "tailwind-merge"
+  import type { ButtonProps } from "types";
+  import getThemeContext from "../styles/getThemeContext"
 
   const theme = getThemeContext();
-  const { defaultProps, styleOverrides } = theme.components.Button;
+  const { defaultProps, styleOverrides } = theme.components.Button
 
   // Forward classes
-  let _class = "";
-  export { _class as class };
+  let _class = ""
+  export { _class as class }
 
-  export let variant = defaultProps.variant;
-  export let color = defaultProps.color;
-  export let size = defaultProps.size;
+  export let variant: ButtonProps["variant"] = defaultProps.variant
+  export let color: ButtonProps["color"] = defaultProps.color
+  export let size: ButtonProps["size"] = defaultProps.size
 
 </script>
 

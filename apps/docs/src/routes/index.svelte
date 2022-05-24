@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Typography from "kitui/components/Typography.svelte";
 </script>
 
