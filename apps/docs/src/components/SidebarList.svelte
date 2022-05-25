@@ -19,6 +19,10 @@
     {
       href: "/components/tabs",
       label: "Tabs",
+    },
+    {
+      href: "/components/textfield",
+      label: "Text Field"
     }
   ]
   export {_class as class};

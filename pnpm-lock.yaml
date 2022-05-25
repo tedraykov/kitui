@@ -29,6 +29,7 @@ importers:
       postcss: ^8.4.5
       prettier: ^2.5.1
       prettier-plugin-svelte: ^2.5.0
+      prismjs: ^1.28.0
       svelte: ^3.44.0
       svelte-check: ^2.2.6
       svelte-preprocess: ^4.10.1
@@ -44,6 +45,7 @@ importers:
       kitui: link:../../packages/kitui
       lodash-es: 4.17.21
       postcss: 8.4.12
+      prismjs: 1.28.0
       tailwind-merge: 1.2.1
       tailwindcss: 3.0.24
     devDependencies:
@@ -2594,6 +2596,11 @@ packages:
       ansi-styles: 5.2.0
       react-is: 17.0.2
     dev: true
+
+  /prismjs/1.28.0:
+    resolution: {integrity: sha512-8aaXdYvl1F7iC7Xm1spqSaY/OJBpYW3v+KJ+F17iYxvdc8sfjW194COK5wVhMZX45tGteiBQgdvD/nhxcRwylw==}
+    engines: {node: '>=6'}
+    dev: false
 
   /progress/2.0.3:
     resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}

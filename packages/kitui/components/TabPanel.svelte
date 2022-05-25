@@ -5,6 +5,7 @@
   import getTabsContext from "../contexts/tabs";
   import { writable } from "svelte/store";
   import generateId from "../utils/generateId";
+  import { twMerge } from "tailwind-merge";
 
   const theme = getThemeContext();
   const { defaultProps, styleOverrides } = theme.components.TabPanel;
@@ -39,6 +40,7 @@
   <svelte:element
     this={element}
     bind:this={$elementRef}
+    class={twMerge(_class)}
     {...props}
   >
     <slot />

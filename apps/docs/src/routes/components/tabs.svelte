@@ -7,11 +7,12 @@
   import TabList from "kitui/components/TabList.svelte";
   import TabPanels from "kitui/components/TabPanels.svelte";
   import TabPanel from "kitui/components/TabPanel.svelte";
+  import Paper from "kitui/components/Paper.svelte";
 </script>
 
 <Container class="py-4">
   <Typography variant="h3" class="mb-4">Tabs</Typography>
-  <Container class="mx-2 p-2 bg-gray-50 shadow-lg rounded-xl w-auto h-[15rem]">
+  <Paper class="mx-2 p-2 border border-gray-200 shadow-none w-auto">
     <Stack>
       <TabGroup>
         <TabList>
@@ -38,5 +39,8 @@
         </TabPanels>
       </TabGroup>
     </Stack>
-  </Container>
+  </Paper>
+  <Paper>
+
+  </Paper>
 </Container>

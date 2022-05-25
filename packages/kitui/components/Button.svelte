@@ -14,22 +14,22 @@
   // Forward classes
   let _class = ""
   export { _class as class }
-
+  export let element: ButtonProps["element"] = defaultProps.element
   export let variant: ButtonProps["variant"] = defaultProps.variant
   export let color: ButtonProps["color"] = defaultProps.color
   export let size: ButtonProps["size"] = defaultProps.size
 
 </script>
 
-<button
+<svelte:element
+  this={element}
   on:click
   class={twMerge(
     cn(
     // Root
     twMerge(
       `font-medium h-fit w-fit rounded-lg py-2 px-4
-       duration-100 ring-primary-200 ring-offset-1
-       focus:ring-2`,
+       duration-100 ring-primary-200 ring-offset-1`,
       styleOverrides?.root
       ),
     {
@@ -79,6 +79,12 @@
          shadow-secondary-500/20`,
         styleOverrides.secondaryContained
       )]: variant === "contained" && color === "secondary",
+      // Text
+      [
+        twMerge(
+          `hover:bg-gray-100/80`
+        )]: variant === "text",
+      // Small
       [twMerge(
         `text-sm`,
         styleOverrides.small
@@ -86,6 +92,7 @@
     }
   ), _class
   )}
+  {...$$restProps}
 >
   <slot/>
-</button>
+</svelte:element>

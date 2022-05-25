@@ -1,9 +1,10 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher } from "svelte";
   import { fade } from "svelte/transition";
   import { twMerge } from "tailwind-merge";
   import getThemeContext from "../styles/getThemeContext";
   import cn from "classnames";
+  import { DrawerProps } from "../types";
 
   const theme = getThemeContext();
 
@@ -12,16 +13,20 @@
   let _class = "";
   export { _class as class };
 
-  export let variant = defaultProps.variant;
-  export let open = false;
+  export let element: DrawerProps["element"] = defaultProps.element;
+  export let variant: DrawerProps["variant"] = defaultProps.variant;
+  export let open: DrawerProps["open"] = defaultProps.open;
 
   const dispatch = createEventDispatcher();
+
   function handleClose() {
     dispatch("close");
   }
 </script>
 
-<aside class={
+<svelte:element
+  this={element}
+  class={
 twMerge(
   cn(
    "bg-slate-100",
@@ -38,7 +43,7 @@ twMerge(
 )
 }>
   <slot />
-</aside>
+</svelte:element>
 
 {#if variant === "temporary" && open}
   <span

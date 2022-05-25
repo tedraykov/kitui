@@ -5,6 +5,7 @@ const defaultTheme: ThemeOptions = {
   components: {
     Button: {
       defaultProps: {
+        element: "button",
         variant: "contained",
         color: "primary",
         size: "medium"
@@ -13,7 +14,9 @@ const defaultTheme: ThemeOptions = {
     },
     Drawer: {
       defaultProps: {
-        variant: "temporary"
+        element: "aside",
+        variant: "temporary",
+        open: false
       },
       styleOverrides: {}
     },
@@ -44,6 +47,12 @@ const defaultTheme: ThemeOptions = {
     TabPanel: {
       defaultProps: {
         element: "div"
+      }
+    },
+    Paper: {
+      defaultProps: {
+        element: "div",
+        elevation: "default"
       }
     }
   }
