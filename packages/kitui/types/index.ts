@@ -3,6 +3,11 @@ import { SupportedElement } from "../utils/elements";
 export type ThemeOptions = {
   components?: {
     Button?: ButtonOptions
+    Card?: CardOptions
+    CardAction?: CardActionOptions
+    CardContent?: CardContentOptions
+    CardHeader?: CardHeaderOptions
+    CardTitle?: CardTitleOptions
     Drawer?: DrawerOptions
     Typography?: TypographyOptions
     TabGroup?: TabGroupOptions
@@ -57,13 +62,13 @@ export type ButtonOptions = ComponentOptions<ButtonPropsOptions, ButtonStylesOve
 
 export type ButtonPropsOptions = ElementOptions & {
   variant?: "text" | "contained" | "outlined"
-  color?: "primary" | "secondary" | "inherit"
+  color?: "accent" | "primary" | "secondary" | "inherit"
   size?: "small" | "medium" | "large"
 }
 
 export type ButtonProps = ElementOptions & {
   variant?: "text" | "contained" | "outlined"
-  color?: "primary" | "secondary" | "inherit"
+  color?: "accent" | "primary" | "secondary" | "inherit"
   size?: "small" | "medium" | "large"
 }
 
@@ -72,12 +77,71 @@ export type ButtonStylesOverrideOptions = {
   contained?: string,
   outlined?: string,
   primary?: string,
+  accent?: string,
   secondary?: string,
   primaryContained?: string,
   primaryOutlined?: string,
   secondaryOutlined?: string,
   secondaryContained?: string,
+  accentOutlined?: string,
+  accentContained?: string,
   small?: string,
+  large?: string
+}
+
+/* Card */
+export type CardOptions = ComponentOptions<CardPropsOptions, CardStylesOverrideOptions>
+
+export type CardPropsOptions = ElementOptions & {
+  outlined?: boolean
+}
+
+export type CardProps = ElementOptions & {
+  outlined?: boolean
+}
+
+export type CardStylesOverrideOptions = {
+  root?: string
+  outline?: string
+}
+
+export type CardHeaderOptions = ComponentOptions<CardHeaderPropsOptions, CardHeaderStylesOverrideOptions>
+export type CardTitleOptions = ComponentOptions<CardTitlePropsOptions, CardTitleStyleOverrideOptions>
+
+export type CardActionOptions = ComponentOptions<CardActionPropsOptions, CardActionOverrideOptions>
+
+export type CardActionPropsOptions = ElementOptions
+
+export type CardActionProps = ElementOptions
+
+export type CardActionOverrideOptions = {
+  root?: string
+}
+
+export type CardContentOptions = ComponentOptions<CardContentPropsOptions, CardContentStylesOverrideOptions>
+
+export type CardContentPropsOptions = ElementOptions
+
+export type CardContentProps = ElementOptions
+
+export type CardContentStylesOverrideOptions = {
+  root?: string
+}
+
+export type CardHeaderPropsOptions = ElementOptions
+
+export type CardHeaderProps = ElementOptions
+
+export type CardHeaderStylesOverrideOptions = {
+  root?: string
+}
+
+export type CardTitleProps = ElementOptions
+
+export type CardTitlePropsOptions = ElementOptions
+
+export type CardTitleStyleOverrideOptions = {
+  root?: string
 }
 
 /* Tabs */
@@ -104,9 +168,7 @@ export type TabGroupPropsOptions = ElementOptions & {
   manual?: boolean
 }
 
-export type TabListOptions = {
-  defaultProps: TabListPropsOptions
-}
+export type TabListOptions = ComponentOptions<TabListPropsOptions, {}>
 
 export type TabListPropsOptions = ElementOptions & {}
 export type TabListProps = ElementOptions & {}

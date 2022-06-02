@@ -3,13 +3,7 @@ module.exports = {
     "./src/**/*.{html,js,svelte,ts}",
     "./node_modules/kitui/**/*.{html,js,svelte,ts}"
   ],
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ["Inter", "sans-serif"]
-      }
-    }
-  },
+  theme: {},
   plugins: [
     require("kitui/plugin")
   ]

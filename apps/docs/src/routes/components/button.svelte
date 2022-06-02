@@ -11,21 +11,15 @@
     <Stack>
       <Typography variant="h5">Contained</Typography>
       <Stack>
-        <Button variant="contained">Default</Button>
-        <Button variant="contained" color="secondary">
-          Contained
-        </Button>
+        <Button color="primary" variant="contained">Primary</Button>
+        <Button color="accent" variant="contained">Accent</Button>
       </Stack>
     </Stack>
     <Stack>
       <Typography variant="h5">Outlined</Typography>
       <Stack>
-        <Button variant="outlined">
-          Primary
-        </Button>
-        <Button variant="outlined" color="secondary">
-          Secondary
-        </Button>
+        <Button color="primary" variant="outlined">Primary</Button>
+        <Button color="accent" variant="outlined">Accent</Button>
       </Stack>
     </Stack>
     <Stack>
@@ -33,6 +27,7 @@
       <Stack>
         <Button size="small">Small</Button>
         <Button>Default</Button>
+        <Button size="large">Large</Button>
       </Stack>
     </Stack>
   </Stack>

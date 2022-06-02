@@ -1,10 +1,14 @@
 const plugin = require('tailwindcss/plugin');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
-module.exports = plugin(function({}) {}, {
+module.exports = plugin(function({theme}) {}, {
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Inter", ...defaultTheme.fontFamily.sans]
+      },
       zIndex: {
-        "drawer": '100'
+        drawer: "100"
       },
       colors: {
         primary: {
@@ -19,7 +23,7 @@ module.exports = plugin(function({}) {}, {
           800: "#075985",
           900: "#0c4a6e"
         },
-        secondary: {
+        accent: {
           50: "#fafafa",
           100: "#f4f4f5",
           200: "#e4e4e7",

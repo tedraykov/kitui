@@ -13,6 +13,10 @@
       label: "Button",
     },
     {
+      href: "/components/card",
+      label: "Card"
+    },
+    {
       href: "/components/list",
       label: "List",
     },

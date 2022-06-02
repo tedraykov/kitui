@@ -39,10 +39,7 @@
         styleOverrides?.outlined
       )]: variant === "outlined",
       // Primary default
-      [twMerge(
-        "",
-        styleOverrides.primary
-      )]: color === "primary",
+      [styleOverrides.primary]: color === "primary",
       // Outlined Primary
       [twMerge(
         `text-primary-600 border-primary-200
@@ -50,13 +47,13 @@
          hover:border-primary-500`,
         styleOverrides.primaryOutlined
       )]: variant === "outlined" && color === "primary",
-      // Outlined Secondary
+      // Outlined Accent
       [twMerge(
-        `text-secondary-900 border-secondary-200
-         shadow-sm shadow-secondary-200/50
-         hover:border-secondary-500`,
-        styleOverrides.secondaryOutlined
-      )]: variant === "outlined" && color === "secondary",
+        `text-accent-900 border-accent-200
+         shadow-sm shadow-accent-200/50
+         hover:border-accent-500`,
+        styleOverrides.accentOutlined
+      )]: variant === "outlined" && color === "accent",
       // Contained Default
       [twMerge(
         "text-white hover:opacity-90 transition-opacity",
@@ -70,15 +67,15 @@
          `,
         styleOverrides.primaryContained
       )]: variant === "contained" && color === "primary",
-      // Secondary Default
-      [styleOverrides.secondary]: color === "secondary",
-      // Contained Secondary
+      // Accent Default
+      [styleOverrides.accent]: color === "accent",
+      // Contained Accent
       [twMerge(
-        `bg-gradient-to-b from-secondary-700 to-secondary-800 shadow-sm
-         active:from-secondary-800 active:to-secondary-900
-         shadow-secondary-500/20`,
-        styleOverrides.secondaryContained
-      )]: variant === "contained" && color === "secondary",
+        `bg-gradient-to-b from-accent-700 to-accent-800 shadow-sm
+         active:from-accent-800 active:to-accent-900
+         shadow-accent-500/20`,
+        styleOverrides.accentContained
+      )]: variant === "contained" && color === "accent",
       // Text
       [
         twMerge(
@@ -89,6 +86,11 @@
         `text-sm`,
         styleOverrides.small
       )]: size === "small",
+      // Large
+      [twMerge(
+        `text-lg py-2 px-4`,
+        styleOverrides.large
+      )]: size === "large",
     }
   ), _class
   )}

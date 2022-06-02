@@ -1,19 +1,19 @@
 <script>
   import Typography from "kitui/components/Typography.svelte";
   import Container from "kitui/components/Container.svelte";
-  import Stack from "kitui/components/Stack.svelte";
   import TabGroup from "kitui/components/TabGroup.svelte";
   import Tab from "kitui/components/Tab.svelte";
   import TabList from "kitui/components/TabList.svelte";
   import TabPanels from "kitui/components/TabPanels.svelte";
   import TabPanel from "kitui/components/TabPanel.svelte";
-  import Paper from "kitui/components/Paper.svelte";
+  import Card from "kitui/components/Card.svelte";
+  import CardContent from "kitui/components/CardContent.svelte";
 </script>
 
 <Container class="py-4">
   <Typography variant="h3" class="mb-4">Tabs</Typography>
-  <Paper class="mx-2 p-2 border border-gray-200 shadow-none w-auto">
-    <Stack>
+  <Card>
+    <CardContent>
       <TabGroup>
         <TabList>
           <Tab>Tab 1</Tab>
@@ -38,9 +38,6 @@
           </TabPanel>
         </TabPanels>
       </TabGroup>
-    </Stack>
-  </Paper>
-  <Paper>
-
-  </Paper>
+    </CardContent>
+  </Card>
 </Container>
