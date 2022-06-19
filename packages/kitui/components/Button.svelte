@@ -83,7 +83,7 @@
       // Contained Primary
       [twMerge(
         `bg-gradient-to-b from-primary-500 to-primary-600
-         shadow-sm shadow-primary-200
+         shadow-md shadow-primary-200/50
          active:from-primary-600 active:to-primary-700
          `,
         styleOverrides.primaryContained
@@ -92,24 +92,24 @@
       [styleOverrides.accent]: color === "accent",
       // Contained Accent
       [twMerge(
-        `bg-gradient-to-b from-accent-700 to-accent-800 shadow-sm
+        `bg-gradient-to-b from-accent-700 to-accent-800
          active:from-accent-800 active:to-accent-900
-         shadow-accent-500`,
+         shadow-md shadow-accent-200`,
         styleOverrides.accentContained
       )]: variant === "contained" && color === "accent",
       [
         `bg-gradient-to-b from-emerald-500 to-emerald-600
-         shadow-sm shadow-emerald-500
+         shadow-md shadow-emerald-200/50
          active:from-emerald-600 active:to-emerald-700
          `
       ]: variant === "contained" && color === "success",
       [
         `bg-gradient-to-b from-amber-500 to-amber-600
-         shadow-sm shadow-amber-500
+         shadow-md shadow-amber-200/50
          active:from-amber-600 active:to-amber-700
          `]: variant === "contained" && color === "warning",
       [ `bg-gradient-to-b from-rose-500 to-rose-600
-         shadow-sm shadow-rose-500
+         shadow-md shadow-rose-200/50
          active:from-rose-600 active:to-rose-700
          `]: variant === "contained" && color === "error",
       // Text
