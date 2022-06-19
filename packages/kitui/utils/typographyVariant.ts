@@ -12,6 +12,10 @@ export default function typographyVariant(variant: string) {
       return "text-2xl font-bold";
     case "h6":
       return "text-xl font-bold";
+    case "subtitle1":
+      return "text-lg text-accent-600"
+    case "subtitle2":
+      return "text-xs font-bold text-accent-600 uppercase"
     case "body1":
       return "text-md";
     case "body2":

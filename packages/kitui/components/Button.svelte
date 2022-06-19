@@ -83,12 +83,12 @@
         )]: variant === "text",
       // Small
       [twMerge(
-        `text-sm`,
+        `text-sm py-1.5 px-3`,
         styleOverrides.small
       )]: size === "small",
       // Large
       [twMerge(
-        `text-lg py-2 px-4`,
+        `py-3 px-6`,
         styleOverrides.large
       )]: size === "large",
     }

@@ -43,6 +43,13 @@ const defaultTheme: ThemeOptions = {
       },
       styleOverrides: {}
     },
+    Divider: {
+      defaultProps: {
+        element: "span",
+        direction: "horizontal"
+      },
+      styleOverrides: {}
+    },
     Drawer: {
       defaultProps: {
         element: "aside",

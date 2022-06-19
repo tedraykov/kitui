@@ -17,8 +17,16 @@
       label: "Card"
     },
     {
+      href: "/components/checkbox",
+      label: "Checkbox"
+    },
+    {
       href: "/components/list",
       label: "List",
+    },
+    {
+      href: "/components/radio",
+      label: "Radio"
     },
     {
       href: "/components/tabs",
@@ -27,6 +35,10 @@
     {
       href: "/components/textfield",
       label: "Text Field"
+    },
+    {
+      href: "/components/typography",
+      label: "Typography"
     }
   ]
   export {_class as class};

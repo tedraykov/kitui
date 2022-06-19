@@ -6,8 +6,8 @@ import Container from "kitui/components/Container.svelte";
 </script>
 
 <Container class="py-4">
-  <Typography variant="h3">Text Field</Typography>
+  <Typography variant="h3" class="pb-4">Text Field</Typography>
   <Stack>
-    test
+    <p>Under construction...</p>
   </Stack>
 </Container>

@@ -7,7 +7,7 @@
 </script>
 
 <div class={twMerge(
-    "flex flex-col w-full max-w-[65ch] px-4",
+    "flex flex-col w-full max-w-[105ch] mx-auto px-4 md:px-6 xl:px-8",
     _class
   )}>
   <slot/>

@@ -16,6 +16,10 @@ export default function deriveTypographyElement(element: TypographyElement, vari
         return "h5"
       case "h6":
         return "h6"
+      case "subtitle1":
+        return "p"
+      case "subtitle2":
+        return "p"
       case "body1":
         return "p"
       case "body2":
