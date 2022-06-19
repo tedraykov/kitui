@@ -2,6 +2,7 @@
   import { twMerge } from "tailwind-merge";
   import getThemeContext from "../styles/getThemeContext";
   import { DividerProps } from "../types";
+  import cn from "classnames";
 
   const theme = getThemeContext();
   const { defaultProps, styleOverrides } = theme.components.Divider;
@@ -16,8 +17,12 @@
 <svelte:element
   this={element}
   class={twMerge(
-    "h-[1px] bg-accent-300/50 w-full my-2",
+    "bg-accent-300/50 ",
     styleOverrides.root,
+    cn({
+      ["h-[1px] w-full my-2"]: direction === "horizontal",
+      ["w-[1px] h-full mx-2"]: direction === "vertical",
+    }),
     _class
   )}>
   <slot />

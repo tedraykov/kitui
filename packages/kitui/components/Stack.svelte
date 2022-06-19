@@ -2,15 +2,23 @@
   import { twMerge } from "tailwind-merge";
   import getGap from "../utils/gap";
   import getDirection from "../utils/direction";
+  import getThemeContext from "../styles/getThemeContext";
+  import { StackProps } from "../types";
+
+  const theme = getThemeContext();
+  const { defaultProps, styleOverrides } = theme.components.Stack
 
   let _class = "";
   export { _class as class };
 
-  export let gap = 2;
-  export let direction: "col" | "row" = "col";
+  export let element: StackProps["element"] = defaultProps.element
+  export let gap: StackProps["gap"]= defaultProps.gap
+  export let direction: StackProps["direction"] = defaultProps.direction
 </script>
 
-<div class={twMerge(
+<svelte:element
+  this={element}
+  class={twMerge(
   `flex`,
   getDirection(direction),
   getGap(gap),
@@ -18,4 +26,4 @@
   )}
 >
   <slot />
-</div>
+</svelte:element>

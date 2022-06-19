@@ -56,6 +56,32 @@ const defaultTheme: ThemeOptions = {
       },
       styleOverrides: {}
     },
+    FilledInput: {
+      defaultProps: {
+        element: "div"
+      },
+      styleOverrides: {}
+    },
+    InputStartAdornment: {
+      defaultProps: {
+        element: "span"
+      },
+      styleOverrides: {}
+    },
+    OutlinedInput: {
+      defaultProps: {
+        element: "div"
+      },
+      styleOverrides: {}
+    },
+    Stack: {
+      defaultProps: {
+        element: "div",
+        gap: 2,
+        direction: "col"
+      },
+      styleOverrides: {}
+    },
     TabGroup: {
       defaultProps: {
         element: "div",

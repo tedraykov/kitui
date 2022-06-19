@@ -4,13 +4,13 @@ export type ButtonOptions = ComponentOptions<ButtonPropsOptions, ButtonStylesOve
 
 export type ButtonPropsOptions = ElementOptions & {
   variant?: "text" | "contained" | "outlined"
-  color?: "accent" | "primary" | "secondary" | "inherit"
+  color?: "accent" | "primary" | "secondary" | "success" | "warning" | "error" | "inherit"
   size?: "small" | "medium" | "large"
 }
 
 export type ButtonProps = ElementOptions & {
   variant?: "text" | "contained" | "outlined"
-  color?: "accent" | "primary" | "secondary" | "inherit"
+  color?: "accent" | "primary" | "secondary" | "success" | "warning" | "error" | "inherit"
   size?: "small" | "medium" | "large"
 }
 
