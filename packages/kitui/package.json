@@ -1,5 +1,5 @@
 {
-  "name": "svelte-kitui",
+  "name": "@alttreble/kitui",
   "version": "0.0.1",
   "scripts": {
     "check": "svelte-check --tsconfig ./tsconfig.json"
