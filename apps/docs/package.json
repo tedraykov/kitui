@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "0.0.1-development",
+  "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev --port 5700 --host",
     "build": "svelte-kit build",
