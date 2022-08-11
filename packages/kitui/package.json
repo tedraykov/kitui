@@ -2,7 +2,8 @@
   "name": "@tedraykov/kitui",
   "version": "0.0.2",
   "scripts": {
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "package": "svelte-kit package"
   },
   "devDependencies": {
     "@rgossiaux/svelte-headlessui": "^1.0.1",
