@@ -1,4 +1,4 @@
-import { ComponentOptions, ElementOptions } from "./index";
+import type { ComponentOptions, ElementOptions } from "./index";
 
 /* Tab Group */
 export type TabGroupOptions = ElementOptions & {
@@ -25,11 +25,11 @@ export type TabGroupPropsOptions = ElementOptions & {
 }
 
 /* Tab List */
-export type TabListOptions = ComponentOptions<TabListPropsOptions, {}>
+export type TabListOptions = ComponentOptions<TabListPropsOptions, object>
 
-export type TabListPropsOptions = ElementOptions & {}
+export type TabListPropsOptions = ElementOptions
 
-export type TabListProps = ElementOptions & {}
+export type TabListProps = ElementOptions
 
 /* Tab */
 export type TabOptions = ComponentOptions<TabPropsOptions, any>
@@ -45,13 +45,13 @@ export type TabProps = ElementOptions & {
 /* Tab Panels */
 export type TabPanelsOptions = ComponentOptions<TabPanelsPropsOptions, any>
 
-export type TabPanelsPropsOptions = ElementOptions & {}
+export type TabPanelsPropsOptions = ElementOptions
 
-export type TabPanelsProps = ElementOptions & {}
+export type TabPanelsProps = ElementOptions
 
 /* Tab Panel */
 export type TabPanelOptions = ComponentOptions<TabPanelPropsOptions, any>
 
-export type TabPanelPropsOptions = ElementOptions & {}
+export type TabPanelPropsOptions = ElementOptions
 
-export type TabPanelProps = ElementOptions & {}
+export type TabPanelProps = ElementOptions

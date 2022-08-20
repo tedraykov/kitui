@@ -1,10 +1,10 @@
 <script>
-  import Container from "kitui/components/Container.svelte";
-  import Typography from "kitui/components/Typography.svelte";
-  import Stack from "kitui/components/Stack.svelte";
-  import Card from "kitui/components/Card.svelte";
-  import CardTitle from "kitui/components/CardTitle.svelte";
-  import CardContent from "kitui/components/CardContent.svelte";
+  import Container from "/src/lib/components/Container.svelte";
+  import Typography from "/src/lib/components/Typography.svelte";
+  import Stack from "/src/lib/components/Stack.svelte";
+  import Card from "/src/lib/components/Card.svelte";
+  import CardTitle from "/src/lib/components/CardTitle.svelte";
+  import CardContent from "/src/lib/components/CardContent.svelte";
 
   let outlined = false;
 </script>

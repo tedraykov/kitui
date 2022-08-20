@@ -1,4 +1,4 @@
-import { Elevation } from "../types";
+import type { Elevation } from "../types";
 
 export default function deriveElevation(elevation: Elevation) {
   switch (elevation) {

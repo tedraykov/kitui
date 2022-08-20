@@ -1,4 +1,4 @@
-import { ComponentOptions, ElementOptions } from "./index";
+import type { ComponentOptions, ElementOptions } from "./index";
 
 /* Filled Input */
 export type FilledInputOptions = ComponentOptions<FilledInputPropsOptions, FilledInputStylesOverrideOptions>

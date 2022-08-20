@@ -7,7 +7,7 @@ export function match<
   ...args: any[]
 ): TReturnValue {
   if (value in lookup) {
-    let returnValue = lookup[value];
+    const returnValue = lookup[value];
     return typeof returnValue === "function"
       ? returnValue(...args)
       : returnValue;

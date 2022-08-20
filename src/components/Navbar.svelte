@@ -1,8 +1,8 @@
 <script>
-  import Stack from "kitui/components/Stack.svelte";
-  import Toolbar from "kitui/components/Toolbar.svelte";
-  import Container from "kitui/components/Container.svelte";
-  import Button from "kitui/components/Button.svelte";
+  import Stack from "/src/lib/components/Stack.svelte";
+  import Toolbar from "/src/lib/components/Toolbar.svelte";
+  import Container from "/src/lib/components/Container.svelte";
+  import Button from "/src/lib/components/Button.svelte";
   import { Icon } from "@steeze-ui/svelte-icon";
   import { Menu } from "@steeze-ui/heroicons";
   import { toggleSidebar } from "../stores/uiStore";

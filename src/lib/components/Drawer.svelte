@@ -4,7 +4,7 @@
   import { twMerge } from "tailwind-merge";
   import getThemeContext from "../styles/getThemeContext";
   import cn from "classnames";
-  import { DrawerProps } from "../types";
+  import type { DrawerProps } from "../types";
 
   const theme = getThemeContext();
 

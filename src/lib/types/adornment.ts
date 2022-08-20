@@ -1,4 +1,4 @@
-import { ComponentOptions, DrawerStylesOverrideOptions, ElementOptions } from "./index";
+import type { ComponentOptions, ElementOptions } from "./index";
 
 export type InputStartAdornmentOptions = ComponentOptions<InputStartAdornmentPropsOptions, InputStartAdornmentStylesOverrideOptions>
 

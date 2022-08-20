@@ -1,5 +1,4 @@
-import { TypographyElement, TypographyVariant } from "../types"
-
+import type { TypographyElement, TypographyVariant } from "../types"
 
 export default function deriveTypographyElement(element: TypographyElement, variant: TypographyVariant) {
   if (!element) {

@@ -1,11 +1,11 @@
 <script lang="ts">
   import { Icon } from "@steeze-ui/svelte-icon";
   import { Search } from "@steeze-ui/heroicons";
-  import Typography from "kitui/components/Typography.svelte";
-  import Stack from "kitui/components/Stack.svelte";
-  import Container from "kitui/components/Container.svelte";
-  import FilledInput from "kitui/components/FilledInput.svelte";
-  import OutlinedInput from "kitui/components/OutlinedInput.svelte";
+  import Typography from "/src/lib/components/Typography.svelte";
+  import Stack from "/src/lib/components/Stack.svelte";
+  import Container from "/src/lib/components/Container.svelte";
+  import FilledInput from "/src/lib/components/FilledInput.svelte";
+  import OutlinedInput from "/src/lib/components/OutlinedInput.svelte";
 </script>
 
 <Container class="py-4">

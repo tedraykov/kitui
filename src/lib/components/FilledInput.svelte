@@ -1,7 +1,7 @@
 <script lang="ts">
   import { twMerge } from "tailwind-merge";
   import getThemeContext from "../styles/getThemeContext";
-  import { FilledInputProps } from "../types";
+  import type { FilledInputProps } from "../types";
 
   const theme = getThemeContext();
   const { defaultProps, styleOverrides } = theme.components.FilledInput;

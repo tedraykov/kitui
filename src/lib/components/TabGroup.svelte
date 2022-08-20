@@ -4,7 +4,7 @@
   import getThemeContext from "../styles/getThemeContext";
   import type { TabGroupProps } from "../types";
   import { tabsContextKey } from "../utils/consts";
-  import { TabsState } from "../contexts/tabs";
+  import type { TabsState } from "../contexts/tabs";
 
   const theme = getThemeContext();
   const { defaultProps, styleOverrides } = theme.components.TabGroup;

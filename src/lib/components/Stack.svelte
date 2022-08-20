@@ -3,7 +3,7 @@
   import getGap from "../utils/gap";
   import getDirection from "../utils/direction";
   import getThemeContext from "../styles/getThemeContext";
-  import { StackProps } from "../types";
+  import type { StackProps } from "../types";
 
   const theme = getThemeContext();
   const { defaultProps, styleOverrides } = theme.components.Stack

@@ -1,4 +1,4 @@
-import { ThemeOptions } from "../types";
+import type { ThemeOptions } from "../types";
 import { setContext } from "svelte";
 import { themeContextKey } from "../utils/consts";
 

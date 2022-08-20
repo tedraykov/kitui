@@ -1,8 +1,7 @@
 <script lang="ts">
   import { twMerge } from "tailwind-merge";
   import getThemeContext from "../styles/getThemeContext";
-  import { FilledInputProps, OutlinedInputProps } from "../types";
-  import OutlinedInput from "./OutlinedInput.svelte";
+  import type { OutlinedInputProps } from "../types";
 
   const theme = getThemeContext();
   const { defaultProps, styleOverrides } = theme.components.OutlinedInput;

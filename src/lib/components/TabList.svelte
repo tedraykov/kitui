@@ -1,7 +1,7 @@
 <script lang="ts">
     import getTabsContext from "../contexts/tabs";
     import getThemeContext from "../styles/getThemeContext";
-    import { TabListProps } from "../types";
+    import type { TabListProps } from "../types";
     import TabHighlighter from "./TabHighlighter.svelte";
     import { twMerge } from "tailwind-merge";
     import cn from "classnames";

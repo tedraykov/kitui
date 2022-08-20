@@ -1,7 +1,7 @@
 <script lang="ts">
   import { twMerge } from "tailwind-merge";
   import getThemeContext from "../styles/getThemeContext";
-  import { DividerProps } from "../types";
+  import type { DividerProps } from "../types";
   import cn from "classnames";
 
   const theme = getThemeContext();

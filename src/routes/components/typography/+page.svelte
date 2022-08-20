@@ -1,7 +1,7 @@
 <script>
-  import Container from "kitui/components/Container.svelte";
-  import Typography from "kitui/components/Typography.svelte";
-  import Stack from "kitui/components/Stack.svelte";
+  import Container from "/src/lib/components/Container.svelte";
+  import Typography from "/src/lib/components/Typography.svelte";
+  import Stack from "/src/lib/components/Stack.svelte";
 </script>
 
 <Container class="py-4">

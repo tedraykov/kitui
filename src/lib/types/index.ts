@@ -1,15 +1,15 @@
-import { SupportedElement } from "../utils/elements";
-import { DividerOptions } from "./divider";
-import { TypographyOptions } from "./typography";
-import { ButtonOptions } from "./button";
-import { DrawerOptions } from "./drawer";
-import { CardActionOptions, CardContentOptions, CardHeaderOptions, CardOptions, CardTitleOptions } from "./card";
-import { TabGroupOptions, TabListOptions, TabOptions, TabPanelOptions, TabPanelsOptions } from "./tabs";
-import { PaperOptions } from "./paper";
-import { BaseInputOptions, FilledInputOptions, OutlinedInputOptions } from "./input";
-import { FormControlOptions, FormLabelOptions } from "./form";
-import { InputStartAdornmentOptions } from "./adornment";
-import { StackOptions } from "./stack";
+import type { SupportedElement } from "../utils/elements";
+import type { DividerOptions } from "./divider";
+import type { TypographyOptions } from "./typography";
+import type { ButtonOptions } from "./button";
+import type { DrawerOptions } from "./drawer";
+import type { CardActionOptions, CardContentOptions, CardHeaderOptions, CardOptions, CardTitleOptions } from "./card";
+import type { TabGroupOptions, TabListOptions, TabOptions, TabPanelOptions, TabPanelsOptions } from "./tabs";
+import type { PaperOptions } from "./paper";
+import type { BaseInputOptions, FilledInputOptions, OutlinedInputOptions } from "./input";
+import type { FormControlOptions, FormLabelOptions } from "./form";
+import type { InputStartAdornmentOptions } from "./adornment";
+import type { StackOptions } from "./stack";
 
 export type ThemeOptions = {
   components?: {

@@ -26,7 +26,7 @@ export type TabsState = {
 }
 
 export default function getTabsContext(component: string): Readable<TabsState> {
-  let context: Writable<TabsState> | undefined = getContext(tabsContextKey);
+  const context: Writable<TabsState> | undefined = getContext(tabsContextKey);
 
   if (context === undefined) {
     throw new Error(

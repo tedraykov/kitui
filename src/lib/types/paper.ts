@@ -1,5 +1,5 @@
 /* Paper */
-import { ComponentOptions, ElementOptions, Elevation } from "./index";
+import type { ComponentOptions, ElementOptions, Elevation } from "./index";
 
 export type PaperOptions = ComponentOptions<PaperPropsOptions, PaperStylesOverrideOptions>
 

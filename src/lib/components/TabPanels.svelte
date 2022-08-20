@@ -1,6 +1,6 @@
 <script lang="ts">
   import getThemeContext from "../styles/getThemeContext";
-  import { TabPanelsProps } from "../types";
+  import type { TabPanelsProps } from "../types";
   import { twMerge } from "tailwind-merge";
 
   const theme = getThemeContext();

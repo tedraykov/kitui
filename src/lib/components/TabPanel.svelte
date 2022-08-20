@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import getThemeContext from "../styles/getThemeContext";
-  import { TabPanelProps } from "../types";
+  import type { TabPanelProps } from "../types";
   import getTabsContext from "../contexts/tabs";
   import { writable } from "svelte/store";
   import generateId from "../utils/generateId";

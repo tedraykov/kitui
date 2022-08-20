@@ -1,13 +1,13 @@
 <script>
-  import Typography from "kitui/components/Typography.svelte";
-  import Container from "kitui/components/Container.svelte";
-  import TabGroup from "kitui/components/TabGroup.svelte";
-  import Tab from "kitui/components/Tab.svelte";
-  import TabList from "kitui/components/TabList.svelte";
-  import TabPanels from "kitui/components/TabPanels.svelte";
-  import TabPanel from "kitui/components/TabPanel.svelte";
-  import Card from "kitui/components/Card.svelte";
-  import CardContent from "kitui/components/CardContent.svelte";
+  import Typography from "/src/lib/components/Typography.svelte";
+  import Container from "/src/lib/components/Container.svelte";
+  import TabGroup from "/src/lib/components/TabGroup.svelte";
+  import Tab from "/src/lib/components/Tab.svelte";
+  import TabList from "/src/lib/components/TabList.svelte";
+  import TabPanels from "/src/lib/components/TabPanels.svelte";
+  import TabPanel from "/src/lib/components/TabPanel.svelte";
+  import Card from "/src/lib/components/Card.svelte";
+  import CardContent from "/src/lib/components/CardContent.svelte";
 </script>
 
 <Container class="py-4">

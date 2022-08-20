@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { TabProps } from "../types";
+  import type { TabProps } from "../types";
   import getThemeContext from "../styles/getThemeContext";
   import generateId from "../utils/generateId";
   import getTabsContext from "../contexts/tabs";

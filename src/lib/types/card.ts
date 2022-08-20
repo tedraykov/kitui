@@ -1,4 +1,4 @@
-import { ComponentOptions, ElementOptions } from "./index";
+import type { ComponentOptions, ElementOptions } from "./index";
 
 /* Card */
 export type CardOptions = ComponentOptions<CardPropsOptions, CardStylesOverrideOptions>

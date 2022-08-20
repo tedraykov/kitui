@@ -1,9 +1,9 @@
 <script>
-  import Container from "kitui/components/Container.svelte";
-  import Typography from "kitui/components/Typography.svelte";
-  import Stack from "kitui/components/Stack.svelte";
-  import List from "kitui/components/List.svelte";
-  import ListItem from "kitui/components/ListItem.svelte";
+  import Container from "/src/lib/components/Container.svelte";
+  import Typography from "/src/lib/components/Typography.svelte";
+  import Stack from "/src/lib/components/Stack.svelte";
+  import List from "/src/lib/components/List.svelte";
+  import ListItem from "/src/lib/components/ListItem.svelte";
 
   const items = [
     {title: "Item 1", description: "Item 1 description"},

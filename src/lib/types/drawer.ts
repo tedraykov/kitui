@@ -1,4 +1,4 @@
-import { ComponentOptions, ElementOptions } from "./index";
+import type { ComponentOptions, ElementOptions } from "./index";
 
 export type DrawerOptions = ComponentOptions<DrawerPropsOptions, DrawerStylesOverrideOptions>
 
