@@ -3,5 +3,11 @@ import { themeContextKey } from "../utils/consts";
 import type { ThemeOptions } from "../types";
 
 export default function getThemeContext() {
-  return getContext<ThemeOptions>(themeContextKey);
+  const theme = getContext<ThemeOptions>(themeContextKey);
+
+  if (!theme) {
+    throw new Error("You haven't defined a theme context!")
+  }
+
+  return theme
 }

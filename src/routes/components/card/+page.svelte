@@ -1,10 +1,10 @@
 <script>
-  import Container from "/src/lib/components/Container.svelte";
-  import Typography from "/src/lib/components/Typography.svelte";
-  import Stack from "/src/lib/components/Stack.svelte";
-  import Card from "/src/lib/components/Card.svelte";
-  import CardTitle from "/src/lib/components/CardTitle.svelte";
-  import CardContent from "/src/lib/components/CardContent.svelte";
+  import Container from "$lib/components/Container.svelte";
+  import Typography from "$lib/components/Typography.svelte";
+  import Stack from "$lib/components/Stack.svelte";
+  import Card from "$lib/components/Card.svelte";
+  import CardTitle from "$lib/components/CardTitle.svelte";
+  import CardContent from "$lib/components/CardContent.svelte";
 
   let outlined = false;
 </script>

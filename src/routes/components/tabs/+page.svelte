@@ -1,13 +1,13 @@
 <script>
-  import Typography from "/src/lib/components/Typography.svelte";
-  import Container from "/src/lib/components/Container.svelte";
-  import TabGroup from "/src/lib/components/TabGroup.svelte";
-  import Tab from "/src/lib/components/Tab.svelte";
-  import TabList from "/src/lib/components/TabList.svelte";
-  import TabPanels from "/src/lib/components/TabPanels.svelte";
-  import TabPanel from "/src/lib/components/TabPanel.svelte";
-  import Card from "/src/lib/components/Card.svelte";
-  import CardContent from "/src/lib/components/CardContent.svelte";
+  import Typography from "$lib/components/Typography.svelte";
+  import Container from "$lib/components/Container.svelte";
+  import TabGroup from "$lib/components/TabGroup.svelte";
+  import Tab from "$lib/components/Tab.svelte";
+  import TabList from "$lib/components/TabList.svelte";
+  import TabPanels from "$lib/components/TabPanels.svelte";
+  import TabPanel from "$lib/components/TabPanel.svelte";
+  import Card from "$lib/components/Card.svelte";
+  import CardContent from "$lib/components/CardContent.svelte";
 </script>
 
 <Container class="py-4">

@@ -1,8 +1,8 @@
 <script>
-  import List from "/src/lib/components/List.svelte";
-  import ListItem from "/src/lib/components/ListItem.svelte";
-  import Typography from "/src/lib/components/Typography.svelte";
-  import ListSubheader from "/src/lib/components/ListSubheader.svelte";
+  import List from "$lib/components/List.svelte";
+  import ListItem from "$lib/components/ListItem.svelte";
+  import Typography from "$lib/components/Typography.svelte";
+  import ListSubheader from "$lib/components/ListSubheader.svelte";
   import { toggleSidebar } from "../stores/uiStore";
   import { page } from "$app/stores";
 

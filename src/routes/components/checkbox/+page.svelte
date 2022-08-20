@@ -1,7 +1,7 @@
 <script>
-  import Container from "/src/lib/components/Container.svelte";
-  import Typography from "/src/lib/components/Typography.svelte";
-  import Stack from "/src/lib/components/Stack.svelte";
+  import Container from "$lib/components/Container.svelte";
+  import Typography from "$lib/components/Typography.svelte";
+  import Stack from "$lib/components/Stack.svelte";
 </script>
 
 <Container class="py-4">

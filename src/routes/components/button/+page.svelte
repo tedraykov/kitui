@@ -1,9 +1,9 @@
 <script>
-  import Stack from "/src/lib/components/Stack.svelte";
-  import Button from "/src/lib/components/Button.svelte";
-  import Container from "/src/lib/components/Container.svelte";
-  import Typography from "/src/lib/components/Typography.svelte";
-  import Divider from "/src/lib/components/Divider.svelte";
+  import Stack from "$lib/components/Stack.svelte";
+  import Button from "$lib/components/Button.svelte";
+  import Container from "$lib/components/Container.svelte";
+  import Typography from "$lib/components/Typography.svelte";
+  import Divider from "$lib/components/Divider.svelte";
 </script>
 
 <Container class="py-4">

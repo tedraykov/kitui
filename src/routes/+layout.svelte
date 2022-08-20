@@ -1,10 +1,10 @@
 <script lang="ts">
   import { onDestroy, onMount } from "svelte";
   import "../app.css";
-  import { createTheme } from "/src/lib/styles/createTheme";
-  import Drawer from "/src/lib/components/Drawer.svelte";
-  import setThemeContext from "/src/lib/styles/setThemeContext";
-  import { mediaQueryMatch } from "/src/lib/stores/mediaQuery";
+  import { createTheme } from "$lib/styles/createTheme";
+  import Drawer from "$lib/components/Drawer.svelte";
+  import setThemeContext from "$lib/styles/setThemeContext";
+  import { mediaQueryMatch } from "$lib/stores/mediaQuery";
   import { sidebarOpen, toggleSidebar } from "../stores/uiStore";
   import SidebarList from "../components/SidebarList.svelte";
   import PageTransition from "../components/PageTransition.svelte";
