@@ -1,5 +1,12 @@
 # docs
 
+## 0.0.5
+
+### Patch Changes
+
+- ca5245f: - Format code with prettier
+  - Export all components, contexts and types in the library
+
 ## 0.0.2
 
 ### Patch Changes
