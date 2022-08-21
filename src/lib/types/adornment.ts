@@ -1,11 +1,14 @@
-import type { ComponentOptions, ElementOptions } from "./index";
+import type { ComponentOptions, ElementOptions } from './index';
 
-export type InputStartAdornmentOptions = ComponentOptions<InputStartAdornmentPropsOptions, InputStartAdornmentStylesOverrideOptions>
+export type InputStartAdornmentOptions = ComponentOptions<
+	InputStartAdornmentPropsOptions,
+	InputStartAdornmentStylesOverrideOptions
+>;
 
-export type InputStartAdornmentPropsOptions = ElementOptions
+export type InputStartAdornmentPropsOptions = ElementOptions;
 
-export type InputStartAdornmentProps = ElementOptions
+export type InputStartAdornmentProps = ElementOptions;
 
 export type InputStartAdornmentStylesOverrideOptions = {
-  root?: string
-}
+	root?: string;
+};

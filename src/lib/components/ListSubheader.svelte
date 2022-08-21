@@ -1,20 +1,20 @@
 <script>
-  import { twMerge } from "tailwind-merge";
+	import { twMerge } from 'tailwind-merge';
 
-  export const element = "li";
-  let _class = "";
-  export { _class as class };
+	export const element = 'li';
+	let _class = '';
+	export { _class as class };
 </script>
 
 <svelte:element
-  this={element}
-  class={twMerge(
-    `py-1 px-4
+	this={element}
+	class={twMerge(
+		`py-1 px-4
     text-gray-500
     cursor-default`,
-    _class
-    )}
-  on:click
+		_class
+	)}
+	on:click
 >
-  <slot/>
+	<slot />
 </svelte:element>

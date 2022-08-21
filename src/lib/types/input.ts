@@ -1,34 +1,43 @@
-import type { ComponentOptions, ElementOptions } from "./index";
+import type { ComponentOptions, ElementOptions } from './index';
 
 /* Filled Input */
-export type FilledInputOptions = ComponentOptions<FilledInputPropsOptions, FilledInputStylesOverrideOptions>
+export type FilledInputOptions = ComponentOptions<
+	FilledInputPropsOptions,
+	FilledInputStylesOverrideOptions
+>;
 
-export type FilledInputPropsOptions = ElementOptions
+export type FilledInputPropsOptions = ElementOptions;
 
-export type FilledInputProps = ElementOptions
+export type FilledInputProps = ElementOptions;
 
 export type FilledInputStylesOverrideOptions = {
-  root?: string
-}
+	root?: string;
+};
 
 /* Outlined Input */
-export type OutlinedInputOptions = ComponentOptions<OutlinedInputPropsOptions, OutlinedInputStylesOverrideOptions>
+export type OutlinedInputOptions = ComponentOptions<
+	OutlinedInputPropsOptions,
+	OutlinedInputStylesOverrideOptions
+>;
 
-export type OutlinedInputPropsOptions = ElementOptions
+export type OutlinedInputPropsOptions = ElementOptions;
 
-export type OutlinedInputProps = ElementOptions
+export type OutlinedInputProps = ElementOptions;
 
 export type OutlinedInputStylesOverrideOptions = {
-  root?: string
-}
+	root?: string;
+};
 
 /* Base Input */
-export type BaseInputOptions = ComponentOptions<BaseInputPropsOptions, BaseInputStylesOverrideOptions>
+export type BaseInputOptions = ComponentOptions<
+	BaseInputPropsOptions,
+	BaseInputStylesOverrideOptions
+>;
 
-export type BaseInputPropsOptions = ElementOptions
+export type BaseInputPropsOptions = ElementOptions;
 
-export type BaseInputProps = ElementOptions
+export type BaseInputProps = ElementOptions;
 
 export type BaseInputStylesOverrideOptions = {
-  root?: string
-}
+	root?: string;
+};

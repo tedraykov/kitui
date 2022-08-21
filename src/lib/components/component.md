@@ -1,6 +1,7 @@
 # Component
 
 Components must follow a standard template
+
 ```sveltehtml
 <script lang="ts">
   import { twMerge } from "tailwind-merge";
