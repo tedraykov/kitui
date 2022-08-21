@@ -1,5 +1,11 @@
 # docs
 
+## 0.0.6
+
+### Patch Changes
+
+- bug: input adornment error fix
+
 ## 0.0.5
 
 ### Patch Changes
