@@ -1,16 +1,17 @@
 import type { ComponentOptions, ElementOptions } from './index';
+import type { Colors } from './colors';
 
 export type ButtonOptions = ComponentOptions<ButtonPropsOptions, ButtonStylesOverrideOptions>;
 
 export type ButtonPropsOptions = ElementOptions & {
 	variant?: 'text' | 'contained' | 'outlined';
-	color?: 'accent' | 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'inherit';
+	color?: Colors;
 	size?: 'small' | 'medium' | 'large';
 };
 
 export type ButtonProps = ElementOptions & {
 	variant?: 'text' | 'contained' | 'outlined';
-	color?: 'accent' | 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'inherit';
+	color?: Colors;
 	size?: 'small' | 'medium' | 'large';
 };
 

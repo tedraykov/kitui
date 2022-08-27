@@ -21,6 +21,10 @@
 			label: 'Checkbox'
 		},
 		{
+			href: '/components/chip',
+			label: 'Chip'
+		},
+		{
 			href: '/components/list',
 			label: 'List'
 		},

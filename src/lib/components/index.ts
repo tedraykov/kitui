@@ -3,6 +3,7 @@ export { default as Card } from './Card.svelte';
 export { default as CardContent } from './CardContent.svelte';
 export { default as CardHeader } from './CardHeader.svelte';
 export { default as CardTitle } from './CardTitle.svelte';
+export { default as Chip } from './Chip.svelte';
 export { default as Container } from './Container.svelte';
 export { default as Divider } from './Divider.svelte';
 export { default as Drawer } from './Drawer.svelte';

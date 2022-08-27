@@ -43,6 +43,14 @@ const defaultTheme: ThemeOptions = {
 			},
 			styleOverrides: {}
 		},
+		Chip: {
+			defaultProps: {
+				element: "div",
+				color: "accent",
+				size: "medium"
+			},
+			styleOverrides: {}
+		},
 		Container: {
 			defaultProps: {
 				element: 'div'

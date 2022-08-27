@@ -20,6 +20,7 @@ import type {
 } from './tabs';
 import type { PaperOptions } from './paper';
 import type { BaseInputOptions, FilledInputOptions, OutlinedInputOptions } from './input';
+import type { ChipOptions } from './chip';
 import type { FormControlOptions, FormLabelOptions } from './form';
 import type { InputStartAdornmentOptions } from './adornment';
 import type { StackOptions } from './stack';
@@ -34,6 +35,7 @@ export type ThemeOptions = {
 		CardContent?: CardContentOptions;
 		CardHeader?: CardHeaderOptions;
 		CardTitle?: CardTitleOptions;
+		Chip?: ChipOptions;
 		Container?: ContainerOptions;
 		Divider?: DividerOptions;
 		Drawer?: DrawerOptions;
