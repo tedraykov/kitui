@@ -1,20 +1,23 @@
-<script>
+<script lang='ts'>
 	import { twMerge } from 'tailwind-merge';
 	import cn from 'classnames';
+	import getThemeContext from '../styles/getThemeContext';
+	import type { ListItemPropsOptions } from '../types';
 
-	export let element = 'div';
-	export let href = '';
-	export let active = false;
+	const theme = getThemeContext();
+	const { defaultProps, styleOverrides } = theme.components.ListItem;
 
 	let _class = '';
 	export { _class as class };
+	export let element: ListItemPropsOptions['element'] = defaultProps.element;
+	export let href: string | undefined;
+	export let active = false;
 </script>
 
-<li class="flex">
-	<svelte:element
-		this={element}
-		class={twMerge(
-			`m-1 py-2 px-4 w-full rounded-md
+<svelte:element
+	this={element}
+	class={twMerge(
+			`flex m-1 py-2 px-4 w-full rounded-md
     transition-colors
     hover:bg-gray-800/10
     active:bg-gray-800/5
@@ -25,9 +28,13 @@
 			}),
 			_class
 		)}
-		on:click
-		{href}
-	>
+	{...$$restProps}
+>
+	{#if href}
+		<a {href}>
+			<slot />
+		</a>
+	{:else}
 		<slot />
-	</svelte:element>
-</li>
+	{/if}
+</svelte:element>

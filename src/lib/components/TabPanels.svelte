@@ -12,6 +12,10 @@
 	export let element: TabPanelsProps['element'] = defaultProps.element;
 </script>
 
-<svelte:element this={element} class={twMerge(_class)}>
+<svelte:element
+	this={element}
+	class={twMerge(_class)}
+	{...$$restProps}
+>
 	<slot />
 </svelte:element>

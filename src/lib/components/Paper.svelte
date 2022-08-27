@@ -18,6 +18,7 @@
 <svelte:element
 	this={element}
 	class={twMerge('rounded-xl bg-white', elevationClass, styleOverrides?.root, _class)}
+	{...$$restProps}
 >
 	<slot />
 </svelte:element>

@@ -14,6 +14,10 @@
 	const typographyClasses = twMerge(typographyVariant(variant), _class);
 </script>
 
-<svelte:element this={computedElement} class={typographyClasses}>
+<svelte:element
+	this={computedElement}
+	class={typographyClasses}
+	{...$$restProps}
+>
 	<slot />
 </svelte:element>

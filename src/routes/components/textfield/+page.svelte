@@ -18,6 +18,7 @@
 	<Stack>
 		<Stack>
 			<Typography variant="h5">Filled Input</Typography>
+			<FilledInput on:click={() => console.log("clicked")}/>
 			<FilledInput>
 				<Icon src={Search} slot="startAdornment" />
 			</FilledInput>

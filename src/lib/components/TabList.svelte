@@ -39,6 +39,7 @@
 		_class
 	)}
 	{...props}
+	{...$$restProps}
 	on:mouseleave={resetHoverState}
 >
 	<TabHighlighter />

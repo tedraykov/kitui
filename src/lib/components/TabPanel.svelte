@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang='ts'>
 	import { onMount } from 'svelte';
 	import getThemeContext from '../styles/getThemeContext';
 	import type { TabPanelProps } from '../types';
@@ -37,7 +37,13 @@
 </script>
 
 {#if selected}
-	<svelte:element this={element} bind:this={$elementRef} class={twMerge(_class)} {...props}>
+	<svelte:element
+		this={element}
+		bind:this={$elementRef}
+		class={twMerge(_class)}
+		{...props}
+		{...$$restProps}
+	>
 		<slot />
 	</svelte:element>
 {/if}

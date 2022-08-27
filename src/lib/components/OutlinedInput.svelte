@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang='ts'>
 	import { twMerge } from 'tailwind-merge';
 	import getThemeContext from '../styles/getThemeContext';
 	import type { OutlinedInputProps } from '../types';
@@ -12,6 +12,7 @@
 </script>
 
 <svelte:element
+	{...$$restProps}
 	this={element}
 	class={twMerge(
 		'flex items-center border border-accent-300 rounded-lg w-fit',
@@ -20,11 +21,11 @@
 	)}
 >
 	{#if $$slots.startAdornment}
-		<slot name="startAdornment" />
+		<slot name='startAdornment' />
 	{/if}
-	<input type="text" class="outline-none bg-inherit py-2 px-2 w-fit" />
+	<input type='text' class='outline-none bg-inherit py-2 px-2 w-fit' />
 	{#if $$slots.endAdornment}
-		<slot name="endAdornment" />
+		<slot name='endAdornment' />
 	{/if}
 </svelte:element>
 

@@ -115,6 +115,7 @@
 	on:focus={$context.activation === 'manual' ? handleFocus : handleSelection}
 	on:mouseenter={handleSetHovered}
 	{...props}
+	{...$$restProps}
 >
 	<slot />
 </svelte:element>

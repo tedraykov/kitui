@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang='ts'>
 	import { createEventDispatcher } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { twMerge } from 'tailwind-merge';
@@ -25,7 +25,7 @@
 </script>
 
 <svelte:element
-	this={element}
+	{...$$restProps}
 	class={twMerge(
 		cn('bg-slate-100', {
 			[`absolute top-0 left-0 w-72 bg-slate-100
@@ -36,6 +36,7 @@
 		}),
 		_class
 	)}
+	this={element}
 >
 	<slot />
 </svelte:element>
@@ -45,6 +46,5 @@
 		in:fade={{ duration: 200 }}
 		out:fade={{ duration: 200 }}
 		on:click|stopPropagation={handleClose}
-		class="absolute w-screen h-screen bg-gray-900/20"
-	/>
+		class='absolute w-screen h-screen bg-gray-900/20'></span>
 {/if}

@@ -50,7 +50,6 @@
 	</ListSubheader>
 	{#each components as component}
 		<ListItem
-			element="a"
 			href={component.href}
 			active={$page.url.pathname === component.href}
 			on:click={toggleSidebar}

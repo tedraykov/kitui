@@ -19,6 +19,7 @@
 <svelte:element
 	this={element}
 	class={twMerge(`flex`, getDirection(direction), getGap(gap), _class)}
+	{...$$restProps}
 >
 	<slot />
 </svelte:element>

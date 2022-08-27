@@ -6,6 +6,9 @@
 	const defaultStyles = 'min-h-[64px] md:min-h-[72px] shadow-sm flex items-center';
 </script>
 
-<nav class={twMerge(defaultStyles, _class)}>
+<nav
+	class={twMerge(defaultStyles, _class)}
+	{...$$restProps}
+>
 	<slot />
 </nav>

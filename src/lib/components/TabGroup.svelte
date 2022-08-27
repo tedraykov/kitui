@@ -109,6 +109,6 @@
 	});
 </script>
 
-<svelte:element this={element}>
+<svelte:element this={element} {...$$restProps}>
 	<slot />
 </svelte:element>
