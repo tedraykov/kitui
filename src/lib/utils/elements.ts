@@ -37,6 +37,12 @@ const components = [
 	'section',
 	'span',
 	'strong',
+	'table',
+	'tbody',
+	'thead',
+	'tr',
+	'th',
+	'td',
 	'ul'
 ] as const;
 

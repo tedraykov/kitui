@@ -20,6 +20,8 @@ export { default as Tab } from './Tab.svelte';
 export { default as TabGroup } from './TabGroup.svelte';
 export { default as TabHighlighter } from './TabHighlighter.svelte';
 export { default as Table } from './Table.svelte';
+export { default as TableCell } from './TableCell.svelte';
+export { default as TableHeaderCell } from './TableHeaderCell.svelte';
 export { default as TabList } from './TabList.svelte';
 export { default as TabPanel } from './TabPanel.svelte';
 export { default as TabPanels } from './TabPanels.svelte';

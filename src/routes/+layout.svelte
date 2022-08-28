@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onDestroy, onMount } from 'svelte';
+	import "../assets/prism-one-light.css";
 	import '../app.css';
 	import { createTheme } from '$lib/styles/createTheme';
 	import Drawer from '$lib/components/Drawer.svelte';

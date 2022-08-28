@@ -4,20 +4,8 @@ import type { DividerOptions } from './divider';
 import type { TypographyOptions } from './typography';
 import type { ButtonOptions } from './button';
 import type { DrawerOptions } from './drawer';
-import type {
-	CardActionOptions,
-	CardContentOptions,
-	CardHeaderOptions,
-	CardOptions,
-	CardTitleOptions
-} from './card';
-import type {
-	TabGroupOptions,
-	TabListOptions,
-	TabOptions,
-	TabPanelOptions,
-	TabPanelsOptions
-} from './tabs';
+import type { CardActionOptions, CardContentOptions, CardHeaderOptions, CardOptions, CardTitleOptions } from './card';
+import type { TabGroupOptions, TabListOptions, TabOptions, TabPanelOptions, TabPanelsOptions } from './tabs';
 import type { PaperOptions } from './paper';
 import type { BaseInputOptions, FilledInputOptions, OutlinedInputOptions } from './input';
 import type { ChipOptions } from './chip';
@@ -25,6 +13,14 @@ import type { FormControlOptions, FormLabelOptions } from './form';
 import type { InputStartAdornmentOptions } from './adornment';
 import type { StackOptions } from './stack';
 import type { ListItemOptions, ListOptions } from './list';
+import type {
+	TableBodyOptions,
+	TableCellOptions,
+	TableHeaderCellOptions,
+	TableHeadOption,
+	TableOptions,
+	TableRowOptions
+} from './table';
 
 export type ThemeOptions = {
 	components?: {
@@ -53,6 +49,12 @@ export type ThemeOptions = {
 		Tab?: TabOptions;
 		TabPanels?: TabPanelsOptions;
 		TabPanel?: TabPanelOptions;
+		Table?: TableOptions;
+		TableCell?: TableCellOptions;
+		TableHeaderCell?: TableHeaderCellOptions;
+		TableRow?: TableRowOptions;
+		TableBody?: TableBodyOptions;
+		TableHead?: TableHeadOption;
 		Typography?: TypographyOptions;
 	};
 };
@@ -67,6 +69,7 @@ export type ElementOptions = {
 };
 
 export type Elevation = 'none' | 'sm' | 'default' | 'md' | 'lg' | 'xl' | '2xl';
+export type Colors = 'accent' | 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'inherit';
 
 export * from './adornment';
 export * from './button';

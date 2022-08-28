@@ -23,7 +23,7 @@
 		cn(
 			// Root
 			twMerge(
-				`font-medium h-fit w-fit rounded-lg py-2 px-4
+				`font h-fit w-fit rounded-lg py-2 px-4
        duration-100 ring-primary-200 ring-offset-1`,
 				styleOverrides?.root
 			),

@@ -1,30 +1,23 @@
 <script lang="ts">
 	import { twMerge } from "tailwind-merge";
 	import getThemeContext from "../styles/getThemeContext";
-	import type { TableProps } from '../types/table';
+	import type { TableCellProps } from '../types/table';
 
 	const theme = getThemeContext();
-	const { defaultProps, styleOverrides } = theme.components.Table;
+	const { defaultProps, styleOverrides } = theme.components.TableCell;
 
 	let _class = "";
 	export { _class as class };
-	export let element: TableProps["element"] = defaultProps.element;
+	export let element: TableCellProps["element"] = defaultProps.element;
 
 </script>
 
 <svelte:element
 	this={element}
 	class={twMerge(
-    "table-auto text-left w-full",
+    "text-sm text-accent-700 px-4 py-2 border-b border-b-accent-300/50",
     styleOverrides.root,
     _class
   )}>
 	<slot />
 </svelte:element>
-
-
-<style>
-	:global(table tbody tr:last-of-type td) {
-			@apply border-b-0;
-	}
-</style>

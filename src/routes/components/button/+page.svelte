@@ -7,33 +7,32 @@
 	import Card from '$lib/components/Card.svelte';
 	import InteractiveComponent from '../../../components/InteractiveComponent.svelte';
 	import type { ComponentProp } from '../../../types';
-	import OutlinedInput from '../../../lib/components/OutlinedInput.svelte';
-	import { renderComponent } from '@tanstack/svelte-table';
+	import { OutlinedInput } from '../../../lib';
 
 	const buttonProps: ComponentProp[] = [
 		{
 			name: 'variant',
-			description: 'The variant to use. Accepted variants are outlined, contained, and text.',
-			default: null,
-			control: (props) => renderComponent(OutlinedInput, props)
+			description: `The variant to use. Accepted variants are <code>outlined</code>, <code>contained</code>, and <code>text</code>.`,
+			default: `"contained"`,
+			control: OutlinedInput
 		},
 		{
 			name: 'color',
-			default: 'default',
-			description: 'The color to use. Accepted `colors are primary, secondary, and default`.',
-			control: null
+			default: '"accent"',
+			description: `The color to use. Accepted colors are <code class='lang-js'>primary</code>, <code>secondary</code>, and <code>default</code>.`,
+			control: OutlinedInput
 		},
 		{
 			name: 'size',
-			default: 'medium',
+			default: '"medium"',
 			description: 'The size to use. Accepted sizes are small, medium, and large.',
-			control: null
+			control: OutlinedInput
 		},
 		{
 			name: 'disabled',
 			default: 'false',
 			description: 'Whether the button is disabled.',
-			control: null
+			control: OutlinedInput
 		},
 		{
 			name: 'fullWidth',

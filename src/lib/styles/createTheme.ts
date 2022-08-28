@@ -6,8 +6,8 @@ const defaultTheme: ThemeOptions = {
 		Button: {
 			defaultProps: {
 				element: 'button',
-				variant: 'contained',
-				color: 'primary',
+				variant: 'outlined',
+				color: 'accent',
 				size: 'medium'
 			},
 			styleOverrides: {}
@@ -139,6 +139,42 @@ const defaultTheme: ThemeOptions = {
 		TabPanel: {
 			defaultProps: {
 				element: 'div'
+			},
+			styleOverrides: {}
+		},
+		Table: {
+			defaultProps: {
+				element: "table"
+			},
+			styleOverrides: {}
+		},
+		TableCell: {
+			defaultProps: {
+				element: "td"
+			},
+			styleOverrides: {}
+		},
+		TableBody: {
+			defaultProps: {
+				element: "tbody"
+			},
+			styleOverrides: {}
+		},
+		TableHead: {
+			defaultProps: {
+				element: "thead"
+			},
+			styleOverrides: {}
+		},
+		TableRow: {
+			defaultProps: {
+				element: "tr"
+			},
+			styleOverrides: {}
+		},
+		TableHeaderCell: {
+			defaultProps: {
+				element: "th"
 			},
 			styleOverrides: {}
 		},
