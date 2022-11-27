@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang='ts'>
 	import cn from 'classnames';
 	import { twMerge } from 'tailwind-merge';
 	import type { ButtonProps } from '../types';
@@ -22,11 +22,9 @@
 	class={twMerge(
 		cn(
 			// Root
-			twMerge(
 				`font h-fit w-fit rounded-lg py-2 px-4
-       duration-100 ring-primary-200 ring-offset-1`,
-				styleOverrides?.root
-			),
+       	 duration-100 ring-primary-200 ring-offset-1`,
+				styleOverrides?.root,
 			{
 				// Outlined Default
 				[twMerge('border transition-colors font active:bg-gray-100/70', styleOverrides?.outlined)]:

@@ -17,21 +17,22 @@
 <svelte:element
 	this={element}
 	class={twMerge(
-			`flex m-1 py-2 px-4 w-full rounded-md
+			`flex m-1 rounded-md
     transition-colors
     hover:bg-gray-800/10
     active:bg-gray-800/5
     focus:bg-gray-800/10`,
 			cn({
 				[`bg-primary-200/30 hover:bg-primary-200/50
-        active:bg-primary-200/30 focus:bg-primary-200/50`]: active
+        active:bg-primary-200/30 focus:bg-primary-200/50`]: active,
+        ["py-2 px-4"]: !href
 			}),
 			_class
 		)}
 	{...$$restProps}
 >
 	{#if href}
-		<a {href}>
+		<a {href} class='flex-1 py-2 px-4'>
 			<slot />
 		</a>
 	{:else}

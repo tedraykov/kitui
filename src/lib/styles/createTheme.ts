@@ -1,12 +1,12 @@
 import type { ThemeOptions } from '../types';
 import merge from 'lodash-es/merge.js';
 
-const defaultTheme: ThemeOptions = {
+export const defaultTheme: ThemeOptions = {
 	components: {
 		Button: {
 			defaultProps: {
 				element: 'button',
-				variant: 'outlined',
+				variant: 'contained',
 				color: 'accent',
 				size: 'medium'
 			},

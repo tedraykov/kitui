@@ -27,3 +27,5 @@ export { default as TabPanel } from './TabPanel.svelte';
 export { default as TabPanels } from './TabPanels.svelte';
 export { default as Toolbar } from './Toolbar.svelte';
 export { default as Typography } from './Typography.svelte';
+export { default as Select } from './Select.svelte';
+export { default as SelectOption } from './SelectOption.svelte';
