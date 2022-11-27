@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Icon } from '@steeze-ui/svelte-icon';
-	import { Search } from '@steeze-ui/heroicons';
+	import { MagnifyingGlass } from '@steeze-ui/heroicons';
 	import Typography from '$lib/components/Typography.svelte';
 	import Stack from '$lib/components/Stack.svelte';
 	import Container from '$lib/components/Container.svelte';
@@ -20,13 +20,13 @@
 			<Typography variant="h5">Filled Input</Typography>
 			<FilledInput on:click={() => console.log("clicked")}/>
 			<FilledInput>
-				<Icon src={Search} slot="startAdornment" />
+				<Icon src={MagnifyingGlass} slot="startAdornment" />
 			</FilledInput>
 		</Stack>
 		<Stack>
 			<Typography variant="h5">Outlined Input</Typography>
 			<OutlinedInput>
-				<Icon src={Search} slot="startAdornment" />
+				<Icon src={MagnifyingGlass} slot="startAdornment" />
 			</OutlinedInput>
 		</Stack>
 	</Stack>

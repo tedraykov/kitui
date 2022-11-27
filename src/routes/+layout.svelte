@@ -20,7 +20,7 @@
 	let isMobile = false;
 	let isMobileUnsubscribe = null;
 	onMount(() => {
-		isMobileUnsubscribe = smMinWidthStore.subscribe((smMinWidth: boolean) => {
+		isMobileUnsubscribe = smMinWidthStore.subscribe((smMinWidth) => {
 			isMobile = !smMinWidth;
 		});
 	});
