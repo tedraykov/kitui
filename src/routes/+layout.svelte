@@ -26,7 +26,7 @@
 	<div class="flex flex-col flex-1">
 		<Navbar />
 		<main>
-			<PageTransition url={data.url}>
+			<PageTransition url={data.url.href}>
 				<slot />
 			</PageTransition>
 		</main>
