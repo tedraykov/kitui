@@ -12,6 +12,6 @@
 	export let element: CardTitleProps['element'] = defaultProps.element;
 </script>
 
-<div class='bg-surface px-8 py-4'>
+<div class='bg-surface-1 px-8 py-4'>
 	<slot/>
 </div>

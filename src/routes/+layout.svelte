@@ -15,11 +15,11 @@
 
 </script>
 
-<div class={`flex min-h-screen overflow-x-hidden bg-neutral-95`}>
+<div class={`flex min-h-screen overflow-x-hidden bg-neutral-100`}>
 		<Drawer class='md:hidden' variant="temporary" open={$sidebarOpen} on:close={toggleSidebar}>
 			<SidebarList />
 		</Drawer>
-		<Drawer variant="persistent" class="min-w-[15rem] shadow hidden md:block">
+		<Drawer variant="persistent" class="min-w-[15rem] hidden md:block">
 			<SidebarList class="px-2" />
 		</Drawer>
 

@@ -8,7 +8,7 @@
 </script>
 
 <div
-	class={`flex justify-center py-10 bg-neutral-95`}>
+	class={`flex justify-center py-10 bg-primary-100 border-b border-outline-variant`}>
 	{#if componentTree?.Component}
 		<svelte:component
 			this={componentTree.Component}

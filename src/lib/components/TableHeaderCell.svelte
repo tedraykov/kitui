@@ -16,7 +16,7 @@
 <svelte:element
 	this={element}
 	class={twMerge(
-    "px-4 py-2 border-b whitespace-nowrap border-b-outline-variant",
+    "px-4 py-2 border-b whitespace-nowrap border-b-outline-variant bg-surface-1",
     styleOverrides.root,
     _class
   )}>

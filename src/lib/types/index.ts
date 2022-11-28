@@ -107,6 +107,7 @@ export type Colors = 'primary' | 'secondary' | 'ternary' | 'success' | 'warning'
 export * from './adornment';
 export * from './button';
 export * from './card';
+export * from './chip';
 export * from './container';
 export * from './divider';
 export * from './drawer';

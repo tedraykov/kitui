@@ -44,9 +44,9 @@
 			if (size === `small`) return `${styleOverrides.headline} text-2xl font-bold ${styleOverrides.headlineSmall}`;
 		}
 		if (variant === 'title') {
-			if (size === 'large') return `${styleOverrides.title} text-xl ${styleOverrides.titleLarge}`;
-			if (size === 'medium') return `${styleOverrides.title} text-lg font-medium ${styleOverrides.titleMedium}`;
-			if (size === 'small') return `${styleOverrides.title} text-base font-medium ${styleOverrides.titleSmall}`;
+			if (size === 'large') return `${styleOverrides.title} text-xl font-bold ${styleOverrides.titleLarge}`;
+			if (size === 'medium') return `${styleOverrides.title} text-lg font-bold ${styleOverrides.titleMedium}`;
+			if (size === 'small') return `${styleOverrides.title} text-base font-bold ${styleOverrides.titleSmall}`;
 		}
 		if (variant === 'label') {
 			if (size === 'large') return `${styleOverrides.label} text-base font-medium ${styleOverrides.labelLarge}`;

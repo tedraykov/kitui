@@ -1,5 +1,5 @@
 <script lang='ts'>
-	import { Card, CardContent, CardHeader, CardTitle, Container, Typography } from '$lib/components';
+	import { Container, Divider, Typography, Stack } from '$lib/components';
 	import Playground from '../../../components/playground/Playground.svelte';
 	import { defaultTheme } from '../../../lib/styles/createTheme';
 	import getCardTree from '../../../docs/playground/card';
@@ -14,15 +14,21 @@
 </script>
 
 <Container class='py-4'>
-	<Card>
-		<CardHeader>
-			<CardTitle>
-				Card
-			</CardTitle>
-		</CardHeader>
-		<CardContent>
-			<Typography variant='headline'></Typography>
+	<Stack gap={8}>
+		<Stack element='header'>
+			<Typography class='text-primary' variant='title'>Components</Typography>
+			<Typography variant='display'>Card</Typography>
+			<Divider/>
+		</Stack>
+		<Stack element='section' gap={4}>
+			<Stack element='header'>
+				<Typography variant='headline'>Playground</Typography>
+				<Typography size='large'>
+					Play around with the component props and see them dynamically apply.
+					The playground serves as a API documentation of the component.
+				</Typography>
+			</Stack>
 			<Playground {componentTree} />
-		</CardContent>
-	</Card>
+		</Stack>
+	</Stack>
 </Container>

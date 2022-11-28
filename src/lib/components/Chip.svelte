@@ -1,7 +1,7 @@
 <script lang='ts'>
 	import { twMerge } from 'tailwind-merge';
 	import getThemeContext from '../styles/getThemeContext';
-	import type { ChipProps } from '../types/chip';
+	import type { ChipProps } from '../types';
 	import cn from 'classnames';
 
 	const theme = getThemeContext();
@@ -22,10 +22,8 @@
 			"w-fit text-white rounded",
     	styleOverrides.root,
 			{
-				// Accent
-				["bg-primary-200 text-primary-800"]: color === 'accent',
 				// Primary
-				["bg-primary-200 text-primary-800"]: color === 'primary',
+				["bg-primary-container text-primary-onContainer"]: color === 'primary',
 				// Success
 				["bg-green-200 text-green-800"]: color === 'success',
 				// Warning
@@ -35,7 +33,9 @@
 				// Small
 				["text-xs py-0.5 px-1"]: size === "small",
 				// Medium
-				["text-sm py-1 px-1"]: size === "medium"
+				["text-sm py-1 px-1"]: size === "medium",
+				// Large
+				["text-base py-1 px-1"]: size === "large"
 			}
     ),
     _class

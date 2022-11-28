@@ -16,11 +16,11 @@
 <svelte:element
 	this={element}
 	class={twMerge(
-		'bg-primary-300/50 ',
+		'',
 		styleOverrides.root,
 		cn({
-			['h-[1px] w-full my-2']: direction === 'horizontal',
-			['w-[1px] h-full mx-2']: direction === 'vertical'
+			['w-full my-2 border-b border-outline-variant']: direction === 'horizontal',
+			['h-full mx-2 border-r border-outline-variant']: direction === 'vertical'
 		}),
 		_class
 	)}

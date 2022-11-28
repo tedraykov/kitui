@@ -1,30 +1,13 @@
-import type { ButtonProps } from '$lib';
-import Button from '$lib/components/Button.svelte';
+import { Chip } from '$lib';
 import type { PlaygroundComponentNode } from '../../types';
+import type { ChipProps } from '$lib';
 
-export default function getButtonTree(defaultProps: ButtonProps): PlaygroundComponentNode {
+export default function getChipTree(defaultProps: ChipProps): PlaygroundComponentNode {
 	return {
-		Component: Button,
-		content: 'Button',
-		name: 'Button',
+		Component: Chip,
+		content: 'Chip',
+		name: 'Chip',
 		propDefinitions: [
-			{
-				name: 'variant',
-				description: 'The variant to use',
-				default: defaultProps.variant,
-				control: {
-					type: 'select',
-					props: {
-						name: 'variant',
-						value: defaultProps.variant,
-						options: [
-							'filled',
-							'tonal',
-							'outlined'
-						]
-					}
-				}
-			},
 			{
 				name: 'color',
 				default: defaultProps.color,

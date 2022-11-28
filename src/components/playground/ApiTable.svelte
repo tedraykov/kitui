@@ -12,11 +12,13 @@
 	import CodeCell from './cells/CodeCell.svelte';
 	import { get, writable } from 'svelte/store';
 	import ControlSelect from './ControlSelect.svelte';
+	import ControlSwitch from './ControlSwitch.svelte';
 
 	export let propDefinitionsMap: PropDefinitionsMap = {};
 
 	function deriveControlComponent(controlType: string) {
 		if (controlType === 'select') return ControlSelect;
+		if (controlType === 'switch') return ControlSwitch;
 		return null;
 	}
 

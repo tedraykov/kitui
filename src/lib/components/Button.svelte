@@ -42,34 +42,26 @@
 				[twMerge(
 					`text-primary-900 border-primary-200
          shadow-sm shadow-primary-200/50
-         hover:border-primary-500`,
-					styleOverrides.accentOutlined
-				)]: variant === 'outlined' && color === 'accent',
+         hover:border-primary-500`)]: variant === 'outlined' && color === 'accent',
 				// Outlined Success
 				[twMerge(
 					`text-emerald-500 border-emerald-200
          shadow-sm shadow-emerald-200/50
-         hover:border-emerald-500`,
-					styleOverrides.accentOutlined
-				)]: variant === 'outlined' && color === 'success',
+         hover:border-emerald-500`)]: variant === 'outlined' && color === 'success',
 				// Outlined Warning
 				[twMerge(
 					`text-amber-500 border-amber-200
          shadow-sm shadow-amber-200/50
-         hover:border-amber-500`,
-					styleOverrides.accentOutlined
-				)]: variant === 'outlined' && color === 'warning',
+         hover:border-amber-500`)]: variant === 'outlined' && color === 'warning',
 				// Outlined Error
 				[twMerge(
 					`text-rose-500 border-rose-200
          shadow-sm shadow-rose-200/50
-         hover:border-rose-500`,
-					styleOverrides.accentOutlined
-				)]: variant === 'outlined' && color === 'error',
-				// Contained Default
+         hover:border-rose-500`)]: variant === 'outlined' && color === 'error',
+				// Filled Default
 				[twMerge('text-white hover:opacity-90 transition-opacity', styleOverrides.filled)]:
 					variant === 'filled',
-				// Contained Primary
+				// Filled Primary
 				[twMerge(
 					`bg-gradient-to-b from-primary-30 to-primary-40
          shadow-md shadow-primary-200/50
@@ -77,18 +69,28 @@
          `,
 					styleOverrides.primaryFilled
 				)]: variant === 'filled' && color === 'primary',
+				// Filled Success
 				[`bg-gradient-to-b from-emerald-500 to-emerald-600
          shadow-md shadow-emerald-200/50
          active:from-emerald-600 active:to-emerald-700
          `]: variant === 'filled' && color === 'success',
+        // Filled warning
 				[`bg-gradient-to-b from-amber-500 to-amber-600
          shadow-md shadow-amber-200/50
          active:from-amber-600 active:to-amber-700
          `]: variant === 'filled' && color === 'warning',
+        // Filled Error
 				[`bg-gradient-to-b from-rose-500 to-rose-600
          shadow-md shadow-rose-200/50
          active:from-rose-600 active:to-rose-700
          `]: variant === 'filled' && color === 'error',
+        // Tonal Default
+        [twMerge(styleOverrides.tonal)]:
+					variant === 'tonal',
+				[twMerge(
+					`bg-primary-container text-primary-onContainer`,
+					styleOverrides.primaryTonal
+				)]: variant === 'tonal' && color === 'primary',
 				// Text
 				[twMerge(`hover:bg-gray-100/80`)]: variant === 'text',
 				// Small

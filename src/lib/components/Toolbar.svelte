@@ -3,7 +3,7 @@
 
 	let _class = '';
 	export { _class as class };
-	const defaultStyles = 'min-h-[64px] md:min-h-[72px] shadow-sm flex items-center';
+	const defaultStyles = 'min-h-[64px] md:min-h-[72px] flex items-center';
 </script>
 
 <nav

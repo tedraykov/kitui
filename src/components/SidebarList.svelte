@@ -17,28 +17,8 @@
 			label: 'Card'
 		},
 		{
-			href: '/components/checkbox',
-			label: 'Checkbox'
-		},
-		{
 			href: '/components/chip',
 			label: 'Chip'
-		},
-		{
-			href: '/components/list',
-			label: 'List'
-		},
-		{
-			href: '/components/radio',
-			label: 'Radio'
-		},
-		{
-			href: '/components/tabs',
-			label: 'Tabs'
-		},
-		{
-			href: '/components/textfield',
-			label: 'Text Field'
 		},
 		{
 			href: '/components/typography',
