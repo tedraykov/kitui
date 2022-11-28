@@ -1,6 +1,8 @@
 <script lang="ts">
 	import "../assets/prism-one-light.css";
 	import '../app.css';
+	import '@fontsource/lato/400.css';
+	import '@fontsource/lato/700.css';
 	import { createTheme } from '$lib/styles/createTheme';
 	import Drawer from '$lib/components/Drawer.svelte';
 	import setThemeContext from '$lib/styles/setThemeContext';
