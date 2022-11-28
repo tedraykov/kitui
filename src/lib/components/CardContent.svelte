@@ -13,7 +13,7 @@
 
 <svelte:element
 	this={element}
-	class={twMerge('p-4', styleOverrides.root, _class)}
+	class={twMerge('px-8 py-6 bg-neutral-100', styleOverrides.root, _class)}
 	{...$$restProps}
 >
 	<slot />

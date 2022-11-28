@@ -22,8 +22,8 @@
 	class={twMerge(
 		cn(
 			// Root
-				`font h-fit w-fit rounded-lg py-2 px-4
-       	 duration-100 ring-primary-200 ring-offset-1`,
+				`h-fit w-fit rounded-lg py-2 px-4
+       	 duration-100 ring-primary-80 ring-offset-1`,
 				styleOverrides?.root,
 			{
 				// Outlined Default
@@ -33,16 +33,16 @@
 				[styleOverrides.primary]: color === 'primary',
 				// Outlined Primary
 				[twMerge(
-					`text-primary-600 border-primary-200
+					`text-primary border-outline
          shadow-sm shadow-primary-200/50
          hover:border-primary-500`,
 					styleOverrides.primaryOutlined
 				)]: variant === 'outlined' && color === 'primary',
 				// Outlined Accent
 				[twMerge(
-					`text-accent-900 border-accent-200
-         shadow-sm shadow-accent-200/50
-         hover:border-accent-500`,
+					`text-primary-900 border-primary-200
+         shadow-sm shadow-primary-200/50
+         hover:border-primary-500`,
 					styleOverrides.accentOutlined
 				)]: variant === 'outlined' && color === 'accent',
 				// Outlined Success
@@ -67,37 +67,28 @@
 					styleOverrides.accentOutlined
 				)]: variant === 'outlined' && color === 'error',
 				// Contained Default
-				[twMerge('text-white hover:opacity-90 transition-opacity', styleOverrides.contained)]:
-					variant === 'contained',
+				[twMerge('text-white hover:opacity-90 transition-opacity', styleOverrides.filled)]:
+					variant === 'filled',
 				// Contained Primary
 				[twMerge(
-					`bg-gradient-to-b from-primary-500 to-primary-600
+					`bg-gradient-to-b from-primary-30 to-primary-40
          shadow-md shadow-primary-200/50
          active:from-primary-600 active:to-primary-700
          `,
-					styleOverrides.primaryContained
-				)]: variant === 'contained' && color === 'primary',
-				// Accent Default
-				[styleOverrides.accent]: color === 'accent',
-				// Contained Accent
-				[twMerge(
-					`bg-gradient-to-b from-accent-700 to-accent-800
-         active:from-accent-800 active:to-accent-900
-         shadow-md shadow-accent-200`,
-					styleOverrides.accentContained
-				)]: variant === 'contained' && color === 'accent',
+					styleOverrides.primaryFilled
+				)]: variant === 'filled' && color === 'primary',
 				[`bg-gradient-to-b from-emerald-500 to-emerald-600
          shadow-md shadow-emerald-200/50
          active:from-emerald-600 active:to-emerald-700
-         `]: variant === 'contained' && color === 'success',
+         `]: variant === 'filled' && color === 'success',
 				[`bg-gradient-to-b from-amber-500 to-amber-600
          shadow-md shadow-amber-200/50
          active:from-amber-600 active:to-amber-700
-         `]: variant === 'contained' && color === 'warning',
+         `]: variant === 'filled' && color === 'warning',
 				[`bg-gradient-to-b from-rose-500 to-rose-600
          shadow-md shadow-rose-200/50
          active:from-rose-600 active:to-rose-700
-         `]: variant === 'contained' && color === 'error',
+         `]: variant === 'filled' && color === 'error',
 				// Text
 				[twMerge(`hover:bg-gray-100/80`)]: variant === 'text',
 				// Small

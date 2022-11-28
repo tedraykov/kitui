@@ -14,7 +14,7 @@
 <svelte:element
 	this={element}
 	class={twMerge(
-		'flex items-center bg-accent-100 rounded-lg w-fit overflow-x-hidden',
+		'flex items-center bg-primary-100 rounded-lg w-fit overflow-x-hidden',
 		styleOverrides.root,
 		_class
 	)}
@@ -31,10 +31,10 @@
 
 <style>
     :global([slot='startAdornment']) {
-        @apply pl-4 px-2 h-4 w-auto text-accent-500 pointer-events-auto;
+        @apply pl-4 px-2 h-4 w-auto text-primary-40 pointer-events-auto;
     }
 
     :global([slot='endAdornment']) {
-        @apply pl-2 px-4 h-4 w-auto text-accent-500 pointer-events-auto;
+        @apply pl-2 px-4 h-4 w-auto text-primary-40 pointer-events-auto;
     }
 </style>

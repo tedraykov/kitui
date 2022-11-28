@@ -1,20 +1,50 @@
-<script>
-	import Container from '$lib/components/Container.svelte';
-	import Typography from '$lib/components/Typography.svelte';
-	import Stack from '$lib/components/Stack.svelte';
+<script lang="ts">
+	import {Typography, Card, CardHeader, CardContent, CardTitle, Container, Stack} from '$lib/components';
+	import getTypographyTree from '../../../docs/playground/typography';
+	import Playground from '../../../components/playground/Playground.svelte';
+	import { defaultTheme } from '../../../lib/styles/createTheme';
+
+	const { defaultProps } = defaultTheme.components.Typography
+	const componentTree = getTypographyTree(defaultProps)
 </script>
 
 <Container class="py-4">
-	<Stack gap={4}>
-		<Typography variant="h1">Heading 1</Typography>
-		<Typography variant="h2">Heading 2</Typography>
-		<Typography variant="h3">Heading 3</Typography>
-		<Typography variant="h4">Heading 4</Typography>
-		<Typography variant="h5">Heading 5</Typography>
-		<Typography variant="h6">Heading 6</Typography>
-		<Typography variant="subtitle1">Subtitle 1</Typography>
-		<Typography variant="subtitle2">Subtitle 2</Typography>
-		<Typography variant="body1">Body 1</Typography>
-		<Typography variant="body2">Body 2</Typography>
-	</Stack>
+	<Card>
+		<CardHeader>
+			<CardTitle>Typography</CardTitle>
+		</CardHeader>
+		<CardContent>
+			<Stack gap={8}>
+				<Playground {componentTree}/>
+				<Stack>
+					<Typography variant='title'>Typography styles</Typography>
+					<Card outlined>
+						<CardContent class='bg-surface'>
+							<Stack gap={4}>
+								<Typography variant="display" size="large">Display Large</Typography>
+								<Typography variant="display" size="medium">Display Medium</Typography>
+								<Typography variant="display" size="small">Display Small</Typography>
+
+								<Typography variant="headline" size="large">Headline Large</Typography>
+								<Typography variant="headline" size="medium">Headline Medium</Typography>
+								<Typography variant="headline" size="small">Headline Small</Typography>
+
+								<Typography variant="title" size="large">Title Large</Typography>
+								<Typography variant="title" size="medium">Title Medium</Typography>
+								<Typography variant="title" size="small">Title Small</Typography>
+
+								<Typography variant="label" size="large">Label Large</Typography>
+								<Typography variant="label" size="medium">Label Medium</Typography>
+								<Typography variant="label" size="small">Label Small</Typography>
+
+								<Typography variant="body" size="large">Body Large</Typography>
+								<Typography variant="body" size="medium">Body Medium</Typography>
+								<Typography variant="body" size="small">Body Small</Typography>
+							</Stack>
+						</CardContent>
+					</Card>
+				</Stack>
+			</Stack>
+		</CardContent>
+	</Card>
 </Container>

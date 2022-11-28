@@ -6,8 +6,8 @@ export const defaultTheme: ThemeOptions = {
 		Button: {
 			defaultProps: {
 				element: 'button',
-				variant: 'contained',
-				color: 'accent',
+				variant: 'filled',
+				color: 'primary',
 				size: 'medium'
 			},
 			styleOverrides: {}
@@ -45,9 +45,9 @@ export const defaultTheme: ThemeOptions = {
 		},
 		Chip: {
 			defaultProps: {
-				element: "div",
-				color: "accent",
-				size: "medium"
+				element: 'div',
+				color: 'primary',
+				size: 'medium'
 			},
 			styleOverrides: {}
 		},
@@ -55,7 +55,7 @@ export const defaultTheme: ThemeOptions = {
 			defaultProps: {
 				element: 'div'
 			},
-			 styleOverrides: {}
+			styleOverrides: {}
 		},
 		Divider: {
 			defaultProps: {
@@ -68,7 +68,9 @@ export const defaultTheme: ThemeOptions = {
 			defaultProps: {
 				element: 'aside'
 			},
-			styleOverrides: {}
+			styleOverrides: {
+				root: ''
+			}
 		},
 		FilledInput: {
 			defaultProps: {
@@ -84,13 +86,13 @@ export const defaultTheme: ThemeOptions = {
 		},
 		List: {
 			defaultProps: {
-				element: "ul"
+				element: 'ul'
 			},
 			styleOverrides: {}
 		},
 		ListItem: {
 			defaultProps: {
-				element: "li"
+				element: 'li'
 			},
 			styleOverrides: {}
 		},
@@ -144,39 +146,68 @@ export const defaultTheme: ThemeOptions = {
 		},
 		Table: {
 			defaultProps: {
-				element: "table"
+				element: 'table'
 			},
 			styleOverrides: {}
 		},
 		TableCell: {
 			defaultProps: {
-				element: "td"
+				element: 'td'
 			},
 			styleOverrides: {}
 		},
 		TableBody: {
 			defaultProps: {
-				element: "tbody"
+				element: 'tbody'
 			},
 			styleOverrides: {}
 		},
 		TableHead: {
 			defaultProps: {
-				element: "thead"
+				element: 'thead'
 			},
 			styleOverrides: {}
 		},
 		TableRow: {
 			defaultProps: {
-				element: "tr"
+				element: 'tr'
 			},
 			styleOverrides: {}
 		},
 		TableHeaderCell: {
 			defaultProps: {
-				element: "th"
+				element: 'th'
 			},
 			styleOverrides: {}
+		},
+		Typography: {
+			defaultProps: {
+				element: 'span',
+				style: 'body',
+				size: 'medium'
+			},
+			styleOverrides: {
+				displaySmall: '',
+				display: '',
+				displayMedium: '',
+				displayLarge: '',
+				headline: '',
+				headlineSmall: '',
+				headlineMedium: '',
+				headlineLarge: '',
+				titleSmall: '',
+				title: '',
+				titleMedium: '',
+				titleLarge: '',
+				label: '',
+				labelSmall: '',
+				labelMedium: '',
+				labelLarge: '',
+				body: '',
+				bodySmall: '',
+				bodyMedium: '',
+				bodyLarge: ''
+			}
 		},
 		Paper: {
 			defaultProps: {

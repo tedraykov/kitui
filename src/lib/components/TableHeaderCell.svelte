@@ -16,11 +16,11 @@
 <svelte:element
 	this={element}
 	class={twMerge(
-    "px-4 py-2 border-b whitespace-nowrap border-b-accent-300/50",
+    "px-4 py-2 border-b whitespace-nowrap border-b-outline-variant",
     styleOverrides.root,
     _class
   )}>
-	<Typography variant='subtitle2'>
+	<Typography variant='label'>
 		<slot />
 	</Typography>
 </svelte:element>

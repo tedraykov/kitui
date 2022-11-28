@@ -42,7 +42,7 @@
 				if (!info?.getValue()) return '';
 				const { type, props } = info?.getValue();
 				const Component = deriveControlComponent(type);
-				return Component ? renderComponent(Component, props ) : '';
+				return Component ? renderComponent(Component, props) : '';
 			}
 		}
 	];
@@ -75,49 +75,85 @@
 	const tableMap = getPropsTableMap(optionsMap);
 </script>
 
-<TabGroup class='pt-2'>
-	<TabList>
-		{#each Object.keys(tableMap) as componentName}
-			<Tab>{componentName}</Tab>
-		{/each}
-	</TabList>
-	<TabPanels>
-		{#each Object.values(tableMap) as table}
-			<TabPanel>
-				<Table>
-					<thead>
-					{#each get(table).getHeaderGroups() as headerGroup}
-						<tr>
-							{#each headerGroup.headers as header}
-								<TableHeaderCell>
-									{#if !header.isPlaceholder}
-										<svelte:component
-											this={flexRender(
+{#if Object.keys(tableMap).length > 1}
+	<TabGroup class='pt-2'>
+		<TabList>
+			{#each Object.keys(tableMap) as componentName}
+				<Tab>{componentName}</Tab>
+			{/each}
+		</TabList>
+		<TabPanels>
+			{#each Object.values(tableMap) as table}
+				<TabPanel>
+					<Table>
+						<thead>
+						{#each get(table).getHeaderGroups() as headerGroup}
+							<tr>
+								{#each headerGroup.headers as header}
+									<TableHeaderCell>
+										{#if !header.isPlaceholder}
+											<svelte:component
+												this={flexRender(
                     header.column.columnDef.header,
                     header.getContext()
                   )}
+											/>
+										{/if}
+									</TableHeaderCell>
+								{/each}
+							</tr>
+						{/each}
+						</thead>
+						<tbody>
+						{#each get(table).getRowModel().rows as row}
+							<tr>
+								{#each row.getVisibleCells() as cell}
+									<TableCell>
+										<svelte:component
+											this={flexRender(cell.column.columnDef.cell, cell.getContext())}
 										/>
-									{/if}
-								</TableHeaderCell>
-							{/each}
-						</tr>
-					{/each}
-					</thead>
-					<tbody>
-					{#each get(table).getRowModel().rows as row}
-						<tr>
-							{#each row.getVisibleCells() as cell}
-								<TableCell>
-									<svelte:component
-										this={flexRender(cell.column.columnDef.cell, cell.getContext())}
-									/>
-								</TableCell>
-							{/each}
-						</tr>
-					{/each}
-					</tbody>
-				</Table>
-			</TabPanel>
+									</TableCell>
+								{/each}
+							</tr>
+						{/each}
+						</tbody>
+					</Table>
+				</TabPanel>
+			{/each}
+		</TabPanels>
+	</TabGroup>
+{:else}
+	<Table>
+		<thead>
+		{#each get(tableMap[Object.keys(tableMap)[0]]).getHeaderGroups() as headerGroup}
+			<tr>
+				{#each headerGroup.headers as header}
+					<TableHeaderCell>
+						{#if !header.isPlaceholder}
+							<svelte:component
+								this={flexRender(
+                    header.column.columnDef.header,
+                    header.getContext()
+                  )}
+							/>
+						{/if}
+					</TableHeaderCell>
+				{/each}
+			</tr>
 		{/each}
-	</TabPanels>
-</TabGroup>
+		</thead>
+		<tbody>
+		{#each get(tableMap[Object.keys(tableMap)[0]]).getRowModel().rows as row}
+			<tr>
+				{#each row.getVisibleCells() as cell}
+					<TableCell>
+						<svelte:component
+							this={flexRender(cell.column.columnDef.cell, cell.getContext())}
+						/>
+					</TableCell>
+				{/each}
+			</tr>
+		{/each}
+		</tbody>
+	</Table>
+{/if}

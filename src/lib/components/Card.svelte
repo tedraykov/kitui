@@ -16,10 +16,10 @@
 <svelte:element
 	this={element}
 	class={twMerge(
-		'rounded-lg overflow-hidden shadow box-border',
+		'rounded-xl overflow-hidden box-border bg-surface',
 		styleOverrides.root,
 		cn({
-			[twMerge('  shadow-none border border-accent-300', styleOverrides.outline)]: outlined
+			[twMerge('shadow-none border border-outline-variant', styleOverrides.outline)]: outlined
 		}),
 		_class
 	)}

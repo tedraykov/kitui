@@ -10,7 +10,7 @@
 		</Typography
 		>
 	</Stack>
-	<Card outlined class="bg-accent-50/50 p-4">
+	<Card outlined class="bg-primary-50/50 p-4">
 		<Stack>
 			<Stack>
 				<Typography variant='subtitle2'>Small</Typography>

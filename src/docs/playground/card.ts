@@ -1,19 +1,19 @@
 import type {
-	CardActionPropsOptions,
-	CardContentPropsOptions,
-	CardHeaderPropsOptions,
-	CardPropsOptions,
-	CardTitlePropsOptions
+	CardActionProps,
+	CardContentProps,
+	CardHeaderProps,
+	CardProps,
+	CardTitleProps
 } from '$lib';
 import { Card, CardContent, CardTitle } from '$lib';
 import type { PlaygroundComponentNode } from '../../types';
 
 export type CardDefaultProps = {
-	Card: CardPropsOptions,
-	CardAction: CardActionPropsOptions,
-	CardContent: CardContentPropsOptions,
-	CardHeader: CardHeaderPropsOptions,
-	CardTitle: CardTitlePropsOptions
+	Card: CardProps,
+	CardAction: CardActionProps,
+	CardContent: CardContentProps,
+	CardHeader: CardHeaderProps,
+	CardTitle: CardTitleProps
 }
 
 export default function getCardTree(defaultProps: CardDefaultProps): PlaygroundComponentNode {

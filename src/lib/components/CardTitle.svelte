@@ -14,8 +14,8 @@
 
 <Typography
 	{element}
-	variant="h5"
-	class={twMerge('p-4', styleOverrides.root, _class)}
+	variant="headline"
+	class={twMerge(styleOverrides.root, _class)}
 	{...$$restProps}
 >
 	<slot />

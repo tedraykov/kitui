@@ -12,13 +12,13 @@
 </script>
 
 <svelte:element
-	{...$$restProps}
 	this={element}
 	class={twMerge(
-		'flex items-center border border-accent-300 rounded-lg w-fit',
+		'flex items-center border border-outline rounded-lg w-fit',
 		styleOverrides.root,
 		_class
 	)}
+	{...$$restProps}
 >
 	{#if $$slots.startAdornment}
 		<slot name='startAdornment' />
@@ -31,9 +31,9 @@
 
 <style>
 	:global([slot='startAdornment']) {
-		@apply pl-4 px-2 h-4 w-auto text-accent-500 pointer-events-auto;
+		@apply pl-4 px-2 h-4 w-auto text-primary-40 pointer-events-auto;
 	}
 	:global([slot='endAdornment']) {
-		@apply pl-2 px-4 h-4 w-auto text-accent-500 pointer-events-auto;
+		@apply pl-2 px-4 h-4 w-auto text-primary-40 pointer-events-auto;
 	}
 </style>

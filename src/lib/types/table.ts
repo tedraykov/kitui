@@ -1,62 +1,50 @@
-import type { ComponentOptions, ElementOptions } from './index';
+import type { ComponentOptions, ElementProps } from './index';
 
-export type TableOptions = ComponentOptions<TablePropsOptions, TableStyleOverrideOptions>;
+export type TableOptions = ComponentOptions<TableProps, TableStyleOverrideOptions>;
 
-export type TablePropsOptions = ElementOptions
-
-export type TableProps = ElementOptions
+export type TableProps = ElementProps
 
 export type TableStyleOverrideOptions = {
 	root?: string;
 };
 
 
-export type TableCellOptions = ComponentOptions<TableCellPropsOptions, TableCellStyleOverrideOptions>;
+export type TableCellOptions = ComponentOptions<TableCellProps, TableCellStyleOverrideOptions>;
 
-export type TableCellPropsOptions = ElementOptions
-
-export type TableCellProps = ElementOptions
+export type TableCellProps = ElementProps
 
 export type TableCellStyleOverrideOptions = {
 	root?: string;
 };
 
-export type TableHeaderCellOptions = ComponentOptions<TableHeaderCellPropsOptions, TableCellStyleOverrideOptions>;
+export type TableHeaderCellOptions = ComponentOptions<TableHeaderCellProps, TableCellStyleOverrideOptions>;
 
-export type TableHeaderCellPropsOptions = ElementOptions
-
-export type TableHeaderCellProps = ElementOptions
+export type TableHeaderCellProps = ElementProps
 
 export type TableHeaderCellStyleOverrideOptions = {
 	root?: string;
 };
 
 
-export type TableRowOptions = ComponentOptions<TableRowPropsOptions, TableCellStyleOverrideOptions>;
+export type TableRowOptions = ComponentOptions<TableRowProps, TableCellStyleOverrideOptions>;
 
-export type TableRowPropsOptions = ElementOptions
-
-export type TableRowProps = ElementOptions
+export type TableRowProps = ElementProps
 
 export type TableRowStyleOverrideOptions = {
 	root?: string;
 };
 
-export type TableBodyOptions = ComponentOptions<TableBodyPropsOptions, TableCellStyleOverrideOptions>;
+export type TableBodyOptions = ComponentOptions<TableBodyProps, TableCellStyleOverrideOptions>;
 
-export type TableBodyPropsOptions = ElementOptions
-
-export type TableBodyProps = ElementOptions
+export type TableBodyProps = ElementProps
 
 export type TableBodyStyleOverrideOptions = {
 	root?: string;
 };
 
-export type TableHeadOption = ComponentOptions<TableHeadPropsOptions, TableCellStyleOverrideOptions>;
+export type TableHeadOption = ComponentOptions<TableHeadProps, TableCellStyleOverrideOptions>;
 
-export type TableHeadPropsOptions = ElementOptions
-
-export type TableHeadProps = ElementOptions
+export type TableHeadProps = ElementProps
 
 export type TableHeadStyleOverrideOptions = {
 	root?: string;

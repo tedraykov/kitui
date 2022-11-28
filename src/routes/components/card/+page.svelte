@@ -1,6 +1,5 @@
-<script lang="ts">
-	import Container from '$lib/components/Container.svelte';
-	import Typography from '$lib/components/Typography.svelte';
+<script lang='ts'>
+	import { Card, CardContent, CardHeader, CardTitle, Container, Typography } from '$lib/components';
 	import Playground from '../../../components/playground/Playground.svelte';
 	import { defaultTheme } from '../../../lib/styles/createTheme';
 	import getCardTree from '../../../docs/playground/card';
@@ -15,6 +14,15 @@
 </script>
 
 <Container class='py-4'>
-	<Typography variant='h3' class='pb-4'>Card</Typography>
-	<Playground {componentTree} />
+	<Card>
+		<CardHeader>
+			<CardTitle>
+				Card
+			</CardTitle>
+		</CardHeader>
+		<CardContent>
+			<Typography variant='headline'></Typography>
+			<Playground {componentTree} />
+		</CardContent>
+	</Card>
 </Container>

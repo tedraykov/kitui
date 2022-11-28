@@ -1,14 +1,14 @@
 <script lang='ts'>
 	import { twMerge } from 'tailwind-merge';
 	import getThemeContext from '../styles/getThemeContext';
-	import type { ListPropsOptions } from '../types';
+	import type { ListProps } from '../types';
 
 	const theme = getThemeContext();
 	const { defaultProps, styleOverrides } = theme.components.List;
 
 	let _class = '';
 	export { _class as class };
-	export let element: ListPropsOptions['element'] = defaultProps.element;
+	export let element: ListProps['element'] = defaultProps.element;
 </script>
 
 <svelte:element

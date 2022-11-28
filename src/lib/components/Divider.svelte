@@ -16,7 +16,7 @@
 <svelte:element
 	this={element}
 	class={twMerge(
-		'bg-accent-300/50 ',
+		'bg-primary-300/50 ',
 		styleOverrides.root,
 		cn({
 			['h-[1px] w-full my-2']: direction === 'horizontal',

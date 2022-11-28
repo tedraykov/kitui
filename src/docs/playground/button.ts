@@ -18,10 +18,8 @@ export default function getButtonTree(defaultProps: ButtonProps): PlaygroundComp
 						name: 'variant',
 						value: defaultProps.variant,
 						options: [
-							'contained',
+							'filled',
 							'outlined'
-							// TODO: implement
-							// "text"
 						]
 					}
 				}
@@ -36,7 +34,7 @@ export default function getButtonTree(defaultProps: ButtonProps): PlaygroundComp
 						name: 'color',
 						value: defaultProps.color,
 						options: [
-							'accent', 'primary', 'success', 'warning', 'error'
+							'primary', 'success', 'warning', 'error'
 						]
 					}
 				}
@@ -54,25 +52,6 @@ export default function getButtonTree(defaultProps: ButtonProps): PlaygroundComp
 					}
 				}
 			}
-			// TODO: Implement
-			// {
-			// 	name: 'disabled',
-			// 	default: false,
-			// 	description: 'Whether the button is disabled.',
-			// 	control: {
-			// 		Component: ControlSwitch,
-			// 		props: {
-			// 			name: "disabled"
-			// 			value: defaultProps.disabled
-			// 		}
-			// 	}
-			// },
-			// TODO: Implement
-			// {
-			// 	name: 'fullWidth',
-			// 	default: false,
-			// 	description: 'Whether the button is full width.'
-			// }
 		]
 	};
 }

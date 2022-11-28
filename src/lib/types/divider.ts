@@ -1,12 +1,8 @@
-import type { ComponentOptions, ElementOptions } from './index';
+import type { ComponentOptions, ElementProps } from './index';
 
-export type DividerOptions = ComponentOptions<DividerPropsOptions, DividerStyleOverrideOptions>;
+export type DividerOptions = ComponentOptions<DividerProps, DividerStyleOverrideOptions>;
 
-export type DividerPropsOptions = ElementOptions & {
-	direction: 'vertical' | 'horizontal';
-};
-
-export type DividerProps = ElementOptions & {
+export type DividerProps = ElementProps & {
 	direction: 'vertical' | 'horizontal';
 };
 

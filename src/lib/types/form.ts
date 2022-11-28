@@ -1,25 +1,21 @@
-import type { ComponentOptions, ElementOptions } from './index';
+import type { ComponentOptions, ElementProps } from './index';
 
 export type FormLabelOptions = ComponentOptions<
-	FormLabelPropsOptions,
+	FormLabelProps,
 	FormLabelStylesOverrideOptions
 >;
 export type FormControlOptions = ComponentOptions<
-	FormControlPropsOptions,
+	FormControlProps,
 	FormControlOverrideOptions
 >;
 
-export type FormLabelPropsOptions = ElementOptions;
-
-export type FormLabelProps = ElementOptions;
+export type FormLabelProps = ElementProps;
 
 export type FormLabelStylesOverrideOptions = {
 	root?: string;
 };
 
-export type FormControlPropsOptions = ElementOptions;
-
-export type FormControlProps = ElementOptions;
+export type FormControlProps = ElementProps;
 
 export type FormControlOverrideOptions = {
 	root?: string;

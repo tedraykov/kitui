@@ -1,12 +1,8 @@
-import type { ComponentOptions, ElementOptions } from './index';
+import type { ComponentOptions, ElementProps } from './index';
 
-export type DrawerOptions = ComponentOptions<DrawerPropsOptions, DrawerStylesOverrideOptions>;
+export type DrawerOptions = ComponentOptions<DrawerProps, DrawerStylesOverrideOptions>;
 
-export type DrawerPropsOptions = ElementOptions & {
-	variant?: 'permanent' | 'persistent' | 'temporary';
-	open?: boolean;
-};
-export type DrawerProps = ElementOptions & {
+export type DrawerProps = ElementProps & {
 	variant?: 'permanent' | 'persistent' | 'temporary';
 	open?: boolean;
 };

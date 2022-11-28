@@ -1,14 +1,12 @@
-import type { ComponentOptions, ElementOptions } from './index';
+import type { ComponentOptions, ElementProps} from './index';
 
 /* Filled Input */
 export type FilledInputOptions = ComponentOptions<
-	FilledInputPropsOptions,
+	FilledInputProps,
 	FilledInputStylesOverrideOptions
 >;
 
-export type FilledInputPropsOptions = ElementOptions;
-
-export type FilledInputProps = ElementOptions;
+export type FilledInputProps = ElementProps;
 
 export type FilledInputStylesOverrideOptions = {
 	root?: string;
@@ -16,13 +14,11 @@ export type FilledInputStylesOverrideOptions = {
 
 /* Outlined Input */
 export type OutlinedInputOptions = ComponentOptions<
-	OutlinedInputPropsOptions,
+	OutlinedInputProps,
 	OutlinedInputStylesOverrideOptions
 >;
 
-export type OutlinedInputPropsOptions = ElementOptions;
-
-export type OutlinedInputProps = ElementOptions;
+export type OutlinedInputProps = ElementProps;
 
 export type OutlinedInputStylesOverrideOptions = {
 	root?: string;
@@ -30,13 +26,11 @@ export type OutlinedInputStylesOverrideOptions = {
 
 /* Base Input */
 export type BaseInputOptions = ComponentOptions<
-	BaseInputPropsOptions,
+	BaseInputProps,
 	BaseInputStylesOverrideOptions
 >;
 
-export type BaseInputPropsOptions = ElementOptions;
-
-export type BaseInputProps = ElementOptions;
+export type BaseInputProps = ElementProps;
 
 export type BaseInputStylesOverrideOptions = {
 	root?: string;

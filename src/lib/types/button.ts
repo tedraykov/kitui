@@ -1,30 +1,24 @@
-import type { ComponentOptions, Colors, ElementOptions } from './index';
+import type { ComponentOptions, Colors, ElementProps} from './index';
 
-export type ButtonOptions = ComponentOptions<ButtonPropsOptions, ButtonStylesOverrideOptions>;
+export type ButtonOptions = ComponentOptions<ButtonProps, ButtonStylesOverrideOptions>;
 
-export type ButtonPropsOptions = ElementOptions & {
-	variant?: 'text' | 'contained' | 'outlined';
-	color?: Colors;
-	size?: 'small' | 'medium' | 'large';
-};
-
-export type ButtonProps = ElementOptions & {
-	variant?: 'text' | 'contained' | 'outlined';
+export type ButtonProps = ElementProps& {
+	variant?: 'text' | 'filled' | "filledTonal" | 'outlined';
 	color?: Colors;
 	size?: 'small' | 'medium' | 'large';
 };
 
 export type ButtonStylesOverrideOptions = {
 	root?: string;
-	contained?: string;
+	filled?: string;
 	outlined?: string;
 	primary?: string;
 	accent?: string;
 	secondary?: string;
-	primaryContained?: string;
+	primaryFilled?: string;
 	primaryOutlined?: string;
 	secondaryOutlined?: string;
-	secondaryContained?: string;
+	secondaryFilled?: string;
 	accentOutlined?: string;
 	accentContained?: string;
 	small?: string;

@@ -1,28 +1,38 @@
-export default function typographyVariant(variant: string) {
-	switch (variant) {
-		case 'h1':
-			return 'text-6xl font-bold';
-		case 'h2':
-			return 'text-5xl font-bold';
-		case 'h3':
-			return 'text-4xl font-bold';
-		case 'h4':
-			return 'text-3xl font-bold';
-		case 'h5':
-			return 'text-2xl font-bold';
-		case 'h6':
-			return 'text-xl font-bold';
-		case 'subtitle1':
-			return 'text-lg text-accent-600';
-		case 'subtitle2':
-			return 'text-xs font-bold text-accent-600 uppercase';
-		case 'body1':
-			return 'text-md';
-		case 'body2':
-			return 'text-sm';
-		case 'caption':
-			return 'text-sm text-gray-600';
-		default:
-			return '';
+import type { TypographyProps, TypographyStylesOverrides } from '../types';
+import { twMerge } from 'tailwind-merge';
+
+function themeStyles(style: TypographyProps["style"], size: TypographyProps["size"], styleOverrides: TypographyStylesOverrides) {
+	if (style === "display") {
+		if (size === "large") return `${styleOverrides.display} text-7xl text-medium ${styleOverrides.displayLarge}`
+		if (size === "medium") return `${styleOverrides.display} text-6xl text-medium ${styleOverrides.displayMedium}`
+		if (size === "small") return `${styleOverrides.display} text-5xl text-medium ${styleOverrides.displaySmall}`
 	}
+	if (style === "headline") {
+		if (size === "large") return `${styleOverrides.headline} text-4xl text-medium ${styleOverrides.headlineLarge}`
+		if (size === `medium`) return `${styleOverrides.headline} text-3xl text-medium ${styleOverrides.headlineMedium}`
+		if (size === `small`) return `${styleOverrides.headline} text-2xl text-medium ${styleOverrides.headlineSmall}`
+	}
+	if (style === "title") {
+		if (size === "large") return `${styleOverrides.title} text-xl ${styleOverrides.titleLarge}`
+		if (size === "medium") return `${styleOverrides.title} text-lg text-medium ${styleOverrides.titleMedium}`
+		if (size === "small") return `${styleOverrides.title} text-base text-medium ${styleOverrides.titleSmall}`
+	}
+	if (style === "label") {
+		if (size === "large") return `${styleOverrides.label} text-base text-medium ${styleOverrides.labelLarge}`
+		if (size === "medium") return `${styleOverrides.label} text-sm text-medium ${styleOverrides.labelMedium}`
+		if (size === "small") return `${styleOverrides.label} text-xs text-medium ${styleOverrides.labelSmall}`
+	}
+	if (style === "body") {
+		if (size === "large") return `${styleOverrides.body} text-lg ${styleOverrides.bodyLarge}`
+		if (size === "medium") return `${styleOverrides.body} text-base ${styleOverrides.bodyMedium}`
+		if (size === "small") return `${styleOverrides.body} text-sm ${styleOverrides.bodySmall}`
+	}
+}
+export default function typographyStyle(
+	style: TypographyProps["style"],
+	size: TypographyProps["size"],
+	styleOverrides: TypographyStylesOverrides,
+	_class?: string
+) {
+	return twMerge(themeStyles(style, size, styleOverrides), _class)
 }

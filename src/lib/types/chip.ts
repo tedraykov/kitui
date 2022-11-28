@@ -1,13 +1,8 @@
-import type { ComponentOptions, Colors, ElementOptions } from './index';
+import type { ComponentOptions, Colors, ElementProps } from './index';
 
-export type ChipOptions = ComponentOptions<ChipPropsOptions, ChipStyleOverrideOptions>;
+export type ChipOptions = ComponentOptions<ChipProps, ChipStyleOverrideOptions>;
 
-export type ChipPropsOptions = ElementOptions & {
-	color?: Colors
-	size?: "small" | 'medium'
-}
-
-export type ChipProps = ElementOptions & {
+export type ChipProps = ElementProps & {
 	color?: Colors
 	size?: "small" | 'medium'
 }

@@ -23,7 +23,7 @@
     	styleOverrides.root,
 			{
 				// Accent
-				["bg-accent-200 text-accent-800"]: color === 'accent',
+				["bg-primary-200 text-primary-800"]: color === 'accent',
 				// Primary
 				["bg-primary-200 text-primary-800"]: color === 'primary',
 				// Success

@@ -3,7 +3,6 @@
 	import { fade } from 'svelte/transition';
 	import { twMerge } from 'tailwind-merge';
 	import getThemeContext from '../styles/getThemeContext';
-	import cn from 'classnames';
 	import type { DrawerProps } from '../types';
 
 	const theme = getThemeContext();
@@ -22,21 +21,31 @@
 	function handleClose() {
 		dispatch('close');
 	}
-</script>
 
-<svelte:element
-	{...$$restProps}
-	class={twMerge(
-		cn('bg-slate-100', {
-			[`absolute top-0 left-0 w-72 bg-slate-100
+	function themeTemporaryStyles() {
+		let classes = `bg-netural-95 ${styleOverrides.root} `;
+		if (variant === 'temporary') {
+			classes += `absolute top-0 left-0 w-72 bg-slate-100
        h-full overflow-hidden
        z-drawer
-       transition-all duration-200`]: variant === 'temporary',
-			'w-0': variant === 'temporary' && !open
-		}),
-		_class
-	)}
+       transition-all duration-200 `;
+			if (!open) {
+				classes += 'w-0 ';
+			}
+		}
+		return classes;
+	}
+
+	function getTemporaryDrawerStyles(..._) {
+		return twMerge(themeTemporaryStyles(), _class);
+	}
+</script>
+
+
+<svelte:element
+	class={getTemporaryDrawerStyles(open, variant, styleOverrides, _class)}
 	this={element}
+	{...$$restProps}
 >
 	<slot />
 </svelte:element>
@@ -46,5 +55,5 @@
 		in:fade={{ duration: 200 }}
 		out:fade={{ duration: 200 }}
 		on:click|stopPropagation={handleClose}
-		class='absolute w-screen h-screen bg-gray-900/20'></span>
+		class='absolute w-screen h-screen bg-neutral-10/20'></span>
 {/if}

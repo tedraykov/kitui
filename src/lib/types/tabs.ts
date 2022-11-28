@@ -1,12 +1,12 @@
-import type { ComponentOptions, ElementOptions } from './index';
+import type { ComponentOptions, ElementProps } from './index';
 
 /* Tab Group */
-export type TabGroupOptions = ElementOptions & {
-	defaultProps?: TabGroupPropsOptions;
+export type TabGroupOptions = ElementProps & {
+	defaultProps?: TabGroupProps;
 	styleOverrides?: any;
 };
 
-export type TabGroupProps = ElementOptions & {
+export type TabGroupProps = ElementProps & {
 	defaultIndex?: number;
 	/** Whether the orientation of the `TabList` is vertical instead of horizontal */
 	vertical?: boolean;
@@ -18,40 +18,24 @@ export type TabGroupProps = ElementOptions & {
 	manual?: boolean;
 };
 
-export type TabGroupPropsOptions = ElementOptions & {
-	defaultIndex?: number;
-	vertical?: boolean;
-	manual?: boolean;
-};
-
 /* Tab List */
-export type TabListOptions = ComponentOptions<TabListPropsOptions, object>;
+export type TabListOptions = ComponentOptions<TabListProps, object>;
 
-export type TabListPropsOptions = ElementOptions;
-
-export type TabListProps = ElementOptions;
+export type TabListProps = ElementProps;
 
 /* Tab */
-export type TabOptions = ComponentOptions<TabPropsOptions, any>;
+export type TabOptions = ComponentOptions<TabProps, any>;
 
-export type TabPropsOptions = ElementOptions & {
-	disabled?: boolean;
-};
-
-export type TabProps = ElementOptions & {
+export type TabProps = ElementProps & {
 	disabled?: boolean;
 };
 
 /* Tab Panels */
-export type TabPanelsOptions = ComponentOptions<TabPanelsPropsOptions, any>;
+export type TabPanelsOptions = ComponentOptions<TabPanelsProps, any>;
 
-export type TabPanelsPropsOptions = ElementOptions;
-
-export type TabPanelsProps = ElementOptions;
+export type TabPanelsProps = ElementProps;
 
 /* Tab Panel */
-export type TabPanelOptions = ComponentOptions<TabPanelPropsOptions, any>;
+export type TabPanelOptions = ComponentOptions<TabPanelProps, any>;
 
-export type TabPanelPropsOptions = ElementOptions;
-
-export type TabPanelProps = ElementOptions;
+export type TabPanelProps = ElementProps;

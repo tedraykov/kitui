@@ -1,26 +1,35 @@
-import type { ComponentOptions, ElementOptions } from './index';
+import type { ComponentOptions, ElementProps} from './index';
 
-export type TypographyOptions = ComponentOptions<TypographyPropsOptions, any>;
+export type TypographyOptions = ComponentOptions<TypographyProps, TypographyStylesOverrides>;
 
-export type TypographyPropsOptions = ElementOptions & {
-	element?: TypographyElement;
-	variant?: TypographyVariant;
+export type TypographyProps = ElementProps& {
+	size?: TypographySize;
+	style?: TypographyStyle;
 };
 
-export type TypographyProps = ElementOptions & {
-	element?: TypographyElement;
-	variant?: TypographyVariant;
-};
+export type TypographyStyle = "display" | "headline" | "title" | "label" | "body";
+export type TypographySize = "small" | "medium" | "large";
 
-export type TypographyElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
-export type TypographyVariant =
-	| 'h1'
-	| 'h2'
-	| 'h3'
-	| 'h4'
-	| 'h5'
-	| 'h6'
-	| 'subtitle1'
-	| 'subtitle2'
-	| 'body1'
-	| 'body2';
+export type TypographyStylesOverrides = {
+	root?: string;
+	display?: string;
+	headline?: string;
+	title?: string;
+	label?: string;
+	body?: string;
+	displayLarge?: string;
+	headlineLarge?: string;
+	titleLarge?: string;
+	labelLarge?: string;
+	bodyLarge?: string;
+	displayMedium?: string;
+	headlineMedium?: string;
+	titleMedium?: string;
+	labelMedium?: string;
+	bodyMedium?: string;
+	displaySmall?: string;
+	headlineSmall?: string;
+	titleSmall?: string;
+	labelSmall?: string;
+	bodySmall?: string;
+};

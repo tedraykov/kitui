@@ -2,14 +2,14 @@
 	import { twMerge } from 'tailwind-merge';
 	import cn from 'classnames';
 	import getThemeContext from '../styles/getThemeContext';
-	import type { ListItemPropsOptions } from '../types';
+	import type { ListItemProps } from '../types';
 
 	const theme = getThemeContext();
 	const { defaultProps, styleOverrides } = theme.components.ListItem;
 
 	let _class = '';
 	export { _class as class };
-	export let element: ListItemPropsOptions['element'] = defaultProps.element;
+	export let element: ListItemProps['element'] = defaultProps.element;
 	export let href: string | undefined;
 	export let active = false;
 </script>

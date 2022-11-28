@@ -1,13 +1,9 @@
-import type { ComponentOptions, ElementOptions } from './index';
+import type { ComponentOptions, ElementProps } from './index';
 
 /* Card */
-export type CardOptions = ComponentOptions<CardPropsOptions, CardStylesOverrideOptions>;
+export type CardOptions = ComponentOptions<CardProps, CardStylesOverrideOptions>;
 
-export type CardPropsOptions = ElementOptions & {
-	outlined?: boolean;
-};
-
-export type CardProps = ElementOptions & {
+export type CardProps = ElementProps & {
 	outlined?: boolean;
 };
 
@@ -18,13 +14,11 @@ export type CardStylesOverrideOptions = {
 
 /* Card Header */
 export type CardHeaderOptions = ComponentOptions<
-	CardHeaderPropsOptions,
+	CardHeaderProps,
 	CardHeaderStylesOverrideOptions
 >;
 
-export type CardHeaderPropsOptions = ElementOptions;
-
-export type CardHeaderProps = ElementOptions;
+export type CardHeaderProps = ElementProps;
 
 export type CardHeaderStylesOverrideOptions = {
 	root?: string;
@@ -32,24 +26,20 @@ export type CardHeaderStylesOverrideOptions = {
 
 /* Card Title */
 export type CardTitleOptions = ComponentOptions<
-	CardTitlePropsOptions,
+	CardTitleProps,
 	CardTitleStyleOverrideOptions
 >;
 
-export type CardTitleProps = ElementOptions;
-
-export type CardTitlePropsOptions = ElementOptions;
+export type CardTitleProps = ElementProps;
 
 export type CardTitleStyleOverrideOptions = {
 	root?: string;
 };
 
 /* Card Action */
-export type CardActionOptions = ComponentOptions<CardActionPropsOptions, CardActionOverrideOptions>;
+export type CardActionOptions = ComponentOptions<CardActionProps, CardActionOverrideOptions>;
 
-export type CardActionPropsOptions = ElementOptions;
-
-export type CardActionProps = ElementOptions;
+export type CardActionProps = ElementProps;
 
 export type CardActionOverrideOptions = {
 	root?: string;
@@ -57,13 +47,11 @@ export type CardActionOverrideOptions = {
 
 /* Card Content */
 export type CardContentOptions = ComponentOptions<
-	CardContentPropsOptions,
+	CardContentProps,
 	CardContentStylesOverrideOptions
 >;
 
-export type CardContentPropsOptions = ElementOptions;
-
-export type CardContentProps = ElementOptions;
+export type CardContentProps = ElementProps;
 
 export type CardContentStylesOverrideOptions = {
 	root?: string;

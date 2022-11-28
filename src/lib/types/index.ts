@@ -22,6 +22,35 @@ import type {
 	TableRowOptions
 } from './table';
 
+export type PaletteColor = {
+	main: string;
+	onMain: string;
+	container: string;
+	onContainer: string;
+}
+
+export type PaletteColors = {
+	primary: string;
+	onPrimary: string;
+	primaryContainer: string;
+	onPrimaryContainer: string;
+	secondary: PaletteColor;
+	ternary: PaletteColor;
+	error: PaletteColor;
+	background: string
+	onBackground: string
+	surface: string
+	onSurface: string
+	surfaceVariant: string;
+	onSurfaceVariant: string;
+	outline: string;
+	outlineVariant: string;
+}
+
+export type Palette = {
+	get: (color: keyof PaletteColors, type: "color" | "background") => string
+} & PaletteColors;
+
 export type ThemeOptions = {
 	components?: {
 		BaseInput?: BaseInputOptions;
@@ -59,17 +88,21 @@ export type ThemeOptions = {
 	};
 };
 
+export type Theme = {
+	palette: Palette
+} & ThemeOptions;
+
 export type ComponentOptions<P, O> = {
 	defaultProps?: P;
 	styleOverrides?: O;
 };
 
-export type ElementOptions = {
+export type ElementProps = {
 	element?: SupportedElement;
 };
 
 export type Elevation = 'none' | 'sm' | 'default' | 'md' | 'lg' | 'xl' | '2xl';
-export type Colors = 'accent' | 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'inherit';
+export type Colors = 'primary' | 'secondary' | 'ternary' | 'success' | 'warning' | 'error' | 'inherit';
 
 export * from './adornment';
 export * from './button';
