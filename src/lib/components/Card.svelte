@@ -2,10 +2,10 @@
 	import { twMerge } from 'tailwind-merge';
 	import getThemeContext from '../styles/getThemeContext';
 	import type { CardProps } from '../types';
-	import cn from 'classnames';
+	import evaluateVariantClasses from '$lib/styles/evaluateVariantClasses';
 
 	const theme = getThemeContext();
-	const { defaultProps, styleOverrides } = theme.components.Card;
+	const { defaultProps, variants } = theme.components.Card;
 
 	let _class = '';
 	export { _class as class };
@@ -16,11 +16,7 @@
 <svelte:element
 	this={element}
 	class={twMerge(
-		'rounded-xl overflow-hidden box-border bg-surface',
-		styleOverrides.root,
-		cn({
-			[twMerge('shadow-none border border-outline-variant', styleOverrides.outline)]: outlined
-		}),
+		evaluateVariantClasses({outlined}, variants),
 		_class
 	)}
 	{...$$restProps}

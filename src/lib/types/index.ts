@@ -1,8 +1,6 @@
 import type { ContainerOptions } from './container';
-import type { SupportedElement } from '../utils/elements';
 import type { DividerOptions } from './divider';
 import type { TypographyOptions } from './typography';
-import type { ButtonOptions } from './button';
 import type { DrawerOptions } from './drawer';
 import type { CardActionOptions, CardContentOptions, CardHeaderOptions, CardOptions, CardTitleOptions } from './card';
 import type { TabGroupOptions, TabListOptions, TabOptions, TabPanelOptions, TabPanelsOptions } from './tabs';
@@ -21,35 +19,33 @@ import type {
 	TableOptions,
 	TableRowOptions
 } from './table';
+import type { ButtonOptions } from '$lib/types/button';
 
-export type PaletteColor = {
+export type ColorPalette = {
 	main: string;
 	onMain: string;
 	container: string;
 	onContainer: string;
 }
 
-export type PaletteColors = {
-	primary: string;
-	onPrimary: string;
-	primaryContainer: string;
-	onPrimaryContainer: string;
-	secondary: PaletteColor;
-	ternary: PaletteColor;
-	error: PaletteColor;
-	background: string
-	onBackground: string
-	surface: string
-	onSurface: string
-	surfaceVariant: string;
-	onSurfaceVariant: string;
-	outline: string;
-	outlineVariant: string;
+export type SurfacePalette = {
+	main: string;
+	dim: string;
+	bright: string;
+	containerLowest: string;
+	containerLow: string;
+	container: string;
+	containerHigh: string;
+	containerHighest: string;
 }
 
 export type Palette = {
-	get: (color: keyof PaletteColors, type: "color" | "background") => string
-} & PaletteColors;
+	primary: ColorPalette;
+	secondary: ColorPalette;
+	ternary: ColorPalette;
+	error: ColorPalette;
+	surface: SurfacePalette
+}
 
 export type ThemeOptions = {
 	components?: {
@@ -90,15 +86,20 @@ export type ThemeOptions = {
 
 export type Theme = {
 	palette: Palette
-} & ThemeOptions;
+} & Required<ThemeOptions>;
 
-export type ComponentOptions<P, O> = {
-	defaultProps?: P;
-	styleOverrides?: O;
+export type Variants<T> = {
+		props: T,
+		class: string
+}[]
+
+export type ComponentOptions<T> = {
+	defaultProps: T;
+	variants: Variants<T>
 };
 
 export type ElementProps = {
-	element?: SupportedElement;
+	element?: keyof HTMLElementTagNameMap;
 };
 
 export type Elevation = 'none' | 'sm' | 'default' | 'md' | 'lg' | 'xl' | '2xl';

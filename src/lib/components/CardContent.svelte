@@ -2,9 +2,10 @@
 	import { twMerge } from 'tailwind-merge';
 	import getThemeContext from '../styles/getThemeContext';
 	import type { CardContentProps } from '../types';
+	import evaluateVariantClasses from '$lib/styles/evaluateVariantClasses';
 
 	const theme = getThemeContext();
-	const { defaultProps, styleOverrides } = theme.components.CardContent;
+	const { defaultProps, variants } = theme.components.CardContent;
 
 	let _class = '';
 	export { _class as class };
@@ -13,7 +14,9 @@
 
 <svelte:element
 	this={element}
-	class={twMerge('px-8 py-6', styleOverrides.root, _class)}
+	class={twMerge(
+		evaluateVariantClasses({}, variants), _class
+		)}
 	{...$$restProps}
 >
 	<slot />

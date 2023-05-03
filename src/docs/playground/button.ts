@@ -9,18 +9,19 @@ export default function getButtonTree(defaultProps: ButtonProps): PlaygroundComp
 		name: 'Button',
 		propDefinitions: [
 			{
-				name: 'variant',
-				description: 'The variant to use',
-				default: defaultProps.variant,
+				name: 'type',
+				description: 'The type of the button',
+				default: defaultProps.type,
 				control: {
 					type: 'select',
 					props: {
-						name: 'variant',
-						value: defaultProps.variant,
+						name: 'type',
+						value: defaultProps.type,
 						options: [
 							'filled',
 							'tonal',
-							'outlined'
+							'outlined',
+							'text'
 						]
 					}
 				}

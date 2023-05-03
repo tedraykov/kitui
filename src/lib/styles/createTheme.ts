@@ -1,48 +1,49 @@
-import type { ThemeOptions } from '../types';
+import type { ThemeOptions } from '$lib';
 import merge from 'lodash-es/merge.js';
+import defaultButtonOptions from '$lib/styles/default/button';
+import defaultCardOptions from '$lib/styles/default/card';
+import defaultCardTitleOptions from '$lib/styles/default/cardTitle';
+import defaultCardActionOptions from '$lib/styles/default/cardAction';
+import defaultCardContentOptions from '$lib/styles/default/cardContent';
+import defaultCardHeaderOptions from '$lib/styles/default/cardHeader';
+// import defaultChipOptions from '$lib/styles/default/chip';
+// import defaultContainerOptions from '$lib/styles/default/container';
+// import defaultDividerOptions from '$lib/styles/default/divider';
+// import defaultDrawerOptions from '$lib/styles/default/drawer';
+// import defaultHeadingOptions from '$lib/styles/default/heading';
+// import defaultIconOptions from '$lib/styles/default/icon';
+// import defaultIconButtonOptions from '$lib/styles/default/iconButton';
+// import defaultInputOptions from '$lib/styles/default/input';
+// import defaultLinkOptions from '$lib/styles/default/link';
+// import defaultListOptions from '$lib/styles/default/list';
+// import defaultListItemOptions from '$lib/styles/default/listItem';
+// import defaultMenuOptions from '$lib/styles/default/menu';
+// import defaultMenuItemOptions from '$lib/styles/default/menuItem';
+// import defaultModalOptions from '$lib/styles/default/modal';
+// import defaultPaperOptions from '$lib/styles/default/paper';
+// import defaultPopoverOptions from '$lib/styles/default/popover';
+// import defaultRadioOptions from '$lib/styles/default/radio';
+// import defaultSelectOptions from '$lib/styles/default/select';
+// import defaultSliderOptions from '$lib/styles/default/slider';
+// import defaultSnackbarOptions from '$lib/styles/default/snackbar';
+// import defaultSwitchOptions from '$lib/styles/default/switch';
+// import defaultTabOptions from '$lib/styles/default/tab';
+// import defaultTableOptions from '$lib/styles/default/table';
+// import defaultTableCellOptions from '$lib/styles/default/tableCell';
+// import defaultTableHeadOptions from '$lib/styles/default/tableHead';
+// import defaultTableRowOptions from '$lib/styles/default/tableRow';
+// import defaultTabsOptions from '$lib/styles/default/tabs';
+// import defaultTextareaOptions from '$lib/styles/default/textarea';
+// import defaultTooltipOptions from '$lib/styles/default/tooltip';
 
-export const defaultTheme: ThemeOptions = {
+export const defaultTheme: Required<ThemeOptions> = {
 	components: {
-		Button: {
-			defaultProps: {
-				element: 'button',
-				variant: 'filled',
-				color: 'primary',
-				size: 'medium'
-			},
-			styleOverrides: {}
-		},
-		Card: {
-			defaultProps: {
-				element: 'div',
-				outlined: false
-			},
-			styleOverrides: {}
-		},
-		CardAction: {
-			defaultProps: {
-				element: 'div'
-			},
-			styleOverrides: {}
-		},
-		CardContent: {
-			defaultProps: {
-				element: 'div'
-			},
-			styleOverrides: {}
-		},
-		CardHeader: {
-			defaultProps: {
-				element: 'div'
-			},
-			styleOverrides: {}
-		},
-		CardTitle: {
-			defaultProps: {
-				element: 'h3'
-			},
-			styleOverrides: {}
-		},
+		Button: defaultButtonOptions,
+		Card: defaultCardOptions,
+		CardAction: defaultCardActionOptions,
+		CardContent: defaultCardContentOptions,
+		CardHeader: defaultCardHeaderOptions,
+		CardTitle: defaultCardTitleOptions,
 		Chip: {
 			defaultProps: {
 				element: 'div',
@@ -187,26 +188,7 @@ export const defaultTheme: ThemeOptions = {
 				size: 'medium'
 			},
 			styleOverrides: {
-				displaySmall: '',
-				display: '',
-				displayMedium: '',
-				displayLarge: '',
-				headline: '',
-				headlineSmall: '',
-				headlineMedium: '',
-				headlineLarge: '',
-				titleSmall: '',
-				title: '',
-				titleMedium: '',
-				titleLarge: '',
-				label: '',
-				labelSmall: '',
-				labelMedium: '',
-				labelLarge: '',
-				body: '',
-				bodySmall: '',
-				bodyMedium: '',
-				bodyLarge: ''
+				displaySmall: 'text'
 			}
 		},
 		Paper: {
@@ -220,5 +202,5 @@ export const defaultTheme: ThemeOptions = {
 };
 
 export const createTheme = (theme: ThemeOptions) => {
-	return merge(defaultTheme, theme);
+	return merge<Required<ThemeOptions>, ThemeOptions>(defaultTheme, theme);
 };

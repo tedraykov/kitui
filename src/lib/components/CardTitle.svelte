@@ -3,9 +3,10 @@
 	import getThemeContext from '../styles/getThemeContext';
 	import type { CardTitleProps } from '../types';
 	import { twMerge } from 'tailwind-merge';
+	import evaluateVariantClasses from '$lib/styles/evaluateVariantClasses';
 
 	const theme = getThemeContext();
-	const { defaultProps, styleOverrides } = theme.components.CardTitle;
+	const { defaultProps, variants } = theme.components.CardTitle;
 
 	let _class = '';
 	export { _class as class };
@@ -15,7 +16,10 @@
 <Typography
 	{element}
 	variant="headline"
-	class={twMerge(styleOverrides.root, _class)}
+	class={twMerge(
+		evaluateVariantClasses({}, variants),
+		_class
+	)}
 	{...$$restProps}
 >
 	<slot />
