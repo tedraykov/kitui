@@ -3,7 +3,6 @@
 	import { getContext } from 'svelte';
 	import type { Writable } from 'svelte/store';
 	import type { ComponentPropsMap } from '../../types';
-
 	export let name: string;
 	export let options: string[] = [];
 	export let value: string;

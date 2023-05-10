@@ -14,10 +14,9 @@
 	export let data;
 	const theme = createTheme({});
 	setThemeContext(theme);
-
 </script>
 
-<div class={`flex min-h-screen overflow-x-hidden bg-neutral-100`}>
+<div class={`flex min-h-screen overflow-x-hidden bg-surface`}>
 		<Drawer class='md:hidden' variant="temporary" open={$sidebarOpen} on:close={toggleSidebar}>
 			<SidebarList />
 		</Drawer>

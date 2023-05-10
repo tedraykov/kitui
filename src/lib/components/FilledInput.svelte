@@ -1,7 +1,7 @@
 <script lang='ts'>
-	import { twMerge } from 'tailwind-merge';
 	import getThemeContext from '../styles/getThemeContext';
 	import type { FilledInputProps } from '../types';
+	import { twMerge } from 'tailwind-merge';
 
 	const theme = getThemeContext();
 	const { defaultProps, styleOverrides } = theme.components.FilledInput;
@@ -31,10 +31,10 @@
 
 <style>
     :global([slot='startAdornment']) {
-        @apply pl-4 px-2 h-4 w-auto text-primary-40 pointer-events-auto;
+        @apply pl-4 px-2 h-4 w-auto text-primary pointer-events-auto;
     }
 
     :global([slot='endAdornment']) {
-        @apply pl-2 px-4 h-4 w-auto text-primary-40 pointer-events-auto;
+        @apply pl-2 px-4 h-4 w-auto text-primary pointer-events-auto;
     }
 </style>

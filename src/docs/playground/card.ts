@@ -22,14 +22,18 @@ export default function getCardTree(defaultProps: CardDefaultProps): PlaygroundC
 		name: 'Card',
 		propDefinitions: [
 			{
-				name: 'outlined',
-				description: 'Whether the card should be outlined',
-				default: defaultProps.Card.outlined,
+				name: 'type',
+				description: 'Three official card types',
+				default: defaultProps.Card.type,
 				control: {
-					type: 'switch',
+					type: 'select',
 					props: {
-						name: 'outlined',
-						value: defaultProps.Card.outlined
+						name: 'type',
+						options: [
+							'outlined',
+							'elevated',
+							'filled'
+						]
 					}
 				}
 			}

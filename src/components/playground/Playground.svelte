@@ -6,7 +6,7 @@
 	import type { ComponentPropsMap, PlaygroundComponentNode, PropDefinitionsMap } from '../../types';
 	import { writable } from 'svelte/store';
 
-	export let componentTree: PlaygroundComponentNode = undefined;
+	export let componentTree: PlaygroundComponentNode;
 
 	function getPropDefinitionsMap(componentTree: PlaygroundComponentNode) {
 		const propDefinitionsMap: PropDefinitionsMap = {};

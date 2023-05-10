@@ -10,13 +10,13 @@
 	let _class = '';
 	export { _class as class };
 	export let element: CardProps['element'] = defaultProps.element;
-	export let outlined: CardProps['outlined'] = defaultProps.outlined;
+	export let type: CardProps['type'] = defaultProps.type;
 </script>
 
 <svelte:element
 	this={element}
 	class={twMerge(
-		evaluateVariantClasses({outlined}, variants),
+		evaluateVariantClasses({type}, variants),
 		_class
 	)}
 	{...$$restProps}

@@ -18,7 +18,7 @@
 				<img src="/logo.png" alt="Logo" />
 			</a>
 			<Stack direction="row" gap="4" class="flex-1 justify-end">
-				<Button element="a" href="https://github.com/alttreble/kitui" variant="text" size="small">
+				<Button element="a" href="https://github.com/alttreble/kitui" type="outlined" size="small">
 					<img src="/github.svg" alt="Github icon" />
 				</Button>
 			</Stack>

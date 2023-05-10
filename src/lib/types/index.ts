@@ -89,7 +89,7 @@ export type Theme = {
 } & Required<ThemeOptions>;
 
 export type Variants<T> = {
-		props: T,
+		props: Partial<T>,
 		class: string
 }[]
 
@@ -99,7 +99,7 @@ export type ComponentOptions<T> = {
 };
 
 export type ElementProps = {
-	element?: keyof HTMLElementTagNameMap;
+	element: keyof HTMLElementTagNameMap;
 };
 
 export type Elevation = 'none' | 'sm' | 'default' | 'md' | 'lg' | 'xl' | '2xl';

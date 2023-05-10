@@ -24,15 +24,15 @@ export default function getChipTree(defaultProps: ChipProps): PlaygroundComponen
 				}
 			},
 			{
-				name: 'size',
-				default: defaultProps.size,
-				description: 'The size to use. Accepted sizes are small, medium, and large.',
+				name: 'type',
+				default: defaultProps.type,
+				description: 'The type to use',
 				control: {
 					type: 'select',
 					props: {
-						name: 'size',
-						value: defaultProps.size,
-						options: ['small', 'medium', 'large']
+						name: 'type',
+						value: defaultProps.type,
+						options: [ 'outlined', 'filled']
 					}
 				}
 			}

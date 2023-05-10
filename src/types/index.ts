@@ -34,8 +34,8 @@ export type ComponentControl = {
 export type PropDefinition = {
 	name: string;
 	description?: string;
-	default?: string | boolean;
-	control?: ComponentControl;
+	default: string | boolean;
+	control: ComponentControl;
 };
 
 export type Props = Record<string, string | boolean | number>;

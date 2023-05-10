@@ -3,16 +3,24 @@ import type { CardOptions } from '$lib';
 const defaultCardOptions: CardOptions = {
 	defaultProps: {
 		element: 'div',
-		outlined: false
+		type: 'outlined'
 	},
 	variants: [
 		{
-			props: { outlined: false },
-			class: `bg-white rounded-xl box-border bg-surface`
+			props: {},
+			class: "rounded-xl"
 		},
 		{
-			props: { outlined: true },
-			class: `shadow-none border border-outline-variant`
+			props: { type: 'filled' },
+			class: "bg-surface-container-highest"
+		},
+		{
+			props: { type: 'outlined' },
+			class: `shadow-none border border-outline-variant bg-surface`
+		},
+		{
+			props: {type: 'elevated'},
+			class: `shadow-md bg-surface-container-low`
 		}
 	]
 }

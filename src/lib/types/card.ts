@@ -4,8 +4,9 @@ import type { ComponentOptions, ElementProps } from './index';
 export type CardOptions = ComponentOptions<CardProps>;
 
 export type CardProps = ElementProps & {
-	outlined?: boolean;
+	type: 'outlined' | 'elevated' | 'filled'
 };
+export type CardPropsOption = Partial<CardProps>
 
 /* Card Header */
 export type CardHeaderOptions = ComponentOptions<CardHeaderProps>;

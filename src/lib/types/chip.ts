@@ -1,12 +1,9 @@
 import type { ComponentOptions, Colors, ElementProps } from './index';
 
-export type ChipOptions = ComponentOptions<ChipProps, ChipStyleOverrideOptions>;
+export type ChipOptions = ComponentOptions<ChipPropsOptions>;
 
 export type ChipProps = ElementProps & {
-	color?: Colors
-	size?: "small" | 'medium'
+	color: Colors
+	type: 'outlined' | 'filled'
 }
-
-export type ChipStyleOverrideOptions = {
-	root?: string;
-};
+export type ChipPropsOptions = Partial<ChipProps>

@@ -31,9 +31,9 @@
 
 <style>
 	:global([slot='startAdornment']) {
-		@apply pl-4 px-2 h-4 w-auto text-primary-40 pointer-events-auto;
+		@apply pl-4 px-2 h-4 w-auto text-primary pointer-events-auto;
 	}
 	:global([slot='endAdornment']) {
-		@apply pl-2 px-4 h-4 w-auto text-primary-40 pointer-events-auto;
+		@apply pl-2 px-4 h-4 w-auto text-primary pointer-events-auto;
 	}
 </style>

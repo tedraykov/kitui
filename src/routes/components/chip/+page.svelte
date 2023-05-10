@@ -36,17 +36,7 @@
 				<CardContent>
 					<Stack>
 						<Stack>
-							<Typography variant='label'>Small</Typography>
-							<Stack direction='row'>
-								<Chip color='primary' size='small'>Primary</Chip>
-								<Chip color='success' size='small'>Success</Chip>
-								<Chip color='warning' size='small'>Warning</Chip>
-								<Chip color='error' size='small'>Error</Chip>
-							</Stack>
-						</Stack>
-						<Divider/>
-						<Stack>
-							<Typography variant='label'>Normal</Typography>
+							<Typography variant='label'>Outlined</Typography>
 							<Stack direction='row'>
 								<Chip color='primary'>Primary</Chip>
 								<Chip color='success'>Success</Chip>
@@ -55,14 +45,11 @@
 							</Stack>
 						</Stack>
 						<Divider/>
-						<Stack>
-							<Typography variant='label'>Normal</Typography>
-							<Stack direction='row'>
-								<Chip size='large' color='primary'>Primary</Chip>
-								<Chip size='large' color='success'>Success</Chip>
-								<Chip size='large' color='warning'>Warning</Chip>
-								<Chip size='large' color='error'>Error</Chip>
-							</Stack>
+						<Stack direction='row'>
+							<Chip color='primary' type='filled'>Primary</Chip>
+							<Chip color='success' type='filled'>Success</Chip>
+							<Chip color='warning' type='filled'>Warning</Chip>
+							<Chip color='error' type='filled'>Error</Chip>
 						</Stack>
 					</Stack>
 				</CardContent>

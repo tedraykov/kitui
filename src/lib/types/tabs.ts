@@ -1,10 +1,7 @@
 import type { ComponentOptions, ElementProps } from './index';
 
 /* Tab Group */
-export type TabGroupOptions = ElementProps & {
-	defaultProps?: TabGroupProps;
-	styleOverrides?: any;
-};
+export type TabGroupOptions = ComponentOptions<TabGroupProps>;
 
 export type TabGroupProps = ElementProps & {
 	defaultIndex?: number;
@@ -19,23 +16,23 @@ export type TabGroupProps = ElementProps & {
 };
 
 /* Tab List */
-export type TabListOptions = ComponentOptions<TabListProps, object>;
+export type TabListOptions = ComponentOptions<TabListProps>;
 
 export type TabListProps = ElementProps;
 
 /* Tab */
-export type TabOptions = ComponentOptions<TabProps, any>;
+export type TabOptions = ComponentOptions<TabProps>;
 
 export type TabProps = ElementProps & {
 	disabled?: boolean;
 };
 
 /* Tab Panels */
-export type TabPanelsOptions = ComponentOptions<TabPanelsProps, any>;
+export type TabPanelsOptions = ComponentOptions<TabPanelsProps>;
 
 export type TabPanelsProps = ElementProps;
 
 /* Tab Panel */
-export type TabPanelOptions = ComponentOptions<TabPanelProps, any>;
+export type TabPanelOptions = ComponentOptions<TabPanelProps>;
 
 export type TabPanelProps = ElementProps;

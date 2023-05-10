@@ -64,7 +64,7 @@ const defaultOptions: ButtonOptions = {
 		},
 		{
 			props: { type: 'filled', color: 'primary' },
-			class: `bg-gradient-to-b from-primary-30 to-primary-40
+			class: `bg-gradient-to-b from-primary-30 to-primary
          					shadow-md shadow-primary-200/50
          					active:from-primary-600 active:to-primary-700`
 		},

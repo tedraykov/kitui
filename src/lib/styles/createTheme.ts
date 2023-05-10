@@ -6,7 +6,7 @@ import defaultCardTitleOptions from '$lib/styles/default/cardTitle';
 import defaultCardActionOptions from '$lib/styles/default/cardAction';
 import defaultCardContentOptions from '$lib/styles/default/cardContent';
 import defaultCardHeaderOptions from '$lib/styles/default/cardHeader';
-// import defaultChipOptions from '$lib/styles/default/chip';
+import defaultChipOptions from '$lib/styles/default/chip';
 // import defaultContainerOptions from '$lib/styles/default/container';
 // import defaultDividerOptions from '$lib/styles/default/divider';
 // import defaultDrawerOptions from '$lib/styles/default/drawer';
@@ -44,14 +44,7 @@ export const defaultTheme: Required<ThemeOptions> = {
 		CardContent: defaultCardContentOptions,
 		CardHeader: defaultCardHeaderOptions,
 		CardTitle: defaultCardTitleOptions,
-		Chip: {
-			defaultProps: {
-				element: 'div',
-				color: 'primary',
-				size: 'medium'
-			},
-			styleOverrides: {}
-		},
+		Chip: defaultChipOptions,
 		Container: {
 			defaultProps: {
 				element: 'div'
@@ -116,34 +109,34 @@ export const defaultTheme: Required<ThemeOptions> = {
 				element: 'div',
 				vertical: false,
 				manual: false,
-				defaultIndex: 0
+				defaultIndex: 0,
 			},
-			styleOverrides: {}
+			variants: []
 		},
 		TabList: {
 			defaultProps: {
 				element: 'ul'
 			},
-			styleOverrides: {}
+			variants: []
 		},
 		Tab: {
 			defaultProps: {
 				element: 'li',
 				disabled: false
 			},
-			styleOverrides: {}
+			variants: []
 		},
 		TabPanels: {
 			defaultProps: {
 				element: 'div'
 			},
-			styleOverrides: {}
+			variants: []
 		},
 		TabPanel: {
 			defaultProps: {
 				element: 'div'
 			},
-			styleOverrides: {}
+			variants: []
 		},
 		Table: {
 			defaultProps: {
@@ -202,5 +195,6 @@ export const defaultTheme: Required<ThemeOptions> = {
 };
 
 export const createTheme = (theme: ThemeOptions) => {
+
 	return merge<Required<ThemeOptions>, ThemeOptions>(defaultTheme, theme);
 };
