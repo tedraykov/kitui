@@ -6,6 +6,7 @@
 	import { Icon } from '@steeze-ui/svelte-icon';
 	import { Bars3 } from '@steeze-ui/heroicons';
 	import { toggleSidebar } from '../stores/uiStore';
+	import DarkThemeToggle from './DarkThemeToggle.svelte';
 </script>
 
 <Toolbar>
@@ -17,7 +18,8 @@
 			<a href="/" class="w-12 h-12 p-2">
 				<img src="/logo.png" alt="Logo" />
 			</a>
-			<Stack direction="row" gap="4" class="flex-1 justify-end">
+			<Stack direction="row" gap={4} class="flex-1 justify-end">
+				<DarkThemeToggle/>
 				<Button element="a" href="https://github.com/alttreble/kitui" type="outlined" size="small">
 					<img src="/github.svg" alt="Github icon" />
 				</Button>

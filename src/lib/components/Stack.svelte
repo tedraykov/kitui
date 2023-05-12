@@ -6,7 +6,7 @@
 	import type { StackProps } from '../types';
 
 	const theme = getThemeContext();
-	const { defaultProps, styleOverrides } = theme.components.Stack;
+	const { defaultProps } = theme.components.Stack;
 
 	let _class = '';
 	export { _class as class };

@@ -20,6 +20,7 @@ import type {
 	TableRowOptions
 } from './table';
 import type { ButtonOptions } from '$lib/types/button';
+import type { SwitchOptions } from '$lib/types/switch';
 
 export type ColorPalette = {
 	main: string;
@@ -69,6 +70,7 @@ export type ThemeOptions = {
 		ListItem?: ListItemOptions;
 		Paper?: PaperOptions;
 		Stack?: StackOptions;
+		Switch?: SwitchOptions;
 		TabGroup?: TabGroupOptions;
 		TabList?: TabListOptions;
 		Tab?: TabOptions;
@@ -93,9 +95,10 @@ export type Variants<T> = {
 		class: string
 }[]
 
-export type ComponentOptions<T> = {
+export type ComponentOptions<T, U = unknown> = {
 	defaultProps: T;
 	variants: Variants<T>
+	styleOverrides: U;
 };
 
 export type ElementProps = {
@@ -103,7 +106,7 @@ export type ElementProps = {
 };
 
 export type Elevation = 'none' | 'sm' | 'default' | 'md' | 'lg' | 'xl' | '2xl';
-export type Colors = 'primary' | 'secondary' | 'ternary' | 'success' | 'warning' | 'error' | 'inherit';
+export type Colors = 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'error' | 'inherit';
 
 export * from './adornment';
 export * from './button';
@@ -117,5 +120,6 @@ export * from './input';
 export * from './list';
 export * from './paper';
 export * from './stack';
+export * from './switch';
 export * from './tabs';
 export * from './typography';

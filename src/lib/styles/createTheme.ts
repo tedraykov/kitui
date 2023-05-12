@@ -26,7 +26,7 @@ import defaultChipOptions from '$lib/styles/default/chip';
 // import defaultSelectOptions from '$lib/styles/default/select';
 // import defaultSliderOptions from '$lib/styles/default/slider';
 // import defaultSnackbarOptions from '$lib/styles/default/snackbar';
-// import defaultSwitchOptions from '$lib/styles/default/switch';
+import defaultSwitchOptions from '$lib/styles/default/switch';
 // import defaultTabOptions from '$lib/styles/default/tab';
 // import defaultTableOptions from '$lib/styles/default/table';
 // import defaultTableCellOptions from '$lib/styles/default/tableCell';
@@ -104,12 +104,13 @@ export const defaultTheme: Required<ThemeOptions> = {
 			},
 			styleOverrides: {}
 		},
+		Switch: defaultSwitchOptions,
 		TabGroup: {
 			defaultProps: {
 				element: 'div',
 				vertical: false,
 				manual: false,
-				defaultIndex: 0,
+				defaultIndex: 0
 			},
 			variants: []
 		},

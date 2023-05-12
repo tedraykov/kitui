@@ -3,36 +3,46 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import {variables, darkVariables} from '@mertasan/tailwindcss-variables/api';
-import { argbFromHex, hexFromArgb, themeFromSourceColor } from '@material/material-color-utilities';
+import {
+	argbFromHex,
+	hexFromArgb,
+	themeFromSourceColor,
+	redFromArgb,
+	greenFromArgb, blueFromArgb
+} from '@material/material-color-utilities';
+
+const variablePrefix = 'kitui';
 
 const variableOptions = {
-	variablePrefix: 'kitui'
+	variablePrefix
 }
 
-const pluginVariables = {
-	DEFAULT: {
-		colors: {
-			primary: {
-				DEFAULT: 'white',
-				container: 'black'
-			},
-		},
-	},
-}
+function alphaRgbaFromArgb(color: number, opacity: number) {
+	const r = redFromArgb(color);
+	const g = greenFromArgb(color);
+	const b = blueFromArgb(color);
 
-const pluginDarkVariables = {
-	DEFAULT: {
-		colors: {
-			primary: {
-				DEFAULT: 'black',
-				container: 'white',
-			},
-		},
-	},
+	return `rgba(${r}, ${g}, ${b}, ${opacity})`;
 }
 
 function computeVariables(options: any) {
-	const materialTheme = themeFromSourceColor(argbFromHex(options.primaryColor))
+	const {
+		primaryColor = "#0b57d0",
+		successColor = "#386A20",
+		warningColor = "#cbbf3b",
+	} = options;
+	const materialTheme = themeFromSourceColor(argbFromHex(primaryColor),  [
+		{
+			value: argbFromHex(successColor),
+			name: "success",
+			blend: true
+		},
+		{
+			value: argbFromHex(warningColor),
+			name: "warning",
+			blend: true
+		}
+	])
 
 	return {
 			light: {
@@ -41,12 +51,42 @@ function computeVariables(options: any) {
 						on: {
 							primary: hexFromArgb(materialTheme.schemes.light.onPrimary),
 							"primary-container": hexFromArgb(materialTheme.schemes.light.onPrimaryContainer),
+							secondary: hexFromArgb(materialTheme.schemes.light.onSecondary),
+							"secondary-container": hexFromArgb(materialTheme.schemes.light.onSecondaryContainer),
+							tertiary: hexFromArgb(materialTheme.schemes.light.onTertiary),
+							"tertiary-container": hexFromArgb(materialTheme.schemes.light.onTertiaryContainer),
+							success: hexFromArgb(materialTheme.customColors[0].light.onColor),
+							"success-container": hexFromArgb(materialTheme.customColors[0].light.onColorContainer),
+							warning: hexFromArgb(materialTheme.customColors[1].light.onColor),
+							"warning-container": hexFromArgb(materialTheme.customColors[1].light.onColorContainer),
+							error: hexFromArgb(materialTheme.schemes.light.onError),
+							"error-container": hexFromArgb(materialTheme.schemes.light.onErrorContainer),
 							surface: hexFromArgb(materialTheme.schemes.light.onSurface),
 							"surface-variant": hexFromArgb(materialTheme.schemes.light.onSurfaceVariant),
 						},
 						primary: {
 							DEFAULT: hexFromArgb(materialTheme.schemes.light.primary),
 							container: hexFromArgb(materialTheme.schemes.light.primaryContainer),
+						},
+						secondary: {
+							DEFAULT: hexFromArgb(materialTheme.schemes.light.secondary),
+							container: hexFromArgb(materialTheme.schemes.light.secondaryContainer),
+						},
+						tertiary: {
+							DEFAULT: hexFromArgb(materialTheme.schemes.light.tertiary),
+							container: hexFromArgb(materialTheme.schemes.light.tertiaryContainer),
+						},
+						success: {
+							DEFAULT: hexFromArgb(materialTheme.customColors[0].light.color),
+							container: hexFromArgb(materialTheme.customColors[0].light.colorContainer),
+						},
+						warning: {
+							DEFAULT: hexFromArgb(materialTheme.customColors[1].light.color),
+							container: hexFromArgb(materialTheme.customColors[1].light.colorContainer),
+						},
+						error: {
+							DEFAULT: hexFromArgb(materialTheme.schemes.light.error),
+							container: hexFromArgb(materialTheme.schemes.light.errorContainer),
 						},
 						surface: {
 							DEFAULT: hexFromArgb(materialTheme.schemes.light.surface),
@@ -62,6 +102,14 @@ function computeVariables(options: any) {
 						outline: {
 							DEFAULT: hexFromArgb(materialTheme.schemes.light.outline),
 							variant: hexFromArgb(materialTheme.schemes.light.outlineVariant)
+						},
+						"state-layer": {
+							primary: {
+								"8": alphaRgbaFromArgb(materialTheme.schemes.light.primary, 0.08),
+							},
+							"on-surface": {
+								"8": alphaRgbaFromArgb(materialTheme.schemes.light.onSurface, 0.08)
+							}
 						}
 					}
 				}
@@ -72,12 +120,42 @@ function computeVariables(options: any) {
 						on: {
 							primary: hexFromArgb(materialTheme.schemes.dark.onPrimary),
 							"primary-container": hexFromArgb(materialTheme.schemes.dark.onPrimaryContainer),
+							secondary: hexFromArgb(materialTheme.schemes.dark.onSecondary),
+							"secondary-container": hexFromArgb(materialTheme.schemes.dark.onSecondaryContainer),
+							tertiary: hexFromArgb(materialTheme.schemes.dark.onTertiary),
+							"tertiary-container": hexFromArgb(materialTheme.schemes.dark.onTertiaryContainer),
+							success: hexFromArgb(materialTheme.customColors[0].dark.onColor),
+							"success-container": hexFromArgb(materialTheme.customColors[0].dark.onColorContainer),
+							warningColor: hexFromArgb(materialTheme.customColors[1].dark.onColor),
+							"warning-container": hexFromArgb(materialTheme.customColors[1].dark.onColorContainer),
+							error: hexFromArgb(materialTheme.schemes.dark.onError),
+							"error-container": hexFromArgb(materialTheme.schemes.dark.onErrorContainer),
 							surface: hexFromArgb(materialTheme.schemes.dark.onSurface),
 							"surface-variant": hexFromArgb(materialTheme.schemes.dark.onSurfaceVariant),
 						},
 						primary: {
 							DEFAULT: hexFromArgb(materialTheme.schemes.dark.primary),
 							container: hexFromArgb(materialTheme.schemes.dark.primaryContainer),
+						},
+						secondary: {
+							DEFAULT: hexFromArgb(materialTheme.schemes.dark.secondary),
+							container: hexFromArgb(materialTheme.schemes.dark.secondaryContainer),
+						},
+						tertiary: {
+							DEFAULT: hexFromArgb(materialTheme.schemes.dark.tertiary),
+							container: hexFromArgb(materialTheme.schemes.dark.tertiaryContainer),
+						},
+						success: {
+							DEFAULT: hexFromArgb(materialTheme.customColors[0].light.color),
+							container: hexFromArgb(materialTheme.customColors[0].light.colorContainer),
+						},
+						warning: {
+							DEFAULT: hexFromArgb(materialTheme.customColors[1].light.color),
+							container: hexFromArgb(materialTheme.customColors[1].light.colorContainer),
+						},
+						error: {
+							DEFAULT: hexFromArgb(materialTheme.schemes.dark.error),
+							container: hexFromArgb(materialTheme.schemes.dark.errorContainer)
 						},
 						surface: {
 							DEFAULT: hexFromArgb(materialTheme.schemes.dark.surface),
@@ -89,6 +167,10 @@ function computeVariables(options: any) {
 							container: hexFromArgb(materialTheme.palettes.neutral.tone(12)),
 							"container-high": hexFromArgb(materialTheme.palettes.neutral.tone(17)),
 							"container-highest": hexFromArgb(materialTheme.palettes.neutral.tone(22))
+						},
+						outline: {
+							DEFAULT: hexFromArgb(materialTheme.schemes.dark.outline),
+							variant: hexFromArgb(materialTheme.schemes.dark.outlineVariant)
 						}
 					}
 				}
@@ -97,14 +179,15 @@ function computeVariables(options: any) {
 }
 
 export default plugin.withOptions(
-	(options = {primaryColor: "#0b57d0"}) => {
+	(options) => {
 		return ({addComponents, addBase}) => {
 			const {light, dark} = computeVariables(options)
 			addComponents(variables(light, variableOptions))
-			addComponents(darkVariables(dark, variableOptions))
+			addComponents(darkVariables(dark, variableOptions, 'class'))
 			addBase({
 				body: {
-					color: 'var(--kitui-color-on-surface)'
+					color: 'var(--kitui-color-on-surface)',
+					backgroundColor: 'var(--kitui-color-surface)'
 				}
 			})
 		}},
@@ -133,11 +216,41 @@ export default plugin.withOptions(
 						colors: {
 							'on': {
 								'primary': 'var(--kitui-color-on-primary)',
-								'primary-container': 'var(--kitui-color-on-primary-container)'
+								'primary-container': 'var(--kitui-color-on-primary-container)',
+								'secondary': 'var(--kitui-color-on-secondary)',
+								'secondary-container': 'var(--kitui-color-on-secondary-container)',
+								'tertiary': 'var(--kitui-color-on-tertiary)',
+								'tertiary-container': 'var(--kitui-color-on-tertiary-container)',
+								'surface': 'var(--kitui-color-on-surface)',
+								'surface-container': 'var(--kitui-color-on-surface-container)',
+								'surface-variant': 'var(--kitui-color-on-surface-variant)',
+								'surface-variant-container': 'var(--kitui-color-on-surface-variant-container)',
+								'success': 'var(--kitui-color-on-success)',
+								'success-container': 'var(--kitui-color-on-success-container)',
+								'warning': 'var(--kitui-color-on-warning)',
+								'warning-container': 'var(--kitui-color-on-warning-container)',
+								error: 'var(--kitui-color-on-error)',
+								'error-container': 'var(--kitui-color-on-error-container)'
 							},
 							'primary': {
 								'DEFAULT': 'var(--kitui-color-primary)',
 								'container': 'var(--kitui-color-primary-container)'
+							},
+							secondary: {
+								DEFAULT: 'var(--kitui-color-secondary)',
+								container: 'var(--kitui-color-secondary-container)'
+							},
+							tertiary: {
+								DEFAULT: 'var(--kitui-color-tertiary)',
+								container: 'var(--kitui-color-tertiary-container)'
+							},
+							success: {
+								DEFAULT: 'var(--kitui-color-success)',
+								container: 'var(--kitui-color-success-container)'
+							},
+							error: {
+								DEFAULT: 'var(--kitui-color-error)',
+								container: 'var(--kitui-color-error-container)'
 							},
 							'surface': {
 								'DEFAULT': 'var(--kitui-color-surface)',

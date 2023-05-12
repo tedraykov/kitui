@@ -9,7 +9,7 @@ const defaultOptions: ChipOptions = {
 	variants: [
 		{
 			props: {},
-			class: "w-fit rounded"
+			class: "w-fit rounded box-border h-8"
 		},
 		{
 			props: { color: "primary", type: 'filled' },
@@ -20,8 +20,8 @@ const defaultOptions: ChipOptions = {
 			class: "bg-secondary-container text-secondary-onContainer"
 		},
 		{
-			props: { color: "ternary", type: 'filled' },
-			class: "bg-ternary-container text-ternary-onContainer"
+			props: { color: "tertiary", type: 'filled' },
+			class: "bg-tertiary-container text-tertiary-onContainer"
 		},
 		{
 			props: { color: "error", type: 'filled' },
@@ -44,8 +44,8 @@ const defaultOptions: ChipOptions = {
 			class: "border border-secondary text-secondary"
 		},
 		{
-			props: { color: "ternary", type: 'outlined' },
-			class: "border border-ternary text-ternary"
+			props: { color: "tertiary", type: 'outlined' },
+			class: "border border-tertiary text-tertiary"
 		},
 		{
 			props: { color: "error", type: 'outlined' },

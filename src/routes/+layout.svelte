@@ -16,7 +16,7 @@
 	setThemeContext(theme);
 </script>
 
-<div class={`flex min-h-screen overflow-x-hidden bg-surface`}>
+<div class={`flex min-h-screen overflow-x-hidden`}>
 		<Drawer class='md:hidden' variant="temporary" open={$sidebarOpen} on:close={toggleSidebar}>
 			<SidebarList />
 		</Drawer>

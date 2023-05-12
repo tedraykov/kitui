@@ -36,7 +36,7 @@ export default function getButtonTree(defaultProps: ButtonProps): PlaygroundComp
 						name: 'color',
 						value: defaultProps.color,
 						options: [
-							'primary', 'success', 'warning', 'error'
+							'primary', 'secondary', 'tertiary', 'success', 'warning', 'error'
 						]
 					}
 				}
