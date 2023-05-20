@@ -14,12 +14,14 @@
 	export let type: ButtonProps['type'] = defaultProps.type;
 	export let color: ButtonProps['color'] = defaultProps.color;
 	export let size: ButtonProps['size'] = defaultProps.size;
+
+    const {root} = evaluateVariantClasses({element, type, color, size}, variants);
 </script>
 
 <svelte:element
 	this={element}
 	class={twMerge(
-		evaluateVariantClasses({type, color, size}, variants),
+		root,
 		_class
 	)}
 	{...$$restProps}

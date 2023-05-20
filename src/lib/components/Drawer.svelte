@@ -1,13 +1,13 @@
 <script lang='ts'>
-	import { createEventDispatcher } from 'svelte';
-	import { fade } from 'svelte/transition';
-	import { twMerge } from 'tailwind-merge';
 	import getThemeContext from '../styles/getThemeContext';
 	import type { DrawerProps } from '../types';
+	import evaluateVariantClasses from '$lib/styles/evaluateVariantClasses';
+	import { fade } from 'svelte/transition';
+	import { twMerge } from 'tailwind-merge';
 
 	const theme = getThemeContext();
 
-	const { defaultProps, styleOverrides } = theme.components.Drawer;
+	const { defaultProps, variants } = theme.components.Drawer;
 
 	let _class = '';
 	export { _class as class };
@@ -16,44 +16,21 @@
 	export let variant: DrawerProps['variant'] = defaultProps.variant;
 	export let open: DrawerProps['open'] = defaultProps.open;
 
-	const dispatch = createEventDispatcher();
-
-	function handleClose() {
-		dispatch('close');
-	}
-
-	function themeTemporaryStyles() {
-		let classes = `bg-netural-95 ${styleOverrides.root} `;
-		if (variant === 'temporary') {
-			classes += `absolute top-0 left-0 w-72 bg-slate-100
-       h-full overflow-hidden
-       z-drawer
-       transition-all duration-200 `;
-			if (!open) {
-				classes += 'w-0 ';
-			}
-		}
-		return classes;
-	}
-
-	function getTemporaryDrawerStyles(..._) {
-		return twMerge(themeTemporaryStyles(), _class);
-	}
+    const {root, scrim} = evaluateVariantClasses({element, variant, open}, variants);
 </script>
 
 
 <svelte:element
-	class={getTemporaryDrawerStyles(open, variant, styleOverrides, _class)}
+	class={twMerge(root, _class)}
 	this={element}
 	{...$$restProps}
 >
 	<slot />
 </svelte:element>
 
-{#if variant === 'temporary' && open}
+{#if variant === 'modal' && open}
 	<span
 		in:fade={{ duration: 200 }}
 		out:fade={{ duration: 200 }}
-		on:click|stopPropagation={handleClose}
-		class='absolute w-screen h-screen bg-neutral-10/20'></span>
+		class={scrim}></span>
 {/if}

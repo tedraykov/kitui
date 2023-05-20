@@ -1,10 +1,10 @@
 import type { ComponentOptions } from '$lib';
 
-export type SwitchOptions = ComponentOptions<SwitchProps, SwitchStyleOverrides>;
+export type SwitchOptions = ComponentOptions<SwitchProps, SwitchStyles>;
 
-export type SwitchProps = {};
+export type SwitchProps = Record<string, unknown>;
 
-export type SwitchStyleOverrides = {
+export type SwitchStyles = {
 	root: string;
 	thumb: string;
 	checkbox: string;

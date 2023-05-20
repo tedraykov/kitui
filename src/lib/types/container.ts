@@ -1,9 +1,9 @@
 import type { ComponentOptions, ElementProps } from './index';
 
-export type ContainerOptions = ComponentOptions<ContainerProps, ContainerStyleOverrideOptions>;
+export type ContainerOptions = ComponentOptions<ContainerProps, ContainerStyles>;
 
 export type ContainerProps = ElementProps
 
-export type ContainerStyleOverrideOptions = {
-	root?: string;
+export type ContainerStyles  = {
+	root: string;
 };

@@ -1,9 +1,9 @@
 import { getContext } from 'svelte';
 import { themeContextKey } from '$lib/utils/consts';
-import type { ThemeOptions } from '$lib';
+import type { Theme } from '$lib';
 
-export default function getThemeContext() {
-	const theme = getContext<Required<ThemeOptions>>(themeContextKey);
+export default function getThemeContext(): Theme {
+	const theme = getContext<Theme>(themeContextKey);
 
 	if (!theme) {
 		throw new Error("You haven't defined a theme context!");

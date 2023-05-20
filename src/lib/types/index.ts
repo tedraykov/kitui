@@ -22,45 +22,18 @@ import type {
 import type { ButtonOptions } from '$lib/types/button';
 import type { SwitchOptions } from '$lib/types/switch';
 
-export type ColorPalette = {
-	main: string;
-	onMain: string;
-	container: string;
-	onContainer: string;
-}
-
-export type SurfacePalette = {
-	main: string;
-	dim: string;
-	bright: string;
-	containerLowest: string;
-	containerLow: string;
-	container: string;
-	containerHigh: string;
-	containerHighest: string;
-}
-
-export type Palette = {
-	primary: ColorPalette;
-	secondary: ColorPalette;
-	ternary: ColorPalette;
-	error: ColorPalette;
-	surface: SurfacePalette
-}
-
-export type ThemeOptions = {
-	components?: {
-		BaseInput?: BaseInputOptions;
-		Button?: ButtonOptions;
-		Card?: CardOptions;
-		CardAction?: CardActionOptions;
-		CardContent?: CardContentOptions;
-		CardHeader?: CardHeaderOptions;
-		CardTitle?: CardTitleOptions;
-		Chip?: ChipOptions;
-		Container?: ContainerOptions;
+export type Components = {
+		BaseInput: BaseInputOptions;
+		Button: ButtonOptions;
+		Card: CardOptions;
+		CardAction: CardActionOptions;
+		CardContent: CardContentOptions;
+		CardHeader: CardHeaderOptions;
+		CardTitle: CardTitleOptions;
+		Chip: ChipOptions;
+		Container: ContainerOptions;
 		Divider?: DividerOptions;
-		Drawer?: DrawerOptions;
+		Drawer: DrawerOptions;
 		FilledInput?: FilledInputOptions;
 		OutlinedInput?: OutlinedInputOptions;
 		FormLabel?: FormLabelOptions;
@@ -70,7 +43,7 @@ export type ThemeOptions = {
 		ListItem?: ListItemOptions;
 		Paper?: PaperOptions;
 		Stack?: StackOptions;
-		Switch?: SwitchOptions;
+		Switch: SwitchOptions;
 		TabGroup?: TabGroupOptions;
 		TabList?: TabListOptions;
 		Tab?: TabOptions;
@@ -82,27 +55,25 @@ export type ThemeOptions = {
 		TableRow?: TableRowOptions;
 		TableBody?: TableBodyOptions;
 		TableHead?: TableHeadOption;
-		Typography?: TypographyOptions;
-	};
+		Typography: TypographyOptions;
 };
 
 export type Theme = {
-	palette: Palette
-} & Required<ThemeOptions>;
+    components: Components
+};
 
-export type Variants<T> = {
+export type Variants<T, U> = {
 		props: Partial<T>,
-		class: string
+        styles: U
 }[]
 
-export type ComponentOptions<T, U = unknown> = {
+export type ComponentOptions<T, U> = {
 	defaultProps: T;
-	variants: Variants<T>
-	styleOverrides: U;
+	variants: Variants<T, U>
 };
 
 export type ElementProps = {
-	element: keyof HTMLElementTagNameMap;
+	element?: keyof HTMLElementTagNameMap;
 };
 
 export type Elevation = 'none' | 'sm' | 'default' | 'md' | 'lg' | 'xl' | '2xl';

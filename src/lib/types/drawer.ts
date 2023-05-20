@@ -1,12 +1,13 @@
 import type { ComponentOptions, ElementProps } from './index';
 
-export type DrawerOptions = ComponentOptions<DrawerProps, DrawerStylesOverrideOptions>;
+export type DrawerOptions = ComponentOptions<DrawerProps, DrawerStyles>;
 
 export type DrawerProps = ElementProps & {
-	variant?: 'permanent' | 'persistent' | 'temporary';
-	open?: boolean;
+	variant: 'standard' | 'modal';
+	open: boolean;
 };
 
-export type DrawerStylesOverrideOptions = {
-	root?: string;
+export type DrawerStyles = {
+	root: string;
+    scrim?: string;
 };

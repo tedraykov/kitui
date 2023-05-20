@@ -10,17 +10,18 @@
 	import SidebarList from '../components/SidebarList.svelte';
 	import PageTransition from '../components/PageTransition.svelte';
 	import Navbar from '../components/Navbar.svelte';
+	import type { Theme } from "$lib";
 
 	export let data;
-	const theme = createTheme({});
+	const theme = createTheme({} as Theme);
 	setThemeContext(theme);
 </script>
 
 <div class={`flex min-h-screen overflow-x-hidden`}>
-		<Drawer class='md:hidden' variant="temporary" open={$sidebarOpen} on:close={toggleSidebar}>
+		<Drawer class='md:hidden' variant="modal" open={$sidebarOpen} on:close={toggleSidebar}>
 			<SidebarList />
 		</Drawer>
-		<Drawer variant="persistent" class="min-w-[15rem] hidden md:block">
+		<Drawer variant="standard" class="min-w-[15rem] hidden md:block">
 			<SidebarList class="px-2" />
 		</Drawer>
 

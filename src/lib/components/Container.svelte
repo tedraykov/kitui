@@ -2,18 +2,21 @@
 	import { twMerge } from 'tailwind-merge';
 	import getThemeContext from '../styles/getThemeContext.js';
 	import type { ContainerProps } from '../types';
+	import evaluateVariantClasses from '$lib/styles/evaluateVariantClasses';
 
 	const theme = getThemeContext();
-	const { defaultProps, styleOverrides } = theme.components.Container;
+	const { defaultProps, variants } = theme.components.Container;
 
 	let _class = '';
 	export { _class as class };
 	export let element: ContainerProps['element'] = defaultProps.element;
+
+    const {root} = evaluateVariantClasses({element}, variants);
 </script>
 
 <svelte:element
 	this={element}
-	class={twMerge('flex flex-col w-full max-w-[105ch] mx-auto px-4 md:px-6 xl:px-8', _class)}
+	class={twMerge(root, _class)}
 	{...$$restProps}
 >
 	<slot />

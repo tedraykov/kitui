@@ -1,4 +1,4 @@
-import type { ThemeOptions } from '$lib';
+import type { Theme } from '$lib';
 import merge from 'lodash-es/merge.js';
 import defaultButtonOptions from '$lib/styles/default/button';
 import defaultCardOptions from '$lib/styles/default/card';
@@ -7,37 +7,18 @@ import defaultCardActionOptions from '$lib/styles/default/cardAction';
 import defaultCardContentOptions from '$lib/styles/default/cardContent';
 import defaultCardHeaderOptions from '$lib/styles/default/cardHeader';
 import defaultChipOptions from '$lib/styles/default/chip';
-// import defaultContainerOptions from '$lib/styles/default/container';
-// import defaultDividerOptions from '$lib/styles/default/divider';
-// import defaultDrawerOptions from '$lib/styles/default/drawer';
-// import defaultHeadingOptions from '$lib/styles/default/heading';
-// import defaultIconOptions from '$lib/styles/default/icon';
-// import defaultIconButtonOptions from '$lib/styles/default/iconButton';
-// import defaultInputOptions from '$lib/styles/default/input';
-// import defaultLinkOptions from '$lib/styles/default/link';
-// import defaultListOptions from '$lib/styles/default/list';
-// import defaultListItemOptions from '$lib/styles/default/listItem';
-// import defaultMenuOptions from '$lib/styles/default/menu';
-// import defaultMenuItemOptions from '$lib/styles/default/menuItem';
-// import defaultModalOptions from '$lib/styles/default/modal';
-// import defaultPaperOptions from '$lib/styles/default/paper';
-// import defaultPopoverOptions from '$lib/styles/default/popover';
-// import defaultRadioOptions from '$lib/styles/default/radio';
-// import defaultSelectOptions from '$lib/styles/default/select';
-// import defaultSliderOptions from '$lib/styles/default/slider';
-// import defaultSnackbarOptions from '$lib/styles/default/snackbar';
+import defaultDrawerOptions from '$lib/styles/default/drawer';
 import defaultSwitchOptions from '$lib/styles/default/switch';
-// import defaultTabOptions from '$lib/styles/default/tab';
-// import defaultTableOptions from '$lib/styles/default/table';
-// import defaultTableCellOptions from '$lib/styles/default/tableCell';
-// import defaultTableHeadOptions from '$lib/styles/default/tableHead';
-// import defaultTableRowOptions from '$lib/styles/default/tableRow';
-// import defaultTabsOptions from '$lib/styles/default/tabs';
-// import defaultTextareaOptions from '$lib/styles/default/textarea';
-// import defaultTooltipOptions from '$lib/styles/default/tooltip';
+import defaultTypographyOptions from '$lib/styles/default/typography';
 
-export const defaultTheme: Required<ThemeOptions> = {
+export const defaultTheme: Theme = {
 	components: {
+        BaseInput: {
+            defaultProps: {
+                element: 'div'
+            },
+            variants: []
+        },
 		Button: defaultButtonOptions,
 		Card: defaultCardOptions,
 		CardAction: defaultCardActionOptions,
@@ -49,52 +30,45 @@ export const defaultTheme: Required<ThemeOptions> = {
 			defaultProps: {
 				element: 'div'
 			},
-			styleOverrides: {}
+            variants: []
 		},
 		Divider: {
 			defaultProps: {
 				element: 'span',
 				direction: 'horizontal'
 			},
-			styleOverrides: {}
+            variants: []
 		},
-		Drawer: {
-			defaultProps: {
-				element: 'aside'
-			},
-			styleOverrides: {
-				root: ''
-			}
-		},
+		Drawer: defaultDrawerOptions,
 		FilledInput: {
 			defaultProps: {
 				element: 'div'
 			},
-			styleOverrides: {}
+            variants: []
 		},
 		InputStartAdornment: {
 			defaultProps: {
 				element: 'span'
 			},
-			styleOverrides: {}
+            variants: []
 		},
 		List: {
 			defaultProps: {
 				element: 'ul'
 			},
-			styleOverrides: {}
+            variants: []
 		},
 		ListItem: {
 			defaultProps: {
 				element: 'li'
 			},
-			styleOverrides: {}
+            variants: []
 		},
 		OutlinedInput: {
 			defaultProps: {
 				element: 'div'
 			},
-			styleOverrides: {}
+            variants: []
 		},
 		Stack: {
 			defaultProps: {
@@ -102,7 +76,7 @@ export const defaultTheme: Required<ThemeOptions> = {
 				gap: 2,
 				direction: 'col'
 			},
-			styleOverrides: {}
+            variants: []
 		},
 		Switch: defaultSwitchOptions,
 		TabGroup: {
@@ -112,7 +86,7 @@ export const defaultTheme: Required<ThemeOptions> = {
 				manual: false,
 				defaultIndex: 0
 			},
-			variants: []
+            variants: []
 		},
 		TabList: {
 			defaultProps: {
@@ -143,59 +117,49 @@ export const defaultTheme: Required<ThemeOptions> = {
 			defaultProps: {
 				element: 'table'
 			},
-			styleOverrides: {}
+            variants: []
 		},
 		TableCell: {
 			defaultProps: {
 				element: 'td'
 			},
-			styleOverrides: {}
+            variants: []
 		},
 		TableBody: {
 			defaultProps: {
 				element: 'tbody'
 			},
-			styleOverrides: {}
+            variants: []
 		},
 		TableHead: {
 			defaultProps: {
 				element: 'thead'
 			},
-			styleOverrides: {}
+            variants: []
 		},
 		TableRow: {
 			defaultProps: {
 				element: 'tr'
 			},
-			styleOverrides: {}
+            variants: []
 		},
 		TableHeaderCell: {
 			defaultProps: {
 				element: 'th'
 			},
-			styleOverrides: {}
+            variants: []
 		},
-		Typography: {
-			defaultProps: {
-				element: 'span',
-				style: 'body',
-				size: 'medium'
-			},
-			styleOverrides: {
-				displaySmall: 'text'
-			}
-		},
+        Typography: defaultTypographyOptions,
 		Paper: {
 			defaultProps: {
 				element: 'div',
 				elevation: 'default'
 			},
-			styleOverrides: {}
+            variants: []
 		}
 	}
 };
 
-export const createTheme = (theme: ThemeOptions) => {
-
-	return merge<Required<ThemeOptions>, ThemeOptions>(defaultTheme, theme);
+export const createTheme = (theme: Theme) => {
+	return merge<Theme, Theme>(defaultTheme, theme);
 };
