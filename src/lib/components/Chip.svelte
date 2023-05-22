@@ -13,18 +13,20 @@
 	export let element: ChipProps['element'] = defaultProps.element;
 	export let color: ChipProps['color'] = defaultProps.color;
 	export let type: ChipProps['type'] = defaultProps.type;
+    
+    const { root, leadingIcon, trailingIcon } = evaluateVariantClasses({color, type}, variants);
 </script>
 
 <svelte:element
 	this={element}
-	class={twMerge(evaluateVariantClasses({color, type}, variants), _class)}>
-	<span class='px-1'>
+	class={twMerge(root, _class)}>
+	<span class={leadingIcon}>
 		<slot name='leadingIcon' />
 	</span>
-	<Typography variant='label' size='large'>
+	<Typography style='label' size='large'>
 		<slot />
 	</Typography>
-	<span class='px-1'>
+	<span class={trailingIcon}>
 		<slot name='trailingIcon' />
 	</span>
 </svelte:element>

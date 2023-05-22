@@ -10,13 +10,16 @@
 	let _class = '';
 	export { _class as class };
 	export let element: CardContentProps['element'] = defaultProps.element;
+
+    const {root} = evaluateVariantClasses({}, variants);
 </script>
 
 <svelte:element
 	this={element}
 	class={twMerge(
-		evaluateVariantClasses({}, variants), _class
-		)}
+        root,
+        _class
+    )}
 	{...$$restProps}
 >
 	<slot />

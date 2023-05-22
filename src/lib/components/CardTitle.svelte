@@ -11,13 +11,15 @@
 	let _class = '';
 	export { _class as class };
 	export let element: CardTitleProps['element'] = defaultProps.element;
+
+    const {root} = evaluateVariantClasses({}, variants);
 </script>
 
 <Typography
 	{element}
 	variant="headline"
 	class={twMerge(
-		evaluateVariantClasses({}, variants),
+        root,
 		_class
 	)}
 	{...$$restProps}

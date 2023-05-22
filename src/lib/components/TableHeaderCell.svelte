@@ -3,21 +3,22 @@
 	import getThemeContext from "../styles/getThemeContext";
 	import type { TableHeaderCellProps } from '../types/table';
 	import { Typography } from './index.js';
+	import evaluateVariantClasses from "$lib/styles/evaluateVariantClasses";
 
 	const theme = getThemeContext();
-	const { defaultProps, styleOverrides } = theme.components.TableHeaderCell;
+	const { defaultProps, variants } = theme.components.TableHeaderCell;
 
 	let _class = "";
 	export { _class as class };
 	export let element: TableHeaderCellProps["element"] = defaultProps.element;
 
+    const { root } = evaluateVariantClasses({}, variants);
 </script>
 
 <svelte:element
 	this={element}
 	class={twMerge(
-    "px-4 py-2 border-b whitespace-nowrap border-b-outline-variant bg-surface-1",
-    styleOverrides.root,
+    root,
     _class
   )}>
 	<Typography variant='label'>

@@ -7,7 +7,9 @@ const defaultOptions: CardContentOptions = {
 	variants: [
 		{
 			props: {},
-			class: 'bg-surface-1 px-8 py-4'
+			styles: {
+                root: 'bg-surface-1 px-8 py-4'
+            }
 		}
 	]
 }

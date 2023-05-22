@@ -32,7 +32,7 @@ export type Components = {
 		CardTitle: CardTitleOptions;
 		Chip: ChipOptions;
 		Container: ContainerOptions;
-		Divider?: DividerOptions;
+		Divider: DividerOptions;
 		Drawer: DrawerOptions;
 		FilledInput?: FilledInputOptions;
 		OutlinedInput?: OutlinedInputOptions;
@@ -49,12 +49,12 @@ export type Components = {
 		Tab?: TabOptions;
 		TabPanels?: TabPanelsOptions;
 		TabPanel?: TabPanelOptions;
-		Table?: TableOptions;
-		TableCell?: TableCellOptions;
-		TableHeaderCell?: TableHeaderCellOptions;
-		TableRow?: TableRowOptions;
-		TableBody?: TableBodyOptions;
-		TableHead?: TableHeadOption;
+		Table: TableOptions;
+		TableCell: TableCellOptions;
+		TableHeaderCell: TableHeaderCellOptions;
+		TableRow: TableRowOptions;
+		TableBody: TableBodyOptions;
+		TableHead: TableHeadOption;
 		Typography: TypographyOptions;
 };
 

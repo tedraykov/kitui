@@ -11,13 +11,13 @@
 <Container class='py-4'>
 	<Stack gap={8}>
 		<Stack element='header'>
-			<Typography class='text-primary' variant='title'>Components</Typography>
-			<Typography variant='display'>Typography</Typography>
+			<Typography class='text-primary' style='title'>Components</Typography>
+			<Typography style='display'>Typography</Typography>
 			<Divider/>
 		</Stack>
 		<Stack element='section' gap={4}>
 			<Stack element='header'>
-				<Typography variant='headline'>Playground</Typography>
+				<Typography style='headline'>Playground</Typography>
 				<Typography size='large'>
 					Play around with the component props and see them dynamically apply.
 					The playground serves as a API documentation of the component.
@@ -27,31 +27,31 @@
 		</Stack>
 		<Stack element='section' gap={4}>
 			<Stack element='header'>
-				<Typography variant='headline'>Styles</Typography>
+				<Typography style='headline'>Styles</Typography>
 				<Typography size='large'>Typography has five distinct type styles: Display, headline, title, body, and label.</Typography>
 			</Stack>
 			<Card outlined>
 				<CardContent>
 					<Stack gap={4}>
-						<Typography variant='display' size='large'>Display Large</Typography>
-						<Typography variant='display' size='medium'>Display Medium</Typography>
-						<Typography variant='display' size='small'>Display Small</Typography>
+						<Typography style='display' size='large'>Display Large</Typography>
+						<Typography style='display' size='medium'>Display Medium</Typography>
+						<Typography style='display' size='small'>Display Small</Typography>
 
-						<Typography variant='headline' size='large'>Headline Large</Typography>
-						<Typography variant='headline' size='medium'>Headline Medium</Typography>
-						<Typography variant='headline' size='small'>Headline Small</Typography>
+						<Typography style='headline' size='large'>Headline Large</Typography>
+						<Typography style='headline' size='medium'>Headline Medium</Typography>
+						<Typography style='headline' size='small'>Headline Small</Typography>
 
-						<Typography variant='title' size='large'>Title Large</Typography>
-						<Typography variant='title' size='medium'>Title Medium</Typography>
-						<Typography variant='title' size='small'>Title Small</Typography>
+						<Typography style='title' size='large'>Title Large</Typography>
+						<Typography style='title' size='medium'>Title Medium</Typography>
+						<Typography style='title' size='small'>Title Small</Typography>
 
-						<Typography variant='label' size='large'>Label Large</Typography>
-						<Typography variant='label' size='medium'>Label Medium</Typography>
-						<Typography variant='label' size='small'>Label Small</Typography>
+						<Typography style='label' size='large'>Label Large</Typography>
+						<Typography style='label' size='medium'>Label Medium</Typography>
+						<Typography style='label' size='small'>Label Small</Typography>
 
-						<Typography variant='body' size='large'>Body Large</Typography>
-						<Typography variant='body' size='medium'>Body Medium</Typography>
-						<Typography variant='body' size='small'>Body Small</Typography>
+						<Typography style='body' size='large'>Body Large</Typography>
+						<Typography style='body' size='medium'>Body Medium</Typography>
+						<Typography style='body' size='small'>Body Small</Typography>
 					</Stack>
 				</CardContent>
 			</Card>

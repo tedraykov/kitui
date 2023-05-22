@@ -8,20 +8,29 @@ const defaultCardOptions: CardOptions = {
 	variants: [
 		{
 			props: {},
-			class: "rounded-xl"
-		},
+			styles: {
+                root: "rounded-xl"
+            } 	
+        },
 		{
 			props: { type: 'filled' },
-			class: "bg-surface-container-highest"
+			styles: {
+                root: "bg-surface-container-highest"
+            }
 		},
 		{
 			props: { type: 'outlined' },
-			class: `shadow-none border border-outline-variant bg-surface`
-		},
+			styles:{
+                root: `shadow-none border border-outline-variant bg-surface`
+
+            } 	
+        },
 		{
 			props: {type: 'elevated'},
-			class: `shadow-md bg-surface-container-low`
-		}
+			styles: {
+                root: `shadow-md bg-surface-container-low`
+            }
+        }
 	]
 }
 
