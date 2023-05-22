@@ -16,13 +16,13 @@
 <Container class='py-4'>
 	<Stack gap={8}>
 		<Stack element='header'>
-			<Typography class='text-primary' variant='title'>Components</Typography>
-			<Typography variant='display'>Card</Typography>
+			<Typography class='text-primary' style='title'>Components</Typography>
+			<Typography style='display'>Card</Typography>
 			<Divider/>
 		</Stack>
 		<Stack element='section' gap={4}>
 			<Stack element='header'>
-				<Typography variant='headline'>Playground</Typography>
+				<Typography style='headline'>Playground</Typography>
 				<Typography size='large'>
 					Play around with the component props and see them dynamically apply.
 					The playground serves as a API documentation of the component.
@@ -32,7 +32,7 @@
 		</Stack>
 		<Stack element='section' gap={4}>
 			<Stack element='header'>
-				<Typography variant='headline'>Styles</Typography>
+				<Typography style='headline'>Styles</Typography>
 			</Stack>
 			<Stack direction='row'>
 

@@ -1,19 +1,21 @@
 import type { ComponentOptions, ElementProps } from './index';
 
-export type ListOptions = ComponentOptions<ListProps,
-	ListStylesOverrideOptions>;
+export type ListOptions = ComponentOptions<ListProps, ListStyles>;
 
 export type ListProps = ElementProps;
 
-export type ListStylesOverrideOptions = {
-	root?: string;
+export type ListStyles = {
+    root: string;
 };
 
-export type ListItemOptions = ComponentOptions<ListItemProps,
-	ListItemStylesOverrideOptions>
+export type ListItemOptions = ComponentOptions<ListItemProps, ListItemStyles>
 
-export type ListItemProps = ElementProps;
-
-export type ListItemStylesOverrideOptions = {
-	root?: string;
+export type ListItemProps = ElementProps & {
+    active: boolean;
+    href?: string;
 };
+
+export type ListItemStyles = {
+    root: string;
+};
+

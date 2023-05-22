@@ -1,38 +1,24 @@
-<script lang='ts'>
+<script lang="ts">
 	import { twMerge } from 'tailwind-merge';
-	import cn from 'classnames';
 	import getThemeContext from '../styles/getThemeContext';
 	import type { ListItemProps } from '../types';
+	import evaluateVariantClasses from '$lib/styles/evaluateVariantClasses';
 
 	const theme = getThemeContext();
-	const { defaultProps, styleOverrides } = theme.components.ListItem;
+	const { defaultProps, variants } = theme.components.ListItem;
 
 	let _class = '';
 	export { _class as class };
 	export let element: ListItemProps['element'] = defaultProps.element;
-	export let href: string | undefined;
-	export let active = false;
+	export let active: ListItemProps['active'] = defaultProps.active;
+	export let href: ListItemProps['href'] = defaultProps.href;
+
+	$: ({root} = evaluateVariantClasses({ active, href }, variants));
 </script>
 
-<svelte:element
-	this={element}
-	class={twMerge(
-			`flex m-1 rounded-md
-    transition-colors
-    hover:bg-gray-800/10
-    active:bg-gray-800/5
-    focus:bg-gray-800/10`,
-			cn({
-				[`bg-primary-200/30 hover:bg-primary-200/50
-        active:bg-primary-200/30 focus:bg-primary-200/50`]: active,
-        ["py-2 px-4"]: !href
-			}),
-			_class
-		)}
-	{...$$restProps}
->
+<svelte:element this={element} class={twMerge(root, _class)} {...$$restProps}>
 	{#if href}
-		<a {href} class='flex-1 py-2 px-4'>
+		<a {href} class="flex-1 py-2 px-4">
 			<slot />
 		</a>
 	{:else}

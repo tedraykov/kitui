@@ -39,8 +39,8 @@ export type Components = {
 		FormLabel?: FormLabelOptions;
 		FormControl?: FormControlOptions;
 		InputStartAdornment?: InputStartAdornmentOptions;
-		List?: ListOptions;
-		ListItem?: ListItemOptions;
+		List: ListOptions;
+		ListItem: ListItemOptions;
 		Paper?: PaperOptions;
 		Stack?: StackOptions;
 		Switch: SwitchOptions;

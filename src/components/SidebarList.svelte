@@ -29,7 +29,7 @@
 </script>
 
 <List class={_class}>
-	<ListSubheader class="font-">
+	<ListSubheader class="text">
 		<Typography variant="caption">Components</Typography>
 	</ListSubheader>
 	{#each components as component}

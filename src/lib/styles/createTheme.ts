@@ -8,6 +8,7 @@ import defaultCardContentOptions from '$lib/styles/default/cardContent';
 import defaultCardHeaderOptions from '$lib/styles/default/cardHeader';
 import defaultChipOptions from '$lib/styles/default/chip';
 import defaultDrawerOptions from '$lib/styles/default/drawer';
+import defaultListItemOptions from '$lib/styles/default/listItem';
 import defaultSwitchOptions from '$lib/styles/default/switch';
 import defaultTypographyOptions from '$lib/styles/default/typography';
 
@@ -58,12 +59,7 @@ export const defaultTheme: Theme = {
 			},
             variants: []
 		},
-		ListItem: {
-			defaultProps: {
-				element: 'li'
-			},
-            variants: []
-		},
+		ListItem: defaultListItemOptions,
 		OutlinedInput: {
 			defaultProps: {
 				element: 'div'
