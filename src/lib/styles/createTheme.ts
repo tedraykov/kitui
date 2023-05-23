@@ -7,8 +7,10 @@ import defaultCardActionOptions from '$lib/styles/default/cardAction';
 import defaultCardContentOptions from '$lib/styles/default/cardContent';
 import defaultCardHeaderOptions from '$lib/styles/default/cardHeader';
 import defaultChipOptions from '$lib/styles/default/chip';
+import defaultContainerOptions from '$lib/styles/default/container';
 import defaultDrawerOptions from '$lib/styles/default/drawer';
 import defaultListItemOptions from '$lib/styles/default/listItem';
+import defaultOutlinedInputOptions from '$lib/styles/default/outlinedInput';
 import defaultSwitchOptions from '$lib/styles/default/switch';
 import defaultTypographyOptions from '$lib/styles/default/typography';
 
@@ -27,12 +29,7 @@ export const defaultTheme: Theme = {
 		CardHeader: defaultCardHeaderOptions,
 		CardTitle: defaultCardTitleOptions,
 		Chip: defaultChipOptions,
-		Container: {
-			defaultProps: {
-				element: 'div'
-			},
-            variants: []
-		},
+		Container: defaultContainerOptions,
 		Divider: {
 			defaultProps: {
 				element: 'span',
@@ -60,12 +57,7 @@ export const defaultTheme: Theme = {
             variants: []
 		},
 		ListItem: defaultListItemOptions,
-		OutlinedInput: {
-			defaultProps: {
-				element: 'div'
-			},
-            variants: []
-		},
+		OutlinedInput: defaultOutlinedInputOptions,
 		Stack: {
 			defaultProps: {
 				element: 'div',

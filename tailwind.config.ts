@@ -5,5 +5,5 @@ export default {
 	mode: 'jit',
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {},
-	plugins: [kituiPlugin({primaryColor: "#0b57d0"})]
+	plugins: [kituiPlugin({primaryColor: "#ff5a5f"})]
 } satisfies Config;

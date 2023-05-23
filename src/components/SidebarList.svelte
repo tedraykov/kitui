@@ -21,6 +21,10 @@
 			label: 'Chip'
 		},
 		{
+			href: '/components/input',
+			label: 'Input'
+		},
+		{
 			href: '/components/typography',
 			label: 'Typography'
 		}

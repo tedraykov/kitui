@@ -17,7 +17,7 @@
 
 <Typography
 	{element}
-	variant="headline"
+	style="headline"
 	class={twMerge(
         root,
 		_class

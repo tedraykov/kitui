@@ -3,35 +3,38 @@ import type { ComponentOptions, ElementProps} from './index';
 /* Filled Input */
 export type FilledInputOptions = ComponentOptions<
 	FilledInputProps,
-	FilledInputStylesOverrideOptions
+	FilledInputStyles
 >;
 
 export type FilledInputProps = ElementProps;
 
-export type FilledInputStylesOverrideOptions = {
-	root?: string;
+export type FilledInputStyles = {
+	root: string;
 };
 
 /* Outlined Input */
 export type OutlinedInputOptions = ComponentOptions<
 	OutlinedInputProps,
-	OutlinedInputStylesOverrideOptions
+	OutlinedInputStyles
 >;
 
 export type OutlinedInputProps = ElementProps;
 
-export type OutlinedInputStylesOverrideOptions = {
-	root?: string;
+export type OutlinedInputStyles = {
+	root: string;
+    input: string;
+    startAdornment: string;
+    endAdornment: string;
 };
 
 /* Base Input */
 export type BaseInputOptions = ComponentOptions<
 	BaseInputProps,
-	BaseInputStylesOverrideOptions
+	BaseInputStyles
 >;
 
 export type BaseInputProps = ElementProps;
 
-export type BaseInputStylesOverrideOptions = {
-	root?: string;
+export type BaseInputStyles = {
+	root: string;
 };

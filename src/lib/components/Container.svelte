@@ -1,4 +1,4 @@
-<script lang='ts'>
+<script lang="ts">
 	import { twMerge } from 'tailwind-merge';
 	import getThemeContext from '../styles/getThemeContext.js';
 	import type { ContainerProps } from '../types';
@@ -11,13 +11,11 @@
 	export { _class as class };
 	export let element: ContainerProps['element'] = defaultProps.element;
 
-    const {root} = evaluateVariantClasses({element}, variants);
+	$: ({ root } = evaluateVariantClasses({ element }, variants));
+    console.log(variants);
+    $: console.log(root);
 </script>
 
-<svelte:element
-	this={element}
-	class={twMerge(root, _class)}
-	{...$$restProps}
->
+<svelte:element this={element} class={twMerge(root, _class)} {...$$restProps}>
 	<slot />
 </svelte:element>
