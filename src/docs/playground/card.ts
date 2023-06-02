@@ -16,7 +16,7 @@ export type CardDefaultProps = {
 	CardTitle: CardTitleProps
 }
 
-export default function getCardTree(defaultProps: CardDefaultProps): PlaygroundComponentNode {
+export default function getCardTree(defaultProps: CardDefaultProps): PlaygroundComponentNode<CardProps> {
 	return {
 		Component: Card,
 		name: 'Card',

@@ -8,18 +8,18 @@
 	export let value: string;
 	export let componentName: string;
 
-	const propStore = getContext<Writable<ComponentPropsMap>>("playgroundProps");
+	const propStore = getContext<Writable<ComponentPropsMap>>('playgroundProps');
 
-	const updateProp = (event: {target: HTMLSelectElement}) => {
+	const updateProp = (event: { target: HTMLSelectElement }) => {
 		propStore.update((props) => {
-			props[componentName][name] = event.target.value
+			props[componentName][name] = event.target.value;
 			return props;
-		})
-	}
+		});
+	};
 </script>
 
-<Select {name} bind:value={value} on:change={updateProp}>
+<Select {name} bind:value on:change={updateProp}>
 	{#each options as option}
 		<SelectOption value={option}>{option}</SelectOption>
-		{/each}
+	{/each}
 </Select>

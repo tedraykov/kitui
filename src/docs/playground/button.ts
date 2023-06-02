@@ -29,7 +29,7 @@ export default function getButtonTree(defaultProps: ButtonProps): PlaygroundComp
 			{
 				name: 'color',
 				default: defaultProps.color,
-				description: `The color to use. Accepted colors are <code class='lang-js'>primary</code>, <code>secondary</code>, and <code>default</code>.`,
+				description: `The color to use.`,
 				control: {
 					type: 'select',
 					props: {

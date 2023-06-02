@@ -13,6 +13,7 @@
     export let type: InputProps['type'] = defaultProps.type;
 
 	$: ({ root, input, startAdornment, endAdornment } = evaluateVariantClasses({ type }, variants));
+    $: console.log(type);
 </script>
 
 <svelte:element this={element} class={twMerge(root, _class)} {...$$restProps}>

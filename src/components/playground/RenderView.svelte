@@ -5,6 +5,7 @@
 
 	export let componentTree: PlaygroundComponentNode;
 	const propsStore = getContext<Writable<ComponentPropsMap>>('playgroundProps');
+    console.log($propsStore);
 </script>
 
 <div

@@ -31,10 +31,10 @@ export type ComponentControl = {
 		props: ControlSwitchProps
 	}
 
-export type PropDefinition = {
-	name: string;
+export type PropDefinition<T extends Props = Props> = {
+	name: keyof T;
 	description?: string;
-	default: string | boolean;
+	default: T[keyof T];
 	control: ComponentControl;
 };
 
@@ -42,14 +42,14 @@ export type Props = Record<string, string | boolean | number>;
 
 export type ComponentPropsMap = Record<string, Props>;
 
-export type PropDefinitions = PropDefinition[];
+export type PropDefinitions<T extends Props = Props> = PropDefinition<T>[];
 
-export type PropDefinitionsMap = Record<string, PropDefinitions>;
+export type PropDefinitionsMap = Record<string, PropDefinitions<Props>>;
 
-export type PlaygroundComponentNode = {
+export type PlaygroundComponentNode<T extends Props = Props> = {
 	Component: ComponentType
 	name: string
-	children?: PlaygroundComponentNode[]
+	children?: PlaygroundComponentNode<Props>[]
 	content?: string
-	propDefinitions: PropDefinitions
+	propDefinitions: PropDefinitions<T>
 }

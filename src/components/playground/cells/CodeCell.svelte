@@ -1,7 +1,7 @@
 <script lang='ts'>
 	import Code from '../../Code.svelte';
 
-	export let text: string | boolean | undefined = undefined;
+	export let text: string | boolean | number | undefined = undefined;
 </script>
 
 {#if text}

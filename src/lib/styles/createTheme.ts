@@ -15,6 +15,9 @@ import defaultFormLabelOptions from '$lib/styles/default/formLabel';
 import defaultListItemOptions from '$lib/styles/default/listItem';
 import defaultInputOptions from '$lib/styles/default/input';
 import defaultSwitchOptions from '$lib/styles/default/switch';
+import defaultTableOptions from '$lib/styles/default/table';
+import defaultTableCellOptions from '$lib/styles/default/tableCell';
+import defaultTableHeaderCellOptions from '$lib/styles/default/tableHeaderCell';
 import defaultTypographyOptions from '$lib/styles/default/typography';
 
 export const defaultTheme: Theme = {
@@ -89,18 +92,8 @@ export const defaultTheme: Theme = {
             },
             variants: []
         },
-        Table: {
-            defaultProps: {
-                element: 'table'
-            },
-            variants: []
-        },
-        TableCell: {
-            defaultProps: {
-                element: 'td'
-            },
-            variants: []
-        },
+        Table: defaultTableOptions,
+        TableCell: defaultTableCellOptions,
         TableBody: {
             defaultProps: {
                 element: 'tbody'
@@ -119,12 +112,7 @@ export const defaultTheme: Theme = {
             },
             variants: []
         },
-        TableHeaderCell: {
-            defaultProps: {
-                element: 'th'
-            },
-            variants: []
-        },
+        TableHeaderCell: defaultTableHeaderCellOptions,
         Typography: defaultTypographyOptions,
         Paper: {
             defaultProps: {

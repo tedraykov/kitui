@@ -1,27 +1,19 @@
 <script lang="ts">
-	import { twMerge } from "tailwind-merge";
-	import {Typography} from "$lib/components";
-	import getThemeContext from "../styles/getThemeContext";
+	import { twMerge } from 'tailwind-merge';
+	import getThemeContext from '../styles/getThemeContext';
 	import type { TableCellProps } from '../types/table';
-	import evaluateVariantClasses from "$lib/styles/evaluateVariantClasses";
+	import evaluateVariantClasses from '$lib/styles/evaluateVariantClasses';
 
 	const theme = getThemeContext();
 	const { defaultProps, variants } = theme.components.TableCell;
 
-	let _class = "";
+	let _class = '';
 	export { _class as class };
-	export let element: TableCellProps["element"] = defaultProps.element;
+	export let element: TableCellProps['element'] = defaultProps.element;
 
-    const { root } = evaluateVariantClasses({}, variants);
+	const { root } = evaluateVariantClasses({}, variants);
 </script>
 
-<svelte:element
-	this={element}
-	class={twMerge(
-    root,
-    _class
-  )}>
-	<Typography>
+<svelte:element this={element} class={twMerge(root, _class)}>
 		<slot />
-	</Typography>
 </svelte:element>

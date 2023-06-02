@@ -1,7 +1,9 @@
 import type { TableOptions } from "$lib/types/table";
 
 const defaultOptions: TableOptions = {
-    defaultProps: {},
+    defaultProps: {
+        element: "table"
+    },
     variants: [
         {
             props: {},

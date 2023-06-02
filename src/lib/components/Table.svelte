@@ -12,6 +12,7 @@
 	export let element: TableProps["element"] = defaultProps.element;
 
     const { root } = evaluateVariantClasses({}, variants);
+
 </script>
 
 <svelte:element

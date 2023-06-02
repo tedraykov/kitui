@@ -12,8 +12,6 @@
 	export let element: ContainerProps['element'] = defaultProps.element;
 
 	$: ({ root } = evaluateVariantClasses({ element }, variants));
-    console.log(variants);
-    $: console.log(root);
 </script>
 
 <svelte:element this={element} class={twMerge(root, _class)} {...$$restProps}>

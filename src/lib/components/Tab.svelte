@@ -11,7 +11,7 @@
 	import cn from 'classnames';
 
 	const theme = getThemeContext();
-	const { defaultProps, styleOverrides } = theme.components.Tab;
+	const { defaultProps } = theme.components.Tab;
 
 	/***** Props *****/
 	let _class = '';
@@ -101,8 +101,7 @@
 			twMerge(
 				`font-medium h-fit w-fit py-2 px-4
         cursor-pointer
-      `,
-				styleOverrides?.root
+      `
 			),
 			{
 				[`border-b-2 border-primary-500`]: selected

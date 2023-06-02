@@ -1,19 +1,27 @@
 <script lang="ts">
-	import { Input, Stack } from '$lib';
-	import FormControl from '$lib/components/FormControl.svelte';
-	import FormHelperText from '$lib/components/FormHelperText.svelte';
-	import FormLabel from '$lib/components/FormLabel.svelte';
+	import { Container, Divider, Stack, Typography } from '$lib';
+	import Playground from '../../../components/playground/Playground.svelte';
+	import getInputTree from '../../../docs/playground/input';
+
+	const componentTree = getInputTree();
 </script>
 
-<Stack>
-	<FormControl>
-		<FormLabel>Label</FormLabel>
-		<Input type="outlined" />
-		<FormHelperText>Supporting text</FormHelperText>
-	</FormControl>
-	<FormControl>
-		<FormLabel>Label</FormLabel>
-		<Input type="filled" />
-		<FormHelperText>Supporting text</FormHelperText>
-	</FormControl>
-</Stack>
+<Container class="py-4">
+	<Stack gap={8}>
+		<Stack element="header">
+			<Typography class="text-primary" style="title">Components</Typography>
+			<Typography style="display">Input</Typography>
+			<Divider />
+		</Stack>
+		<Stack element="section" gap={4}>
+			<Stack element="header">
+				<Typography style="headline">Playground</Typography>
+				<Typography size="large">
+					Play around with the component props and see them dynamically apply. The playground serves
+					as a API documentation of the component.
+				</Typography>
+			</Stack>
+			<Playground {componentTree} />
+		</Stack>
+	</Stack>
+</Container>

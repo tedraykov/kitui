@@ -15,7 +15,7 @@
 	export let color: ButtonProps['color'] = defaultProps.color;
 	export let size: ButtonProps['size'] = defaultProps.size;
 
-    const {root} = evaluateVariantClasses({element, type, color, size}, variants);
+    $: ({root} = evaluateVariantClasses({element, type, color, size}, variants));
 </script>
 
 <svelte:element
