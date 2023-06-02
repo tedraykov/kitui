@@ -13,7 +13,7 @@
 	export let active: ListItemProps['active'] = defaultProps.active;
 	export let href: ListItemProps['href'] = defaultProps.href;
 
-	$: ({root} = evaluateVariantClasses({ active, href }, variants));
+	$: ({ root } = evaluateVariantClasses({ active, href }, variants));
 </script>
 
 <svelte:element this={element} class={twMerge(root, _class)} {...$$restProps}>

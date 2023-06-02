@@ -2,21 +2,30 @@ import type { ComponentOptions, ElementProps } from './index';
 
 export type FormLabelOptions = ComponentOptions<
 	FormLabelProps,
-	FormLabelStylesOverrideOptions
->;
-export type FormControlOptions = ComponentOptions<
-	FormControlProps,
-	FormControlOverrideOptions
+	FormLabelStyles
 >;
 
 export type FormLabelProps = ElementProps;
 
-export type FormLabelStylesOverrideOptions = {
-	root?: string;
+export type FormLabelStyles = {
+	root: string;
 };
+
+export type FormControlOptions = ComponentOptions<
+	FormControlProps,
+    FormControlStyles
+>;
 
 export type FormControlProps = ElementProps;
 
-export type FormControlOverrideOptions = {
-	root?: string;
+export type FormControlStyles = {
+	root: string;
+};
+
+export type FormHelperTextOptions = ComponentOptions<FormHelperTextProps, FormHelperTextStyles>;
+
+export type FormHelperTextProps = ElementProps;
+
+export type FormHelperTextStyles = {
+    root: string;
 };

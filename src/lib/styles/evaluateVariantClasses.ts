@@ -21,7 +21,6 @@ export default function evaluateVariantClasses<T, U extends Record<string, strin
                 applicableStyles[styleKey] = variant.styles[styleKey];
             }
         }
-
     }
     // Apply tailwind-merge to all styles
     for (const styleKey of Object.keys(applicableStyles) as (keyof U)[]) {

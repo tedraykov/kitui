@@ -1,40 +1,18 @@
 import type { ComponentOptions, ElementProps} from './index';
 
-/* Filled Input */
-export type FilledInputOptions = ComponentOptions<
-	FilledInputProps,
-	FilledInputStyles
+export type InputOptions = ComponentOptions<
+	InputProps,
+	InputStyles
 >;
 
-export type FilledInputProps = ElementProps;
-
-export type FilledInputStyles = {
-	root: string;
+export type InputProps = ElementProps & {
+    type: "outlined" | "filled"
 };
 
-/* Outlined Input */
-export type OutlinedInputOptions = ComponentOptions<
-	OutlinedInputProps,
-	OutlinedInputStyles
->;
-
-export type OutlinedInputProps = ElementProps;
-
-export type OutlinedInputStyles = {
+export type InputStyles = {
 	root: string;
     input: string;
-    startAdornment: string;
-    endAdornment: string;
+    startAdornment?: string;
+    endAdornment?: string;
 };
 
-/* Base Input */
-export type BaseInputOptions = ComponentOptions<
-	BaseInputProps,
-	BaseInputStyles
->;
-
-export type BaseInputProps = ElementProps;
-
-export type BaseInputStyles = {
-	root: string;
-};

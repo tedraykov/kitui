@@ -286,6 +286,9 @@ export default plugin.withOptions(
                             "12": 'var(--kitui-color-state-layer-on-surface-12)'
                         }
                     }
+                },
+                boxShadow: {
+                    focus: "0 0 0 1px var(--kitui-color-primary)"
                 }
             }
         }

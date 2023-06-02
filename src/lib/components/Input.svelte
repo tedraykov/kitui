@@ -1,17 +1,18 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
 	import getThemeContext from '../styles/getThemeContext';
-	import type { OutlinedInputProps } from '../types';
+	import type { InputProps } from '../types';
 	import evaluateVariantClasses from '$lib/styles/evaluateVariantClasses';
 
 	const theme = getThemeContext();
-	const { defaultProps, variants } = theme.components.OutlinedInput;
+	const { defaultProps, variants } = theme.components.Input;
 
 	let _class = '';
 	export { _class as class };
-	export let element: OutlinedInputProps['element'] = defaultProps.element;
+	export let element: InputProps['element'] = defaultProps.element;
+    export let type: InputProps['type'] = defaultProps.type;
 
-	$: ({ root, input, startAdornment, endAdornment } = evaluateVariantClasses({}, variants));
+	$: ({ root, input, startAdornment, endAdornment } = evaluateVariantClasses({ type }, variants));
 </script>
 
 <svelte:element this={element} class={twMerge(root, _class)} {...$$restProps}>
