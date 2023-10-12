@@ -18,7 +18,6 @@
 	import { get, writable } from 'svelte/store';
 	import ControlSelect from './ControlSelect.svelte';
 	import ControlSwitch from './ControlSwitch.svelte';
-	import Divider from '$lib/components/Divider.svelte';
 
 	export let propDefinitionsMap: PropDefinitionsMap = {};
 

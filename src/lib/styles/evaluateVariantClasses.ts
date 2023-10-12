@@ -1,4 +1,4 @@
-import type { Variants } from '$lib';
+import type { Variants } from '$lib/types';
 import { twMerge } from 'tailwind-merge';
 
 export default function evaluateVariantClasses<T, U extends Record<string, string>>(props: T, variants: Variants<T, U>) {

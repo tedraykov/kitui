@@ -1,4 +1,4 @@
-import type { ChipOptions } from '$lib/types';
+import type { ChipOptions } from '$lib';
 
 const defaultOptions: ChipOptions = {
     defaultProps: {

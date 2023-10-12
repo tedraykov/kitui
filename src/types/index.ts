@@ -38,7 +38,7 @@ export type PropDefinition<T extends Props = Props> = {
 	control: ComponentControl;
 };
 
-export type Props = Record<string, string | boolean | number>;
+export type Props = Record<string, string | boolean | number | undefined>;
 
 export type ComponentPropsMap = Record<string, Props>;
 
@@ -46,7 +46,7 @@ export type PropDefinitions<T extends Props = Props> = PropDefinition<T>[];
 
 export type PropDefinitionsMap = Record<string, PropDefinitions<Props>>;
 
-export type PlaygroundComponentNode<T extends Props = Props> = {
+export type PlaygroundComponentNode<T extends Props> = {
 	Component: ComponentType
 	name: string
 	children?: PlaygroundComponentNode<Props>[]

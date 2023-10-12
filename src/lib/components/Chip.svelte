@@ -14,7 +14,7 @@
 	export let color: ChipProps['color'] = defaultProps.color;
 	export let type: ChipProps['type'] = defaultProps.type;
     
-    const { root, leadingIcon, trailingIcon } = evaluateVariantClasses({color, type}, variants);
+    $: ({ root, leadingIcon, trailingIcon } = evaluateVariantClasses({color, type}, variants));
 </script>
 
 <svelte:element

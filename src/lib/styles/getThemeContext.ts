@@ -1,6 +1,6 @@
 import { getContext } from 'svelte';
 import { themeContextKey } from '$lib/utils/consts';
-import type { Theme } from '$lib';
+import type { Theme } from '$lib/types';
 
 export default function getThemeContext(): Theme {
 	const theme = getContext<Theme>(themeContextKey);

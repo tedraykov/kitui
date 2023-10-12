@@ -1,8 +1,8 @@
 <script lang='ts'>
-	import type { TypographyProps } from '../types';
-	import getThemeContext from '../styles/getThemeContext';
+	import type { TypographyProps } from '$lib/types';
 	import { twMerge } from 'tailwind-merge';
 	import evaluateVariantClasses from '$lib/styles/evaluateVariantClasses';
+	import getThemeContext from '$lib/styles/getThemeContext';
 
 	const theme = getThemeContext();
 	const { defaultProps, variants } = theme.components.Typography;

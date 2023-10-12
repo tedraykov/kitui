@@ -11,6 +11,7 @@
 	const propStore = getContext<Writable<ComponentPropsMap>>('playgroundProps');
 
 	const updateProp = (event: { target: HTMLSelectElement }) => {
+        console.log(event.target.value)
 		propStore.update((props) => {
 			props[componentName][name] = event.target.value;
 			return props;

@@ -11,7 +11,8 @@
 	export { _class as class };
 	export let element: DividerProps['element'] = defaultProps.element;
 	export let direction: DividerProps['direction'] = defaultProps.direction;
-    const { root } = evaluateVariantClasses({direction}, variants);
+
+    $: ({ root } = evaluateVariantClasses({direction}, variants));
 </script>
 
 <svelte:element

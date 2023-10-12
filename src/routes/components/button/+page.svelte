@@ -1,7 +1,7 @@
 <script lang='ts'>
 	import { Button, Card, Container, Divider, Stack, Typography } from '$lib';
-	import Playground from '../../../components/playground/Playground.svelte';
 	import { defaultTheme } from '$lib/styles/createTheme';
+	import Playground from '../../../components/playground/Playground.svelte';
 	import getButtonTree from '../../../docs/playground/button';
 
 	const { defaultProps } = defaultTheme.components.Button;

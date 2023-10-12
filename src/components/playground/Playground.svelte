@@ -36,7 +36,6 @@
 				}
 			), {});
 		});
-        console.log('Initial Props Map', initialPropsMap);
 		return initialPropsMap;
 	};
 

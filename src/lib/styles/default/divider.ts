@@ -1,4 +1,30 @@
+import type { DividerOptions } from '$lib';
 
-			// ['w-full my-2 border-b border-outline-variant']: direction === 'horizontal',
-			// ['h-full mx-2 border-r border-outline-variant']: direction === 'vertical'
-const default
+const defaultDividerOptions: DividerOptions = {
+    defaultProps: {
+        element: "span",
+        direction: "horizontal",
+    },
+    variants: [
+        {
+            props: {},
+            styles: {
+                root: "bg-outline-variant"
+            }
+        },
+        {
+            props: { direction: "vertical" },
+            styles: {
+                root: "w-[1px]"
+            }
+        },
+        {
+            props: { direction: "horizontal" },
+            styles: {
+                root: "w-full h-[1px]"
+            }
+        }
+    ]
+}
+
+export default defaultDividerOptions;

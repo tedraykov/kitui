@@ -16,7 +16,12 @@
 	export let variant: DrawerProps['variant'] = defaultProps.variant;
 	export let open: DrawerProps['open'] = defaultProps.open;
 
-    const {root, scrim} = evaluateVariantClasses({element, variant, open}, variants);
+    const closeDrawer = () => {
+        console.log('closeDrawer');
+        open = false;
+    }
+
+    $: ({root, scrim} = evaluateVariantClasses({element, variant, open}, variants));
 </script>
 
 
@@ -32,5 +37,7 @@
 	<span
 		in:fade={{ duration: 200 }}
 		out:fade={{ duration: 200 }}
-		class={scrim}></span>
+		class={scrim}
+        on:click={closeDrawer}
+        ></span>
 {/if}

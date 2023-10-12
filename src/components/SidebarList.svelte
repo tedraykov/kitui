@@ -21,6 +21,14 @@
 			label: 'Chip'
 		},
 		{
+			href: '/components/divider',
+			label: 'Divider'
+		},
+		{
+			href: '/components/drawer',
+			label: 'Drawer'
+		},
+		{
 			href: '/components/input',
 			label: 'Input'
 		},

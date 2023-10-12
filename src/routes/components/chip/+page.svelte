@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Card, CardContent, Chip, Container, Stack, Typography, Divider} from '$lib';
 	import getChipTree from '../../../docs/playground/chip';
-	import { defaultTheme } from '../../../lib/styles/createTheme';
+	import { defaultTheme } from '$lib/styles/createTheme';
 	import Playground from '../../../components/playground/Playground.svelte';
 
 	const componentTree = getChipTree(defaultTheme.components.Chip.defaultProps);

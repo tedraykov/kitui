@@ -1,7 +1,7 @@
 <script lang='ts'>
 	import { twMerge } from 'tailwind-merge';
-	import type { ButtonProps } from '$lib';
-	import getThemeContext from '../styles/getThemeContext';
+	import type { ButtonProps } from '$lib/types';
+	import getThemeContext from '$lib/styles/getThemeContext';
 	import evaluateVariantClasses from '$lib/styles/evaluateVariantClasses';
 
 	const theme = getThemeContext();
@@ -24,6 +24,7 @@
 		root,
 		_class
 	)}
+    on:*
 	{...$$restProps}
 >
 	<slot />

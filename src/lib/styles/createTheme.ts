@@ -1,4 +1,4 @@
-import type { Theme } from '$lib';
+import type { Theme } from '$lib/types';
 import merge from 'lodash-es/merge.js';
 import defaultButtonOptions from '$lib/styles/default/button';
 import defaultCardOptions from '$lib/styles/default/card';
@@ -19,6 +19,7 @@ import defaultTableOptions from '$lib/styles/default/table';
 import defaultTableCellOptions from '$lib/styles/default/tableCell';
 import defaultTableHeaderCellOptions from '$lib/styles/default/tableHeaderCell';
 import defaultTypographyOptions from '$lib/styles/default/typography';
+import defaultDividerOptions from './default/divider';
 
 export const defaultTheme: Theme = {
     components: {
@@ -30,13 +31,7 @@ export const defaultTheme: Theme = {
         CardTitle: defaultCardTitleOptions,
         Chip: defaultChipOptions,
         Container: defaultContainerOptions,
-        Divider: {
-            defaultProps: {
-                element: 'span',
-                direction: 'horizontal'
-            },
-            variants: []
-        },
+        Divider: defaultDividerOptions,
         Drawer: defaultDrawerOptions,
         FormControl: defaultFormControlOptions,
         FormHelperText: defaultFormHelperTextOptions,
