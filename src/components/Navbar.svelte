@@ -12,7 +12,7 @@
 <Toolbar>
 	<Container class="max-w-8xl">
 		<Stack class="items-center" direction="row" gap={4}>
-			<Button class="md:hidden p-1.5" variant="outlined" on:click={toggleSidebar}>
+			<Button class="md:hidden p-1.5" type="outlined" on:click={toggleSidebar}>
 				<Icon src={Bars3} class="w-6 h-6 text-inherit" />
 			</Button>
 			<a href="/" class="w-12 h-12 p-2">

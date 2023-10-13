@@ -8,7 +8,7 @@ const defaultOptions: CardTitleOptions = {
 		{
 			props: {},
 			styles:{
-              root: 'p-4 pb-0'  
+              root: ''  
             } 
 		}
 	]

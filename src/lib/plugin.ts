@@ -10,6 +10,7 @@ import {
     redFromArgb,
     greenFromArgb, blueFromArgb
 } from '@material/material-color-utilities';
+import { match } from 'assert';
 
 const variablePrefix = 'kitui';
 
@@ -217,7 +218,10 @@ export default plugin.withOptions(
             },
             extend: {
                 zIndex: {
-                    drawer: '100'
+                    drawer: '1200',
+                    'drawer-scrim': '1199',
+                    'modal': '1300',
+                    'modal-scrim': '1299'
                 },
                 colors: {
                     'on': {

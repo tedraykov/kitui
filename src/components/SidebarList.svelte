@@ -33,6 +33,10 @@
 			label: 'Input'
 		},
 		{
+			href: '/components/switch',
+			label: 'Switch'
+		},
+		{
 			href: '/components/typography',
 			label: 'Typography'
 		}

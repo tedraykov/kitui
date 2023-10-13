@@ -17,7 +17,7 @@
 
 <Typography
 	{element}
-	style="headline"
+	style="title"
 	class={twMerge(
         root,
 		_class

@@ -13,6 +13,7 @@ export { default as ListSubheader } from './ListSubheader.svelte';
 export { default as Input } from './Input.svelte';
 export { default as Paper } from './Paper.svelte';
 export { default as Stack } from './Stack.svelte';
+export { default as Switch } from './Switch.svelte';
 export { default as Tab } from './Tab.svelte';
 export { default as TabGroup } from './TabGroup.svelte';
 export { default as TabHighlighter } from './TabHighlighter.svelte';

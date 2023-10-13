@@ -21,7 +21,7 @@
 		<Drawer class='md:hidden' variant="modal" open={$sidebarOpen} on:close={toggleSidebar}>
 			<SidebarList />
 		</Drawer>
-		<Drawer variant="standard" class="min-w-[15rem] hidden md:block">
+		<Drawer open variant="standard" class="hidden md:block w-content">
 			<SidebarList class="px-2" />
 		</Drawer>
 
